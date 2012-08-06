@@ -1,0 +1,31 @@
+/* CSS - North House GUI - March 19 2009 - Johnny Rodgers */
+
+/* ELEMENTS */
+
+/* Horizontal Rules */
+hr {
+	border: none;
+	border-bottom: 1px solid #CCC;
+	margin: 10px 0;
+}
+
+/* Clears */
+.clear_left { clear: left; }
+.clear_right { clear: right; }
+.clear_both { clear: both; }
+
+/* Floats */
+.left { float: left; }
+.right { float: right; }
+
+/* Scripts */
+script {
+	height: 0;
+	width: 0;
+}
+
+/* NO BACKGROUND */
+div.clear_bg {
+	background-color: #FFF;
+	background-image: none;
+}

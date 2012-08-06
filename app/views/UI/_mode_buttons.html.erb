@@ -1,0 +1,20 @@
+<div id="<%= set_id %>" class="button_set">
+	<% @modes.each do |mode| %>
+		<%= link_to_function(mode.name.upcase, "setMode(#{mode.id}, '#{set_id}', '#{@client_id}')", :id => "#{set_id}_#{mode.id}", :class => "button") %>
+	<% end %>
+	<script type="text/javascript">
+		<%= update_page do |page|
+				# assign mode settings to javascript variables
+				@modes.each do |mode|					
+					page.assign "mode_#{mode.id}_settings", mode.settings
+				end				
+				# assign active mode id to active_mode js variable
+				page.assign "active_mode", active_id
+				# make active mode button active
+				page["#{set_id}_#{active_id}"].addClassName("button_active");				
+				# assign active mode settings to global controls hash
+				page << "window.controls = recursive_clone(mode_#{active_id}_settings);" 
+			end
+		%>
+	</script>
+</div>

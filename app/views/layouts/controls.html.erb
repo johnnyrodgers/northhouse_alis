@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>West House | Controls</title>
+		
+		<!-- META -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<!-- ICONS -->
+		<link rel="shortcut icon" href="/images/icons/favicon.png" type="image/png" /> <!-- standards-based browsers -->
+		<link rel="shortcut icon" href="/images/icons/favicon.ico" /> <!-- IE6 -->
+
+		<!-- STYLE -->
+		<%= stylesheet_link_tag "controls" %>
+		<%= stylesheet_link_tag "ui_elements" %>
+		
+		<!-- BEHAVIOUR -->
+		<%= javascript_include_tag :defaults %>
+		<%= javascript_include_tag :juggernaut %>
+		<%= javascript_include_tag "controls" %>
+		<%= javascript_include_tag "controls_shared" %>
+		<%= javascript_include_tag "update_controls" %>
+		<%= javascript_include_tag "sync_controls" %>
+		<%= javascript_include_tag "trigger_mode_commands" %>
+		<%= javascript_include_tag "ui_functions" %>
+		<%= javascript_include_tag "utility" %>
+		
+		<!-- PUSH SERVER -->
+		<%= juggernaut :client_id => @client_id %>
+		
+	</head>
+	<body>
+		<div id="container">
+				<%= yield %>
+		</div>
+		<!-- SCRIPTS -->
+		<script type="text/javascript">
+			//initialize controls for this client (central, north, east)
+			initializeControls('<%= @client_id %>');
+			//pass device hash to javascript
+			<%= update_page do |page|
+						page.assign "devices", DEVICES
+					end %>
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+/* CSS - North House GUI - March 19 2009 - Johnny Rodgers */
+
+/* CODE */
+code {
+	margin: 10px 10px 10px 0;
+	padding: 5px 10px;
+	background-color: #EEE;
+}
+
+/* ELEMENTS */
+div#dev {
+	padding: 10px 5px; 
+	background-color: #EEE; 
+	margin-top: 1px; 
+	border-top: 1px solid #666; 
+	color: #AAA; 
+	height: 25px; 
+	text-align: right; 
+	font-size: 0.8em;
+}
+.dev_note {
+	color: #999;
+	font-size: 0.9em;
+	letter-spacing: -0.05em;
+	font-family: "Monaco";
+}

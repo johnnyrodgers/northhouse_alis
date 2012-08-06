@@ -1,0 +1,44 @@
+/* CSS - North House GUI - May 1 2009 - Johnny Rodgers */
+
+/* LABELS */
+.vertical_slider .slider_label, .vertical_toggle .toggle_label  {
+	color: #666;
+	font-weight: bold;
+}
+
+/* LIGHTS */
+.vertical_slider.lights {
+	margin-left: 35px;
+}
+.vertical_toggle {
+	margin-left: 20px;
+}
+
+/* BLINDS */
+.vertical_slider.blinds {
+	margin-left: 65px;
+}
+.vertical_slider .master_status {
+	top: 25px;
+}
+
+/* SHADES */
+.mode_shade_subsection .vertical_slider.shades {
+	margin: 0 50px;
+}
+.mode_shade_subsection {
+	width: 610px;
+	padding-left: 20px;
+	margin: 0 auto;
+}
+
+/* CLIMATE */
+.up_down_value {
+	background-image: url("/images/modes/climate_screen_bg.png");
+	color: #666;
+	font-size: 1.6em;
+	padding: 30px 10px 25px 10px;
+	margin-top: 10px;
+}
+
+

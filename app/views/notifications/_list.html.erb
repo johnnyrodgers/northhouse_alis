@@ -1,0 +1,45 @@
+<div id="notifications_modal" class="modal" style="display: none;">	
+	<div class="banner">
+		<div class="banner_stub_left"></div>
+		<div class="banner_bg">
+		<h2>House Notifications</h2>
+		</div>
+		<div class="banner_stub_right"></div>
+	</div>
+	<%= link_to_close_redbox("", { :class => "modal_close" }) %>
+	<div class="modal_contents">		
+		
+		<% form_tag "main/manage_notifications", :id => "notifications_form" do %>			
+			<div class="modal_form_buttons" style="margin-top: 30px;">
+				<input type='submit' value='Select All' id="select_all" onClick="$$('#notifications_form input.notification_checkbox').each(function(box){box.checked=true});$('select_none').show();this.hide();return false;" />
+				<input type='submit' value='Select None' id="select_none" style="display: none;" onClick="$$('#notifications_form input.notification_checkbox').each(function(box){box.checked=false});$('select_all').show();this.hide();return false;" />				
+				<% if demo? %>
+					<%= submit_tag "Delete Selected", :disabled => true %>
+					<%= submit_tag "Delete All", :disabled => true %>
+				<% else %>
+					<%= submit_to_remote "delete_selected", "Delete Selected", :url => { :controller => "notifications", :action => "delete_selected" } %> 
+					<%= submit_to_remote "delete_all", "Delete All", :url => { :controller => "notifications", :action => "delete_all" } %>				
+				<% end %>
+				
+			</div>			
+			<div class="modal_form_contents">
+				<% if !@notifications.nil? %>
+					<ul>
+						<% @notifications.each do |notification| %>
+							<li class="<%= notification.priority_as_text %>">
+								<%= check_box_tag "notification_ids[]", notification.id, false, :class => "notification_checkbox" %> 
+								<%= notification.message %> 
+								<span class="timestamp">
+									<%= time_ago_in_words(notification.updated_at).capitalize %> ago
+								</span>
+							</li>
+						<% end %>
+					</ul>
+				<% else %>
+					There are currently no notifications to display.
+				<% end %>
+			</div>				
+		<% end %>
+	
+	</div>
+</div>

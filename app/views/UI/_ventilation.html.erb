@@ -1,0 +1,5 @@
+<h3 style="margin-top: 20px;"><%= label %></h3>
+<div class="binary_buttons">
+	<%= link_to_function("ON", "setVentilation('#{control_id}', 'ON'); pushVentilation('#{control_id}', 'ON', #{device_id})", :id => "#{control_id}_on", :class => "button") %>
+	<%= link_to_function("OFF", "setVentilation('#{control_id}', 'OFF'); pushVentilation('#{control_id}', 'OFF', #{device_id})", :id => "#{control_id}_off", :class => "button") %>
+</div>

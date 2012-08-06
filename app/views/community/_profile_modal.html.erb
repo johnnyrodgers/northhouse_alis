@@ -1,0 +1,48 @@
+<div id="modal_edit_profile" class="modal_small" style="display: none;">	
+	<div class="banner">
+		<div class="banner_stub_left"></div>
+		<div class="banner_bg">
+		<h2>Edit Profile</h2>
+		</div>
+		<div class="banner_stub_right"></div>
+	</div>
+	<%= link_to_close_redbox("", { :class => "modal_close" }) %>
+	
+	
+	<div class="edit_profile_content">
+		
+		Use this area to add a profile image and change the household name that will be visible when you participate in the community.
+		<br><br>
+		<form name="someform">
+			<label class="aqua_blue">Name:</label><input type="text" name="name" size=30>
+			<br><br>
+			<label class="aqua_blue">Upload Image:</label><input type="file" name="somename" size="chars">
+			<br/><br>
+	<label class="aqua_blue">Number of Residents:</label>
+	<select class='redbox_select'>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+		<option>> 5</option>
+	</select>
+	<br/><br>
+	<label class="aqua_blue">Size of Residence:</label>
+	<select class='redbox_select'>
+		<option>&lt; 1000 sq. ft.</option>
+		<option>1000-1499 sq. ft.</option>
+		<option>1500-1999 sq. ft.</option>
+		<option>2000-2499 sq. ft.</option>
+		<option>2500-2999 sq. ft.</option>
+		<option>3000-3499 sq. ft.</option>
+		<option>3500-4000 sq. ft.</option>
+		<option>> 4000 sq. ft.</option>
+	</select>
+</form>
+		
+		
+		<div class="content_divider"></div>
+		<div class="button_light"><a href="#" onclick="RedBox.close(); return false;">Cancel</a></div><br><br>
+	</div>
+</div>

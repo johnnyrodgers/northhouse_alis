@@ -1,0 +1,7 @@
+# 'devices.yml' holds the current Device IDs for each GUI-controlled device in West House, as administered by mControl.
+
+# @author Johnny Rodgers
+# @date January 21st, 2010
+
+LeftLight: 2
+RightLight: 3

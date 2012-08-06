@@ -1,0 +1,22 @@
+	<% form_for :mode, @mode, :url => { :action => form_action, :id => @mode } do |f| %>
+		<div class="mode_setup_form">
+			<div id="setup" class="mode_section"><%= render :partial => "setup", :locals => { :f => f } %></div>
+			<div id="climate" class="mode_section" style="display: none;"><%= render :partial => "climate", :locals => { :f => f } %></div>
+			<div id="lights" class="mode_section" style="display: none;"><%= render :partial => "lights", :locals => { :f => f } %></div>
+			<div id="blinds" class="mode_section" style="display: none;"><%= render :partial => "interior_blinds", :locals => { :f => f } %></div>
+			<div id="shades" class="mode_section" style="display: none;"><%= render :partial => "exterior_shades", :locals => { :f => f } %></div>
+		</div>
+
+		<div class="content_divider"></div>	
+
+		<div class="mode_form_links">
+			<% if controller.action_name == "new" || controller.action_name == "create" || controller.action_name == "new_from_existing" %>
+				<input class="form_button" type="submit" value="Create Preset" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>
+			<% elsif controller.action_name == "edit" || controller.action_name == "update" %>
+				<input class="form_button" type="submit" value="Save Changes" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>
+			<% end %>
+			<input class="form_button" type="reset" value="Reset" onclick="if (confirm('Are you sure?  Your changes will be lost.')) { updateControls(window.controls); } else { return false; }">
+			<p class="mode_saved smaller green"><%= flash[:notice] %></p>
+		</div>
+
+	<% end %>

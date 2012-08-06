@@ -1,0 +1,12 @@
+<%
+	master = false if local_assigns[:master].nil?
+	slaves = [] if local_assigns[:slaves].nil?
+%>
+<div id="<%= control_id %>_buttons" class="tilt_section_buttons">	
+	<%= link_to_function("UPPER TILT", "switchSections('#{control_id}', 'upper'); return false", :id => "#{control_id}_upper", :class => "section_button upper active") %>
+	<%= render :partial => "modes/UI/tilt_degree_buttons", :locals => { :control_id => control_id, :device_id => device_id, :section => "upper", :active => true, :master => master, :slaves => slaves } %>	
+	<%= f.hidden_field control_id + "_upper", :value => state %>
+	<%= link_to_function("LOWER TILT", "switchSections('#{control_id}', 'lower'); return false", :id => "#{control_id}_lower", :class => "section_button lower") %>
+	<%= render :partial => "modes/UI/tilt_degree_buttons", :locals => { :control_id => control_id, :device_id => device_id, :section => "lower", :active => false, :master => master, :slaves => slaves } %>	
+	<%= f.hidden_field control_id + "_lower", :value => state %>
+</div>

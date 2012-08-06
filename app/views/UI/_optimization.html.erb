@@ -1,0 +1,14 @@
+<div id="<%= control_id %>_delay_settings" style="display: none;">
+	<%= render :partial => "UI/delay_settings", :locals => { :control_id => control_id, :value => @optimization_delay, :units => "Hrs" } %>
+</div>
+<div id="<%= control_id %>_buttons" class="button_set">
+	<div id="optimization">
+		<%= link_to_function "", "setOptimization(true); pushOptimization(true)", :id => "#{control_id}_button" %>
+		<span id="optimization_status"></span>
+	</div>
+	<div id="delay">
+		<%= link_to_function image_tag("/images/controls/delay_icon.png", :alt => "Delay"), "openDelaySettings('#{control_id}')", :id => "#{control_id}_delay", :class => "" %>
+		<span id="delay_status"><%= @optimization_delay %> Hours</span>
+	</div>
+</div>
+<script type="text/javascript">setOptimization(<%= @optimization %>)</script>

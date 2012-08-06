@@ -1,0 +1,10 @@
+<div id="<%= control_id %>_buttons" class="button_set">
+	<%= link_to_function("UP", "setBedPosition('#{control_id}', 'UP'); pushBedPosition('#{control_id}', 'UP', #{device_id})", :id => "#{control_id}_up", :class => "button") %>
+	<%= link_to_function("DOWN", "setBedPosition('#{control_id}', 'DOWN'); pushBedPosition('#{control_id}', 'DOWN', #{device_id})", :id => "#{control_id}_down", :class => "button") %>
+	<br />
+	<div id="<%= control_id %>_status" class="bed_status"></div>
+</div>
+<script type="text/javascript">
+	if ('<%= state %>' == "UP") { $('<%= control_id %>_up').addClassName('button_active'); }
+	if ('<%= state %>' == "DOWN") { $('<%= control_id %>_down').addClassName('button_active'); }
+</script>

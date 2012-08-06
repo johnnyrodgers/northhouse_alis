@@ -1,0 +1,27 @@
+<div id="lights" style="display: none;">
+	<h2>
+		<%= link_to_function(image_tag("/images/controls/main_screen.png"), nil, :class => "back_button") do |page| 
+					page.visual_effect :fade, :lights, :duration => 0.25
+					page.delay(0.25) do
+						page.visual_effect :appear, :index, :duration => 0.25
+					end
+			end %>
+	</h2>
+	<div id="K2_interior_lights" class="K2_section">
+		<h3>Additional Lighting</h3>
+		<div style="margin-left: 150px; float: left;">
+			<%= render :partial => "UI/vertical_toggle", :locals => { :toggle_id => "K2_light_kitchen_backsplash", :state => @mode.settings[:lights][:K2_light_kitchen_backsplash], :label => "Kitchen Backsplash", :device_id => DEVICES["lights_counter"] } %>
+			<%= render :partial => "UI/vertical_toggle", :locals => { :toggle_id => "K2_light_ambient_canvas", :state => @mode.settings[:lights][:K2_light_ambient_canvas], :label => "Ambient Canvas", :device_id => DEVICES["ambient_canvas"] } %>
+			<div class="slider_set_label" style="width: 215px;">
+				<span class="label">Kitchen</span>
+			</div>
+		</div>
+		<div style="margin-left: 150px; float: left;">
+			<%= render :partial => "UI/vertical_toggle", :locals => { :toggle_id => "K2_light_entry", :state => @mode.settings[:lights][:K2_light_entry], :label => "Interior Entry", :device_id => DEVICES["lights_entry"] } %>
+			<%= render :partial => "UI/vertical_toggle", :locals => { :toggle_id => "K2_light_exterior_entry", :state => @mode.settings[:lights][:K2_light_exterior_entry], :label => "Exterior Entry", :device_id => DEVICES["lights_ext_entry"] } %>
+			<div class="slider_set_label" style="width: 215px;">
+				<span class="label">North Entry Vestibule</span>
+			</div>
+		</div>
+	</div>
+</div>

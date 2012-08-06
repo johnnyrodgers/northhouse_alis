@@ -1,0 +1,99 @@
+<% title("Preferences") %>
+<div id="sidebar_left">
+	<div id="sidebar_content">
+		
+	<br /><br />	
+	<h5 class="title aqua_blue">DESCRIPTION</h5>
+	<p class="smaller light-grey"> 
+	This section allows you to change the web application's settings in order to better suit your needs. Here you can 
+	change the preferences on unit of measure, and also enter the information on the cost of energy, which is used to generate the various graphs in the system. You can also edit your personal information necessary to maintain the application's security and to locate you geographically within the system. You can also edit the notification preferences that provide alerts on important events within the house.					
+	
+	</p>
+	
+</div>	
+</div>
+
+<div id="center_block">
+	
+	<div id="content_center">
+		
+		<h1 class="title dark-grey">Application Preferences</h1>
+			<div id="application_preferences">
+			<div class="window"> 
+			<div class="medium aqua_blue">Personal Settings</div>
+			<table class="settings">
+			<tr>
+			<td align="right"><label>House ID:</label></td><td align="left"><input type="text" value="North House"></td>
+			<td class="second"align="right"><label>Password</label></td><td align="left"><input type="text" value=""></td>
+	</tr><tr>
+	<td align="right"><label>Username:</label></td><td align="left"><input type="text"></td>
+			<td class="second"align="right"><label>Retype Password:</label></td><td align="left"><input type="text" value=""></td>
+			</tr>
+			<tr>
+			<td align="right"><label>Country</label></td><td align="left"><select class="small"><option>Canada<option>United States</select></td>
+			<td class="second" align="right"><label>Province/State</label></td><td align="left"><select class="small">
+					<option>Alberta</option>
+					<option selected="selected">British Columbia</option>
+					<option>Manitoba</option>
+					<option>New Brunswick</option>
+					<option>Northwest Territories</option>
+					<option>Nova Scotia</option>
+					<option>Nunavut</option>
+					<option>Ontario</option>
+					<option>PEI</option>
+					<option>Quebec</option>
+					<option>Saskatchewan</option>
+					<option>Yukon</option>
+					
+					</select></td>
+			
+			</tr>
+			<tr>
+			<td align="right"><label>City</label></td><td align="left"><input type="text" value="Vancouver"></td>
+			</tr>
+			</table>
+
+			<div class="content_divider"></div>
+			<Br>
+			<div class="medium aqua_blue">Units of Measure</div>
+			<table class="settings">
+			<tr>
+			<td align="right"><label>Units</label></td><td align="left"><select class="small"><option>Metric<option>Imperial</select></td>
+			<td class="second"align="right"><label>Temperature</label></td><td align="left"><select class="small"><option>Celsius<option>Fahrenheit</select></td>      									</tr>
+			</table>
+
+			<div class="content_divider"></div>
+			<br>
+			<div class="medium aqua_blue">Energy Costs</div>	
+			<table class="settings">
+			<tr>
+			<td align="right"><label>Energy Costs:</label></td><td align="left"><input type="text" value=""> kWh</td>
+			<td class="second"align="right"><label>Peak Energy Costs:</label></td><td align="left"><input type="text" value=""> kWh</td>      															</tr>
+			</table>		
+			      						
+			<div class="content_divider"></div>
+			<br>
+			<div class="medium aqua_blue">Notifications</div>	
+			<table class="settings">
+			<tr>
+			<td align="right"><input type="checkbox" name="alerts" value="damage">Receive house damage alerts</td>
+			<td class="second"align="right"><input type="checkbox" name="alerts" value="high_consump">Receive high consumption alerts</td>      														</tr>
+			<tr>
+			<td align="right"><input type="checkbox" name="alerts" value="low_product">Receive low production alerts</td>
+			<td class="second"align="right"><input type="checkbox" name="alerts" value="low_product">Receive neighbourhood updates</td>      															</tr>
+			</table>	
+
+			<div class="content_divider"></div><br>
+			<div class="button_light"><a href="" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>Save Changes</a></div>
+			
+			</div>
+			</div>
+		
+	</div>
+</div>
+
+
+
+
+
+

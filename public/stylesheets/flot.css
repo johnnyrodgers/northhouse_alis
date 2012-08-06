@@ -1,0 +1,111 @@
+
+#electricityGraph{
+margin-left:5px;
+margin-top:-5px;
+}
+
+#waterGraph{
+margin-left:5px;
+margin-top:-5px;
+}
+
+.tickLabel{
+margin-right:10px;
+font-size:.85em;
+color:#ccc;
+
+}
+
+#waterGraph .tickLabel{
+font-size:.9em;
+color:#999;
+font-weight:bold;
+margin-top:-2px;
+}
+
+#communityGraph .tickLabel{
+font-size:.9em;
+color:#999;
+
+margin-top:-2px;
+}
+
+
+#tooltip{
+position: absolute;
+border: 1px solid #ccc;
+padding: 5px;
+-moz-border-radius: 5px; 
+-webkit-border-radius: 5px;
+-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); 
+background-color: #fff;
+min-width:120px;
+height:13px;
+color:#666;
+font-size:10px;
+}
+
+
+.tooltip_content{
+min-width:120px;
+margin-right:5px;
+margin-left:-5px;
+font-size:10px;
+}
+
+.point{
+background-image:url('../images/point.png');
+background-repeat: no-repeat;
+width:20px;
+height:50px;
+float:left;
+margin-left:-13px;
+margin-top:13px;
+}
+
+
+#communityGraph .legend{
+margin-left: 80px;
+margin-top:32px;
+font-color:#333;
+font-weight:bold;
+font-size:.9em;
+
+}
+
+#electricityGraph .legend{
+margin-left: 150px;
+margin-top:3px;
+font-size:.8em;
+
+}
+
+#waterGraph .legend {
+margin-left: 70px;
+margin-top:3px;
+font-size:.8em;
+}
+
+
+#waterGraph .color-box, #electricityGraph .color-box {
+width:10px;
+height:5px;
+}
+
+ .color-box {
+width:10px;
+height:10px;
+}
+
+
+
+td.legendLabel{
+padding-right:20px;
+color:#999;
+
+}
+
+.legend table{
+border:none;
+
+}

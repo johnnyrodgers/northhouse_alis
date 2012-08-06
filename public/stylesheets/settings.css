@@ -1,0 +1,21 @@
+/* CSS - North House GUI - September 23, 2009 - Kevin Muise */
+
+/* House Application Preferences */
+
+#application_preferences .window{
+height:470px;
+}
+
+table.settings{
+margin-top:5px;
+margin-bottom:5px;
+border:none;
+}
+
+table.settings td{
+padding-bottom:10px;
+}
+
+td.second{
+padding-left:50px;
+}

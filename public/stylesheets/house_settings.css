@@ -1,0 +1,639 @@
+/* CSS - North House GUI - August 20 2009 - Kevin Muise */
+
+
+
+/**************************** TEXT COLOR CLASSES  *************************************/
+.mode_red a, .mode_red {
+color:#d52b2b;
+}
+
+.mode_pink a, .mode_pink{
+color:#f042d1;
+}
+
+.mode_purple a, .mode_purple{
+color:#8d3dcb;
+}
+
+.mode_blue a, .mode_blue{
+color:#2a7bce;
+}
+
+.mode_aqua a, .mode_aqua{
+color:#2cd1d7;
+}
+
+
+.mode_green a, .mode_green{
+color:#64c945;
+}
+
+.mode_orange a, .mode_orange{
+color:#eb871c;
+}
+
+.mode_name a:hover{
+text-decoration:none;
+}
+
+/**************************** LEFT SIDEBAR CLASSES *************************************/
+
+
+.mode_functions .button_dark{
+float:right;
+margin-right:5px;
+margin-top:10px;
+}
+
+
+.mode_box{
+background-color:#fff;
+padding-top:10px;
+padding-bottom:10px;
+-webkit-border-radius:5px; 
+min-height:90px;
+width:175px;
+overflow: auto;
+margin-top:10px;
+}
+
+
+.mode_delete_link{
+float:left;
+margin-left:5px;
+margin-right:10px;
+
+
+}
+
+.mode_name{
+margin-left:10px;
+font-size:1.1em;
+font-family:helvetica;
+}
+
+.mode_selector {
+width:175px;
+padding-top:5px;
+padding-bottom:5px;
+}
+
+.mode_selector.active{
+background-color:#e2e2e2;
+}
+
+
+.imported_cal{
+background-color:#fff;
+padding-top:10px;
+padding-bottom:10px;
+-webkit-border-radius:5px; 
+min-height:50px;
+width:175px;
+}
+
+
+.cal_name{
+
+}
+
+.cal_name img{
+margin-right:5px;
+margin-left:0px;
+vertical-align:top;
+
+}
+
+input.cal_preset{
+float:left;
+margin-right:10px;
+margin-left:10px;
+margin-top:2px;
+}
+
+.cal_functions .button_dark, .cal_functions img.refresh{
+float:right;
+margin-right:5px;
+}
+
+.cal_functions .button_dark{
+margin-top:8px;
+}
+
+.cal_functions img.refresh{
+margin-top:6px;
+}
+
+
+img.refresh{
+text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;
+padding: 4px 10px 4px 10px;
+border:1px solid #222;
+-webkit-box-shadow:rgba(0, 0, 0, 0.2) 0 -1px 0;
+-webkit-border-radius:3px; 
+-moz-border-radius: 3px;
+background-color:#444;
+background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#000), color-stop(0.5, #333), color-stop(0.5, #222));
+           -webkit-background-size:100%;
+
+}
+
+
+a:hover img.refresh{
+border:1px solid #083056;
+background-color:#0463bd;
+background: -webkit-gradient(linear, left top, left bottom, from(#0463bd), to(#004c93), color-stop(0.5, #025aae), color-stop(0.5, #01509b));
+           -webkit-background-size:100%;
+
+}
+
+
+.add{
+font-size:1.1em;
+font-weight:bold;
+}
+
+
+
+
+
+/**************************** CENTER CLASSES *************************************/
+
+
+
+/****** MODE SETTINGS NAV BUTTONS ********/
+
+
+.mode_sections{
+}
+
+
+.mode_sections a{
+font-family: "Futura", "Futura Bk BT";
+font-size:1.2em;
+color:#fff;
+margin-left:40px;
+}
+
+.mode_sections a:hover, .mode_sections a.active {
+color:#66ccff;
+text-decoration:none;
+}
+.mode_section { 
+	min-height: 375px;
+}
+
+
+.control_browser_next{
+	background-image:url('../images/sub_page/btn_circle_next.png');
+	width:25px;
+	height:25px;
+	position: relative;
+	right: 0;
+	display: block;
+	float: right;
+	top: 160px;
+}
+.control_browser_next:hover{
+	background-image:url('../images/sub_page/btn_circle_next_hover.png');
+}
+.control_browser_prev{
+	background-image:url('../images/sub_page/btn_circle_prev.png');
+	width:25px;
+	height:25px;
+	position: relative;
+	left: 0;
+	display: block;
+	float: left;
+	top: 160px;
+}
+.control_browser_prev:hover{
+	background-image:url('../images/sub_page/btn_circle_prev_hover.png');
+}
+
+
+/****** MODE SAVING BUTTONS ********/
+
+.mode_form_links{
+margin-top:10px;
+float:left;
+}
+
+.mode_form_links .form_button{
+float:left;
+margin-right:10px;
+}
+
+
+.mode_saved{
+float:left;
+margin-top:5px;
+font-weight:bold;
+}
+
+
+
+
+
+/****** MODE SETUP PAGE ********/
+
+#mode_setup{
+margin-top:30px;
+margin-left:10px;
+}
+
+#setup {
+}
+#setup label{
+	font-size:1.2em;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.mode_setup_form{
+min-height:300px;
+}
+
+.mode_setup_form .items{
+margin-bottom:15px;
+}
+
+.mode_setup_form textarea{
+margin-top:5px;
+width:700px;
+height:100px;
+font-size:1.1em;
+color:#666;
+border: 1px solid #999;
+}
+
+.mode_setup_form input{
+font-size:1.1em;
+color:#666;
+border: 1px solid #999;
+}
+
+.mode_setup_form select{
+}
+
+.note {
+	margin: 5px 10px 0 5px; 
+	font-style: italic;
+	font-size: 0.9em;
+	float: left;
+}
+
+/****** MODE CLIMATE CONTROLS LAYOUT ********/
+
+#mode_climate{
+height:360px;
+width:630px;
+}
+
+#mode_climate table{
+border:none;
+
+}
+
+#mode_climate table td.large{
+padding-top:30px;
+padding-bottom:20px;
+text-align:right;
+}
+
+#mode_climate table td{
+padding:15px 15px 20px 15px;
+}
+
+.climate_screen{
+background-image:URL('../images/modes/climate_screen_bg.png');
+background-repeat:no-repeat;
+width:89px;
+height:64px;
+font-size:1.9em;
+padding-top:20px;
+padding-left:18px;
+float:left;
+color:#666666;
+
+}
+
+.climate_controls{
+margin-top:5px;
+margin-left:-5px;
+float:left;
+}
+
+.climate_controls img.bottom{
+margin-left:-1px;
+}
+
+
+/****** MODE SLIDER PAGE CONTROLS LAYOUT ********/
+.mode_subnav {
+height:35px;
+}
+
+
+.mode_subnav a {
+color:#1fa1cd;
+text-decoration:none;
+
+}
+
+
+.mode_subnav a:hover, .mode_subnav a.active {
+color:#333;
+text-decoration:none;
+}
+
+
+.mode_subnav a.active {
+font-weight:bold;
+}
+
+
+
+
+#mode_controls{
+width:650px;
+height:330px;
+margin-left:40px;
+margin-bottom:10px;
+}
+
+
+
+#mode_controls table{
+border:none;
+padding-top:20px;
+width:100%;
+}
+
+#mode_controls table td{
+
+padding:0px;
+text-align:center;
+}
+
+#mode_controls table td.control_label{
+text-align:center;
+font-size:11px;
+font-weight:bold;
+padding-left:15px;
+padding-right:25px;
+padding-top:10px;
+}
+
+
+#mode_controls table td.northfinder{
+text-align:center;
+font-size:11px;
+font-weight:bold;
+padding-top:10px;
+}
+
+
+#mode_controls table td.northfinder_west{
+text-align:center;
+font-size:11px;
+font-weight:bold;
+padding-top:10px;
+padding-right:25px;
+}
+
+
+#mode_controls table td.blind_label{
+text-align:center;
+font-size:11px;
+font-weight:bold;
+padding-top:10px;
+padding-right:60px;
+}
+
+
+
+
+/****** MODE CONTROLS LIGHTS ********/
+
+
+.light_toggle_bg{
+background-image:url('../images/modes/slider_lights.png');
+background-repeat:no-repeat;
+height:250px;
+width:60px;
+margin-left:20px;
+
+
+}
+
+.light_toggle{
+background-image:url('../images/modes/toggle_light.png');
+background-repeat:no-repeat;
+height:150px;
+width:60px;
+margin-top:-135px;
+margin-left:24px;
+float:left;
+}
+
+.light_toggle .text{
+color:#fff;
+text-shadow: rgba(15, 90, 125, 0.3) 0px -1px 0;
+margin-left:-8px;
+margin-top:60px;
+}
+
+
+
+.light_slider_bg{
+background-image:url('../images/modes/slider_lights_slider.png');
+background-repeat:no-repeat;
+height:250px;
+width:75px;
+margin-left:17px;
+margin-right:10px;
+
+}
+
+.light_slider{
+background-image:url('../images/modes/slider_light_btn.png');
+background-repeat:no-repeat;
+height:150px;
+width:60px;
+margin-top:-138px;
+margin-left:19px;
+float:left;
+}
+
+.light_slider .text{
+color:#fff;
+text-shadow: rgba(15, 90, 125, 0.3) 0px -1px 0;
+margin-left:-10px;
+margin-top:13px;
+font-size:.95em;
+}
+
+.show_percent{
+float:left;
+margin-left:15px;
+margin-top:-125px;
+font-size:.85em;
+
+}
+
+
+
+/****** MODE CONTROLS BLINDS ********/
+
+
+
+.blind_slider_bg{
+background-image:url('../images/modes/slider_blind_bg.png');
+background-repeat:no-repeat;
+height:250px;
+width:75px;
+margin-left:40px;
+margin-right:10px;
+
+}
+
+.blind_slider{
+float:left;
+background-image:url('../images/modes/blind_slider_btn.png');
+background-repeat:no-repeat;
+height:40px;
+width:60px;
+margin-top:-135px;
+margin-left:42px;
+text-align:center;
+}
+
+.blind_slider_pulldown{
+background-image:url('../images/modes/slider_blind_pulldown.png');
+background-repeat:no-repeat;
+float:left;
+height:125px;
+width:75px;
+margin-top:1px;
+margin-left:2px;
+
+}
+
+
+.blind_slider .text{
+color:#fff;
+text-shadow: rgba(15, 90, 125, 0.3) 0px -1px 0;
+margin-left:-5px;
+margin-top:7px;
+font-size:.95em;
+
+}
+
+
+
+
+
+/****** MODE CONTROLS SHADES ********/
+
+
+
+.shade_slider_bg{
+background-image:url('../images/modes/slider_blind_bg.png');
+background-repeat:no-repeat;
+height:250px;
+width:75px;
+margin-left:10px;
+margin-right:10px;
+float:left;
+
+}
+
+.shade_slider{
+float:left;
+background-image:url('../images/modes/blind_slider_btn.png');
+background-repeat:no-repeat;
+height:40px;
+width:60px;
+margin-top:110px;
+margin-left:-83px;
+text-align:center;
+
+}
+
+.shade_slider_pulldown{
+background-image:url('../images/modes/slider_shade_pulldown.png');
+background-repeat:no-repeat;
+height:125px;
+width:75px;
+margin-top:1px;
+margin-left:2px;
+
+}
+
+
+.shade_slider .text{
+color:#fff;
+text-shadow: rgba(15, 90, 125, 0.3) 0px -1px 0;
+margin-left:-5px;
+margin-top:7px;
+font-size:.95em;
+
+}
+
+.shade_tilt{
+margin-left:30px;
+float:left;
+
+}
+
+
+
+
+
+/****** MODE POP UP WINDOWS ********/
+
+
+.new_mode_options, .new_mode_selecter{
+text-align:center;
+line-height:3em;
+font-weight:bold;
+padding:0 10px 0 10px;
+}
+
+
+
+
+.new_mode_options a{
+color:#00aeef;
+}
+
+.new_mode_options a:hover{
+color:#666;
+text-decoration:none;
+}
+
+
+.new_mode_options .content_divider{
+margin-top:5px;
+}
+
+.new_mode_selecter .content_divider{
+margin-top:40px;
+}
+
+.new_mode_selecter table{
+border:none;
+padding:0px;
+}
+
+
+/****** CALENDAR CLASSES ********/
+
+#calendar .window{
+height:475px;
+}
+
+
+
+

@@ -1,0 +1,35 @@
+<% title("Beckhoff Readings") %>
+<h1>Beckhoff Readings (<span class="current"><%= @dataset[0].attributes["timeStamp"].strftime("%a %b %d - %H:%M:%S") %></span>)</h1>
+
+<table cellpadding="0" cellspacing="0">
+	<tr>
+		<th></th>
+		<th><%= @dataset[0].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[1].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[2].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[3].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[4].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[5].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[6].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[7].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[8].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+		<th><%= @dataset[9].attributes["timeStamp"].strftime("%H:%M:%S") %></th>
+	</tr>
+	<% @dataset[0].attributes.sort.each do |key, value| %>
+		<% if key != "timeStamp" %>
+		<tr>
+			<td style="text-align: left; font-weight: bold; background-color: #EEE;"><%= key %></td>
+			<td class="current"><% if (value > @dataset[1].attributes[key]) %>&uarr;<% elsif (value < @dataset[1].attributes[key]) %>&darr;<% end %> <%= value %></td>
+			<td><% if (@dataset[1].attributes[key] > @dataset[2].attributes[key]) %>&uarr;<% elsif (@dataset[1].attributes[key] < @dataset[2].attributes[key]) %>&darr;<% end %> <%= @dataset[1].attributes[key] %></td>
+			<td><% if (@dataset[2].attributes[key] > @dataset[3].attributes[key]) %>&uarr;<% elsif (@dataset[2].attributes[key] < @dataset[3].attributes[key]) %>&darr;<% end %> <%= @dataset[2].attributes[key] %></td>
+			<td><% if (@dataset[3].attributes[key] > @dataset[4].attributes[key]) %>&uarr;<% elsif (@dataset[3].attributes[key] < @dataset[4].attributes[key]) %>&darr;<% end %> <%= @dataset[3].attributes[key] %></td>
+			<td><% if (@dataset[4].attributes[key] > @dataset[5].attributes[key]) %>&uarr;<% elsif (@dataset[4].attributes[key] < @dataset[5].attributes[key]) %>&darr;<% end %> <%= @dataset[4].attributes[key] %></td>
+			<td><% if (@dataset[5].attributes[key] > @dataset[6].attributes[key]) %>&uarr;<% elsif (@dataset[5].attributes[key] < @dataset[6].attributes[key]) %>&darr;<% end %> <%= @dataset[5].attributes[key] %></td>
+			<td><% if (@dataset[6].attributes[key] > @dataset[7].attributes[key]) %>&uarr;<% elsif (@dataset[6].attributes[key] < @dataset[7].attributes[key]) %>&darr;<% end %> <%= @dataset[6].attributes[key] %></td>
+			<td><% if (@dataset[7].attributes[key] > @dataset[8].attributes[key]) %>&uarr;<% elsif (@dataset[7].attributes[key] < @dataset[8].attributes[key]) %>&darr;<% end %> <%= @dataset[7].attributes[key] %></td>
+			<td><% if (@dataset[8].attributes[key] > @dataset[9].attributes[key]) %>&uarr;<% elsif (@dataset[8].attributes[key] < @dataset[9].attributes[key]) %>&darr;<% end %> <%= @dataset[8].attributes[key] %></td>
+			<td><%= @dataset[9].attributes[key] %></td>
+		</tr>
+		<% end %>
+	<% end %>
+</table>

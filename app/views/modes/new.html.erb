@@ -1,0 +1,36 @@
+<% title("Presets | New Preset") %>
+
+<script type="text/javascript"> 
+	<%= update_page do |page|
+			page.assign "window.controls", @mode.settings
+	end %>	
+</script>
+
+<div id="center_block">
+	<div id="content_center">
+		<h1 class="title dark-grey">New Preset</h1>
+
+		<div class="section_nav">
+			<div class="section_nav_content_left">	 
+				<div id="mode_links" class="mode_sections">
+					<%= link_to_function "Setup", "switch_sections('setup', 'mode_links', 'mode_section')", :id => "setup_link", :class => "active" %>
+					<%= link_to_function "Climate", "switch_sections('climate', 'mode_links', 'mode_section')", :id => "climate_link" %>
+					<%= link_to_function "Lights", "switch_sections('lights', 'mode_links', 'mode_section')", :id => "lights_link" %>
+					<%= link_to_function "Interior Blinds", "switch_sections('blinds', 'mode_links', 'mode_section')", :id => "blinds_link" %>
+					<%= link_to_function "Exterior Shades", "switch_sections('shades', 'mode_links', 'mode_section')", :id => "shades_link" %>
+				</div>
+			</div>	
+		</div>
+		
+		<div class="window"> 		
+			<%= render :partial => "form", :locals => { :form_action => "create" } %>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript"> 
+	<%= update_page do |page|
+			page.assign "mode_#{@mode.id}_settings", @mode.settings
+			page << "updateControls(mode_#{@mode.id}_settings);"
+	end %>	
+</script>

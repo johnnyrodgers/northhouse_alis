@@ -1,0 +1,28 @@
+<div id="mode_climate">	
+	<table align="center">
+		<tr >
+			<td class="large">
+				<b>Temperature</b>
+			</td>	
+			<td >
+				<%= render :partial => "modes/UI/up_down", :locals => { :control_id => "K1_temperature_control", :current_value => @current_temp, :device_id_increase => DEVICES["T_HEAT_SETPOINT"], :device_id_decrease => DEVICES["T_COOL_SETPOINT"], :subsystem => "hvac", :key => "temperature", :value => @mode.settings[:hvac][:temperature], :label => "Temperature", :units => "&deg;C", :f => f } %>
+			</td>	
+		</tr>
+		<tr >
+			<td class="large">
+				<b>Relative Humidity</b>
+			</td>	
+			<td >
+				<%= render :partial => "modes/UI/up_down", :locals => { :control_id => "K1_humidity_control", :current_value => @current_rh, :device_id_increase => DEVICES["RH_HIGH_SETPOINT"], :device_id_decrease => DEVICES["RH_LOW_SETPOINT"], :subsystem => "hvac", :key => "humidity", :value => @mode.settings[:hvac][:humidity], :label => "Relative Humidity", :units => "%", :f => f } %>
+			</td>	
+		</tr>
+				<tr >
+			<td class="large" style="padding-top: 40px;">
+				<b>Ventilation</b>
+			</td>	
+			<td >
+				<%= render :partial => "modes/UI/ventilation", :locals => { :control_id => "K1_ventilation", :device_id => DEVICES["VENT_REQUESTED"], :subsystem => "hvac", :key => "ventilation", :state => @mode.settings[:hvac][:ventilation], :label => "Ventilation", :f => f } %>			
+			</td>	
+		</tr>	
+	</table>
+</div>                     

@@ -1,0 +1,6 @@
+<div class="binary_buttons">
+	<%= link_to_function("ON", "setVentilation('#{control_id}', 'ON'); $('mode_#{key}').value = 'ON'", :id => "#{control_id}_on", :class => "button") %>
+	<%= link_to_function("OFF", "setVentilation('#{control_id}', 'OFF'); $('mode_#{key}').value = 'OFF'", :id => "#{control_id}_off", :class => "button") %>
+</div>
+<%= f.hidden_field "ventilation" %>
+

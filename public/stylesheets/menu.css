@@ -1,0 +1,327 @@
+/* CSS - North House GUI - April 3 2009 - Johnny Rodgers */
+
+/* MENU BAR */
+div#menu {
+	background-image: url("../images/layout/menu_bg.jpg");
+	background-repeat: repeat-x;
+	height: 35px;
+	font-size: 0.9em;
+	color: #FFF;
+}
+div#menu a {
+	color: #FFF;
+}
+div#logo {
+	float: left;
+	padding: 6px 0 0 10px;
+}
+div#menu div.subsection {
+	height: 20px;
+	padding: 10px 10px 5px 10px;
+	margin: 0;
+	float: right;
+	border-left: 1px solid #555;
+}
+div#mode_select {
+	width: 180px;
+}
+/*
+div#mode_select span{
+margin-left:15px;
+}
+*/
+
+/* Weather */
+div#weather {
+	position: relative;
+	width: 80px;
+	padding: 0;
+	text-align: center;
+	font-family: "Futura", sans-serif;
+}
+a#weather_button_show, a#weather_button_hide {
+	width: 80px;
+	height: 20px;
+	padding: 10px;
+	margin: -10px 0 0 -10px;
+	display: block;
+	cursor: pointer;
+}
+
+a#weather_button_hide{
+background: #333333;
+}
+
+
+div#menu div#weather img#weather_image {
+	float: left;	
+	margin-top: -5px;
+}
+div#menu div#weather a:hover {
+	text-decoration: none;
+}
+div#menu div#weather span#weather_degrees {
+	padding: 0px 0 0 5px;
+	font-size: 1.25em;
+	font-weight: lighter;
+}
+div#weather_overlay {
+	width: 332px;
+	left: -201px;
+	top: 35px;
+	padding: 20px;
+	text-align: left;
+	line-height: 1.4em;
+	
+	position:absolute;
+	z-index:10;
+}
+
+
+
+
+div#weather_overlay p#current_weather {
+	font-size: 3em;
+	text-align: center;
+	margin: 0 0 15px 0;
+}
+
+
+
+
+
+div#weather_overlay p#current_weather img {
+	margin-bottom: -20px;
+}
+
+
+div#weather_overlay p#weather_text {
+	font-size: 1.3em;
+	text-align: center;
+	margin-top:30px;
+	
+}
+
+
+div#weather_overlay p#weather_text span#location {
+	font-size: 10px;
+	color: #BBB;
+}
+
+div#weather_overlay table#weather_details {
+	border: none;
+	width: 75%;
+	margin: 15px 20px 20px 55px;
+	color: #ececec;
+	font-size: .95em;
+	
+}
+
+
+
+table#weather_details table th, table td {
+padding:3px;
+}
+
+
+div#weather_overlay div#weather_forecast ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	border-top: 2px solid #888;
+}
+div#weather_overlay div#weather_forecast ul li {
+	list-style-type: none;
+	display: block;
+	float: left;
+	text-align: center;
+	width: 71.5px;
+	padding: 5px;
+	padding-top: 15px;
+	font-size: 1.3em;
+	font-weight:normal;
+	color:#cccccc;
+	border-right: 1px solid #666; 
+}
+div#weather_overlay div#weather_forecast ul li:last-child {
+	border-right: none;
+}
+div#weather_overlay div#weather_forecast ul li img {
+	margin: 4px;
+}
+.forecast_high { line-height: 2em; }
+.forecast_low { color: #999999; }
+
+
+/* ALERTS */
+div#alerts {
+	position: relative;
+	width: 50px;
+	text-align: center;	
+	background-image: url ('../images/layout/alert_icon_bg.png');
+}
+
+.alert_num{
+float:left;
+font-size:0.9em;
+font-weight: bold;
+top: 8px;
+right: 21px;
+position:absolute;
+z-index:11;
+}
+
+div#alerts a:hover{
+text-decoration: none;
+}
+
+a#alerts_button_show, a#alerts_button_hide {
+	width: 55px;
+	height: 30px;
+	padding-top: 4px;
+	padding-left: 13px;
+	margin: -10px 0 0 -10px;
+	display: block;
+	cursor: pointer;
+}
+a#alerts_button_hide {
+	background: #333333;
+	padding: 14px;
+	width: 42px;
+	height: 6px;
+}
+
+
+div#alerts_overlay {
+	width: 370px;
+	left: -302px;
+	top: 35px;
+	padding: 0;
+	text-align: left;
+	line-height: 1.4em;
+	border: 1px solid #888;
+	border-top: none;
+	position:absolute;
+	z-index:10;
+}
+
+div#alerts_overlay .button_dark{
+font-size:1.2em;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+div#alerts_overlay ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+div#alerts_overlay ul li {
+	margin: 0;
+	padding: 12px;
+	border-bottom: 1px dotted #666;
+}
+div#alerts_overlay ul li.error 				{ background-color: #592d2d; } 
+div#alerts_overlay ul li.error:hover 	{ background-color: #5a5a5a; }
+div#alerts_overlay ul li.important 				{ background-color: #6c502b; } 
+div#alerts_overlay ul li.important:hover 	{ background-color: #5a5a5a;  }
+div#alerts_overlay ul li.notification 				{ } 
+div#alerts_overlay ul li.notification:hover 	{ background-color: #5a5a5a;  }
+div#alerts_overlay ul li.tip 				{  } 
+div#alerts_overlay ul li.tip:hover	{ background-color: #5a5a5a;   } 
+
+div#alerts_overlay ul li:last-child {
+	background: none;
+	border-bottom: none;
+	padding: 8px 12px;
+}
+
+/* SYSTEM DETAILS */
+div#menu div#system img#system_image { margin-top:-3px; }
+  
+  div#system_overlay {
+	width: 250px;
+	left: -235px;
+	top: 35px;
+	padding: 20px;
+	text-align: left;
+	line-height: 1.4em;
+	position:absolute;
+	z-index:10;
+}
+
+div#system {
+	position: relative;
+	width: 35px;
+	padding: 0;
+	text-align: center;
+	font-family: "Futura", "Futura Book BT", sans-serif;
+}
+
+
+
+a#system_button_show, a#system_button_hide {
+	width: 35px;
+	height: 20px;
+	padding: 10px;
+	margin: -10px 0 0 -10px;
+	display: block;
+	cursor: pointer;
+}
+
+a#system_button_hide{
+background: #333333;
+}
+
+
+div#system_overlay .content{
+text-align: center;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+.system_title{
+font-size: 1.3em;
+font-weight:bold;
+margin:10px 0 5px 0;
+padding-bottom:15px;
+border-bottom: 1px solid #999999;
+}
+
+div#system_overlay table{
+border:none;
+margin-left:10px;
+}
+
+div#system_overlay table th{
+background-color:transparent;
+text-align:right;
+color:#fff;
+padding: 15px 20px 0 0;
+
+
+}
+
+
+td.yellow{
+color:#f5ee54;
+}
+
+td.data_label{
+text-align: right;
+padding-right:20px;
+color:#cccccc;
+}
+
+
+
+/* OVERLAYS */
+div.overlay {
+	position: absolute;
+	background: #333333;
+	color: #f6f6f6;
+	padding: 0;
+	margin: 0;
+	font-family:helvetica;
+	-webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
+}

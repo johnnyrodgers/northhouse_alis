@@ -1,0 +1,21 @@
+body {
+	margin: 20px;
+	font-size: 12px;
+	font-family: sans-serif;
+}
+table {
+	border: 1px solid #888; 
+	float: none;	                        
+	border-collapse: collapse;	                        
+}
+table th {
+	background-color: #EEE;
+}
+table th, table td {
+	border: 1px solid #AAA;
+	padding: 3px 5px;
+	text-align: right;
+}
+.current {
+	background-color: #ADE4BE;
+}

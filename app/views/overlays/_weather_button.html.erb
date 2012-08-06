@@ -1,0 +1,22 @@
+<% get_weather %>
+<%= link_to_function(image_tag("/images/icons/weather/100x70/" + @weather.condition.text.gsub(/\/\w+/, "").gsub(" ", "_").downcase + ".png", :alt => @weather.condition.text, :title => @weather.condition.text, :id => "weather_image", :style => "width: 36px;") + "<span id='weather_degrees' title='#{@weather.condition.temp}&deg; C / #{convert_temp(@weather.condition.temp, "C")}&deg; F'>#{@weather.condition.temp}&deg;#{@weather.units.temperature.upcase}</span>", nil, :id => "weather_button_show") do |page|
+			# hide alerts
+	    page.hide "alerts_overlay"
+			page.show "alerts_button_show"
+			page.hide "alerts_button_hide"
+			# hide system
+	    page.hide "system_overlay"
+			page.show "system_button_show"
+			page.hide "system_button_hide"
+			# show weather
+	    page.toggle "weather_overlay"
+			page.show "weather_button_hide"
+			page.hide "weather_button_show"
+	  end
+ %>
+<%= link_to_function("&mdash;", nil, :id => "weather_button_hide", :style => "display: none;" ) do |page|
+	    page.toggle "weather_overlay"
+			page.show "weather_button_show"
+			page.hide "weather_button_hide"
+	  end
+ %>

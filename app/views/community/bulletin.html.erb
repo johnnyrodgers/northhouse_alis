@@ -1,0 +1,78 @@
+<% title("Neighbourhood Network | Bulletin") %>
+
+<div id="sidebar_left"><!-- START OF SIDEBAR LEFT -->
+	<div id="sidebar_content">
+	
+	<H5 class="title aqua_blue">BOUCHER HOUSEHOLD</H5>
+	<div id="profilepic" class="profile" onmouseover="DisplayDIV('editMode');"  style="cursor:pointer" >
+		<div class="profile_edit" onmouseout="HideDIV('editMode');" id="editMode" style="display:none;" onclick="RedBox.showInline('modal_edit_profile'); return false;"></div>
+	</div>
+	
+	
+	<table class="household_profile">
+	<tr>
+	<td width="115px" class="smaller aqua_blue">Number of Occupants:</td>
+	<td class="smaller light-grey">2</td>
+	</tr>
+	</table>
+	
+	<table class="household_details">
+	<tr><td class="smaller aqua_blue">Size of Residence:</td></tr>
+	<tr><td class="smaller light-grey">Small (under 1000 ft<sup>2</sup>)</td></tr>
+	<tr><td class="empty"></td></tr>
+	<tr><td class="smaller aqua_blue">Location:</td></tr>
+	<tr><td class="smaller light-grey">Vancouver, BC, Canada</td></tr>
+	<tr><td class="empty"></td></tr>
+	<tr><td class="smaller aqua_blue">Net-Zero Activity:</td></tr>
+	<tr><td class="smaller light-grey">Above avg. in neighbourhood</td></tr>
+	</table>
+	
+	<div class="section_divider"></div>
+	<h5 class="title aqua_blue">ACHIEVEMENTS</h5>
+	
+	<div class="achievement_row2">	
+		<span class="trophy"><img src="../images/community/trophy_01.png"></span><span class="smaller light-grey">10% Electricity Reduction Challenge</span>
+	</div>
+	<div class="achievement_row2">	
+		<span class="trophy"><img src="../images/community/trophy_02.png"></span><span class="smaller light-grey">10% Water Reduction Challenge</span>
+	</div>
+	<div class="achievement_row2">	
+		<span class="trophy"><img src="../images/community/green_tip_medal.png"></span><span class="smaller light-grey">Highest Rated Green Tip </span>
+	</div>
+	<div class="achievement_row2">	
+		<span class="trophy"><img src="../images/community/green_tip_medal_02.png"></span><span class="smaller light-grey">Top Weekly Contributer </span>
+	</div>
+</div>	
+</div><!-- END OF SIDEBAR LEFT -->
+
+
+<div id="center_block"> <!-- START OF CENTER BLOCK ---- ----------------------->
+			
+			<div id="content_center">
+				
+				<h1 class="title dark-grey">THE NEIGHBOURHOOD BULLETIN</h1>
+				
+				
+				<div class="section_nav">
+					<div class="section_nav_content_left">	 
+						<div id="community_links" class="community_profile_sections">
+							<%= link_to_function "Your Updates", "switch_sections('your_updates', 'community_links', 'community_section')", :id => "your_updates_link", :class => "active" %>
+							<%= link_to_function "Neighbourhood Updates", "switch_sections('all_updates', 'community_links', 'community_section')", :id => "all_updates_link"  %>
+							<%= link_to_function "Neighbourhood Energy Use", "switch_sections('compare', 'community_links', 'community_section')", :id => "compare_link" %>
+						</div>
+					</div>	
+				</div>
+				
+				<div id="community_sections">
+					<div id="your_updates" class="community_section"><%= render :partial => "your_updates" %></div>
+					<div id="all_updates" class="community_section" style="display: none;"><%= render :partial => "all_updates" %></div>
+					<div id="compare" class="community_section" style="visibility: hidden;"><%= render :partial => "compare" %></div>
+				</div>
+
+				</div><!-- END OF CONTENT CENTER -->
+		</div><!-- END OF CENTER BLOCK -->
+
+
+
+
+

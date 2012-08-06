@@ -1,0 +1,35 @@
+<!-- GLOBAL NAVIGATION -->
+<div id="nav">
+	<ul>
+		<li>
+			<%= image_tag("/images/mobile/icons/icon_blocker.png", :alt => "", :id => "nav_graphs_blocker", :class => "blocker") %>
+			<%= link_to image_tag("/images/mobile/icons/graphs_icon_active.png", :alt => "Graphs") + "Graphs", { :anchor => "graph_line" }, { :id => "nav_graphs", :class => "nav_item current", :onclick => "setActiveNavItem('graphs');" } %>
+		</li>
+		<li>
+			<%= image_tag("/images/mobile/icons/icon_blocker.png", :alt => "", :id => "nav_controls_blocker", :class => "blocker", :style => "display: none;") %>
+			<%= link_to image_tag("/images/mobile/icons/controls_icon.png", :alt => "Controls") + "Controls", { :anchor => "controls" }, { :id => "nav_controls", :class => "nav_item", :onclick => "setActiveNavItem('controls');" } %>
+		</li>
+		<li>
+			<%= image_tag("/images/mobile/icons/icon_blocker.png", :alt => "", :id => "nav_challenge_blocker", :class => "blocker", :style => "display: none;") %>
+			<%= link_to image_tag("/images/mobile/icons/challenge_icon.png", :alt => "Challenge") + "Challenge", { :anchor => "challenge" }, { :id => "nav_challenge", :class => "nav_item", :onclick => "setActiveNavItem('challenge');" } %>
+		</li>
+		<li>
+			<%= image_tag("/images/mobile/icons/icon_blocker.png", :alt => "", :id => "nav_alerts_blocker", :class => "blocker", :style => "display: none;") %>
+			<%= link_to image_tag("/images/mobile/icons/alerts_icon.png", :alt => "Alerts") + "Alerts", { :anchor => "alerts" }, { :id => "nav_alerts", :class => "nav_item", :onclick => "setActiveNavItem('alerts');" } %>
+		</li>
+		<li>
+			<%= image_tag("/images/mobile/icons/icon_blocker.png", :alt => "", :id => "nav_settings_blocker", :class => "blocker", :style => "display: none;") %>
+			<%= link_to image_tag("/images/mobile/icons/settings_icon.png", :alt => "Settings") + "Settings", { :anchor => "settings" }, { :id => "nav_settings", :class => "nav_item", :onclick => "setActiveNavItem('settings');" } %>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	function setActiveNavItem(id) {		
+		$(".nav_item").each(function() { $(this).removeClass("current"); });		
+		$(".blocker").each(function() { $(this).css("display", "none"); });
+		$(".nav_item > img").each(function() { $(this).attr("src", $(this).attr("src").replace("_active", "")); });		
+		$("#nav_" + id).addClass("current");
+		$("#nav_" + id + "_blocker").show();
+		$("#nav_" + id + " > img").attr("src", "images/mobile/icons/" + id + "_icon_active.png");		
+	}
+</script>

@@ -1,0 +1,32 @@
+<h3>
+	<%= label %><br />
+	<span class="current">CURRENTLY <span id="<%= control_id %>_current">&mdash;</span><%= units %></span>
+</h3>
+<div id="<%= control_id %>_up_down" class="up_down">
+	<div style="float: left;">		
+		<div class="up_down_value">
+			<span id="<%= control_id %>_value_and_units"><span id="<%= control_id %>_value"><%= value %></span><%= units %></span><br />
+		</div>
+		<div id="<%= control_id %>_status" class="up_down_status"></div>
+	</div>
+	<div class="up_down_buttons">
+		<%= link_to_function("", 
+					"set#{key.capitalize}('#{control_id}', window.controls.#{subsystem}.#{key} + 0.5);
+					push#{key.capitalize}('#{control_id}', window.controls.#{subsystem}.#{key} + 0.5, #{device_id_increase}, #{device_id_decrease})", 
+					:id => "#{control_id}_up", 
+					:class => "button up"
+				) 
+		%>
+		<%= link_to_function("", 
+					"set#{key.capitalize}('#{control_id}', window.controls.#{subsystem}.#{key} - 0.5);
+					push#{key.capitalize}('#{control_id}', window.controls.#{subsystem}.#{key} - 0.5, #{device_id_increase}, #{device_id_decrease})",
+					:id => "#{control_id}_down", 
+					:class => "button down"
+				) 
+		%>
+	</div>
+	<script type="text/javascript">
+		
+	</script>
+</div>
+	

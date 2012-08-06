@@ -1,0 +1,22 @@
+<% generate_notifications %>
+<%= link_to_function("<img src='/images/layout/alert_icon_bg.png'><div class='alert_num'>#{@notifications.size}</div>", nil, :id => "alerts_button_show") do |page|
+			# hide weather
+	    page.hide "weather_overlay"
+			page.show "weather_button_show"
+			page.hide "weather_button_hide"
+			# hide system
+	    page.hide "system_overlay"
+			page.show "system_button_show"
+			page.hide "system_button_hide"
+			# show alerts
+	    page.toggle "alerts_overlay"
+			page.show "alerts_button_hide"
+			page.hide "alerts_button_show"
+	  end
+ %>
+<%= link_to_function("&mdash;", nil, :id => "alerts_button_hide", :style => "display: none;" ) do |page|
+	    page.toggle "alerts_overlay"
+			page.show "alerts_button_show"
+			page.hide "alerts_button_hide"
+	  end
+ %>

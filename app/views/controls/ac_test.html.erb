@@ -1,0 +1,25 @@
+<h1>Ambient Canvas Utility</h1>
+
+<% form_tag "ac_test" do %> 
+	<table>
+		<tr>
+			<td>CHANNEL</td>
+			<td>
+				<select name="channel" id="channel">
+					<option value="ALL" selected>ALL</option>
+					<% (1..14).each do |i| %>
+						<option value="<%= i %>"><%= i %></option>
+					<% end%>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>DUTY</td>
+			<td><input type="text" name="duty" id="duty" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit" /></td>
+		</tr>
+	</table>
+<% end %>

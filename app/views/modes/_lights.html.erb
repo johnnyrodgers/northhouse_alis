@@ -1,0 +1,25 @@
+<div class="mode_subnav light-grey"></div>  				
+<div id="mode_lights_1">
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_kitchen", :value => @mode.settings[:lights][:K1_light_kitchen], :label => "Kitchen Area", :device_id => DEVICES["lights_kitchen"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_dining_area", :value => @mode.settings[:lights][:K1_light_dining_area], :label => "Dining Area", :device_id => DEVICES["lights_dining"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_lounge", :value => @mode.settings[:lights][:K1_light_lounge], :label => "Lounge", :device_id => DEVICES["lights_lounge"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_sleeping_area", :value => @mode.settings[:lights][:K1_light_sleeping_area], :label => "Sleeping Area", :device_id => DEVICES["lights_sleeping"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_toggle", :locals => { :toggle_id => "K1_light_landscape", :state => @mode.settings[:lights][:K1_light_landscape], :label => "Landscape", :device_id => DEVICES["lights_landscape"], :f => f } %>
+	<%= link_to_function("", nil, :class => "control_browser_next") do |page|
+				page["mode_lights_1"].hide
+				page["mode_lights_2"].show 
+			end %>
+</div>
+
+<div id="mode_lights_2" style="display: none;">
+	<%= link_to_function("", nil, :class => "control_browser_prev") do |page|
+				page["mode_lights_2"].hide
+				page["mode_lights_1"].show 
+			end %>
+	<div style="float: left; margin-left: 80px;">
+		<%= render :partial => "modes/UI/vertical_toggle", :locals => { :toggle_id => "K2_light_kitchen_backsplash", :state => @mode.settings[:lights][:K2_light_kitchen_backsplash], :label => "Kitchen Backsplash", :device_id => DEVICES["lights_counter"], :f => f } %>
+		<%= render :partial => "modes/UI/vertical_toggle", :locals => { :toggle_id => "K2_light_ambient_canvas", :state => @mode.settings[:lights][:K2_light_ambient_canvas], :label => "Ambient Canvas", :device_id => DEVICES["ambient_canvas"], :f => f } %>
+		<%= render :partial => "modes/UI/vertical_toggle", :locals => { :toggle_id => "K2_light_entry", :state => @mode.settings[:lights][:K2_light_entry], :label => "Interior Entry", :device_id => DEVICES["lights_entry"], :f => f } %>
+		<%= render :partial => "modes/UI/vertical_toggle", :locals => { :toggle_id => "K2_light_exterior_entry", :state => @mode.settings[:lights][:K2_light_exterior_entry], :label => "Exterior Entry", :device_id => DEVICES["lights_ext_entry"], :f => f } %>
+	</div>
+</div>

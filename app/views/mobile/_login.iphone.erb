@@ -1,0 +1,15 @@
+<!-- AUTHENTICATION -->
+<div id="login" class="panel">
+	<div class="toolbar">
+    <h1><%= image_tag "/images/mobile/north_house_logo.png", :alt => "North House" %> | Login</h1>
+  </div>
+  <div>
+		<% form_tag 'authenticate' do %>
+			ENTER PASSWORD<br />
+			<input name="password" type="password" value="password" size="20" />
+			<%= submit_tag ">" %>
+			
+		<% end %>	
+  </div> 
+</div>
+

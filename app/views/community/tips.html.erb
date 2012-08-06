@@ -1,0 +1,188 @@
+<% title("Neighbourhood Network | Green Tips") %>
+
+<div id="sidebar_left"><!-- START OF SIDEBAR LEFT -->
+	<div id="sidebar_content">
+	<H5 class="title aqua_blue">BOUCHER HOUSEHOLD</H5>
+	<div id="profilepic" class="profile" onmouseover="DisplayDIV('editMode');"  style="cursor:pointer" >
+	
+	<div class="profile_edit" onmouseout="HideDIV('editMode');" id="editMode" style="display:none;" onclick="RedBox.showInline('modal_edit_profile'); return false;"></div>
+	</div>
+
+	<p class="small light-grey">
+		You have posted <span class="green">10 Tips</span> so far. Three of your tips have received a 5 star ranking.
+	</p>
+	<div class="button_dark"><%= link_to "View your posted items", :action => "contributions" %></a></div>
+	<div class="section_divider"></div>
+	<h5 class="title aqua_blue">ACHIEVEMENTS</h5>
+	
+	<div class="achievement_row2">	
+		<span class="trophy"><img src="../images/community/green_tip_medal.png"></span><span class="smaller light-grey">High Rated Green Tip </span>
+	</div>
+	<div class="achievement_row2">	
+		<span class="trophy"><img src="../images/community/green_tip_medal_02.png"></span><span class="smaller light-grey">Top Weekly Contributer </span>
+	</div>
+</div>	
+</div><!-- END OF SIDEBAR LEFT -->
+
+		<div id="center_block"> <!-- START OF CENTER BLOCK ---- ----------------------->
+			
+			<div id="content_center">
+				
+				<h1 class="title dark-grey">COMMUNITY GREEN TIPS</h1>
+				<h2 class="subtitle grey">Recently Contributed</h2>
+				
+				<div class="search">
+				<table><tr>
+				<td><input class="searching" type="text"></td>
+				<td><div class="button_light"><a href="tips_search.htm" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>Search</a></td>
+				</tr></table>
+				</div>
+
+				
+				<div class="section_nav">
+					<div class="section_nav_content_left">
+					<div class="form_items">
+							<label class="light-grey small">Browse Green Tip Categories:</label>
+							<select class="small">
+							<option>Electricity Saving Tips
+							<option>Water Saving Tips
+							<option>Improving Appliance Efficiency
+							<option>Recently Posted
+							</select>
+						
+						</div>
+					</div>
+					<div class="section_nav_content_right">
+					
+					</div>
+				</div>
+				
+				<div class="window"> 
+				
+					<div id ="tips">
+						<div class="scroll_div"> 
+							<div class="rows">
+								
+								<div class="row_item even" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>
+									<div class="title">Laundry electricity saving tips | <span class="category_title grey"> Electricity Saving</span></div>
+									<div class="fullview"><a href="tips_fullview_01.htm"></a></div>
+									<div class="comment_link">
+									<img src="../images/community/icon_comment.png" alt="icon_comment" width="19" height="12"/>
+									</div>
+									<div class="rating">
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_empty%5Bs%5D.png" alt="star_empty%5Bs%5D" width="12" height="12"/>
+									</div>
+								</div>
+								
+								<div class="row_item odd" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>
+									<div class="title">Recycle useful mateirals | <span class="category_title grey"> Recycling Tips</span></div>
+									<div class="fullview"><a href="tips_fullview_02.htm"></a></div>
+									<div class="rating">
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_empty%5Bs%5D.png" alt="star_empty%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_empty%5Bs%5D.png" alt="star_empty%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_empty%5Bs%5D.png" alt="star_empty%5Bs%5D" width="12" height="12"/>
+									</div>      									</div>
+								
+								<div class="row_item even" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>
+									<div class="title">Alternative Kitchen Sponges | <span class="category_title grey"> Cleaning</span></div>
+									<div class="fullview"><a href="tips_fullview_03.htm"></a></div>
+									<div class="comment_link">
+									<img src="../images/community/icon_comment.png" alt="icon_comment" width="19" height="12"/>
+									</div>
+									<div class="rating">
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_empty%5Bs%5D.png" alt="star_empty%5Bs%5D" width="12" height="12"/>
+									</div>
+									
+								</div>
+								
+								<div class="row_item odd" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>
+									<div class="title">How I saved electricity in my kitchen. | <span class="category_title grey"> Electricity Saving</span></div>
+									<div class="fullview"><a href="tips_fullview_04.htm"></a></div>
+									<div class="comment_link">
+									<img src="../images/community/icon_comment.png" alt="icon_comment" width="19" height="12"/>
+									</div>
+									<div class="rating">
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_empty%5Bs%5D.png" alt="star_empty%5Bs%5D" width="12" height="12"/>
+									</div>	
+								</div>
+								
+								<div class="row_item even" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>
+									<div class="title">Proper maintenance of your air conditioner can increase its efficiency by about 5%.  | <span class="category_title grey">Improving Appliance Efficiency</span></div>
+									<div class="fullview"><a href="tips_fullview_05.htm"></a></div>
+									<div class="rating">
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_empty%5Bs%5D.png" alt="star_empty%5Bs%5D" width="12" height="12"/>
+									</div>
+								</div>
+								<div class="row_item odd" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>
+									<div class="title">Winter energy saving tips.  | <span class="category_title grey"> Electricity Saving</span></div>
+									<div class="fullview"><a href="tips_fullview_06.htm"></a></div>
+									<div class="rating">
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_full%5Bs%5D.png" alt="star_full%5Bs%5D" width="12" height="12"/>
+									<img src="../images/community/star_empty%5Bs%5D.png" alt="star_empty%5Bs%5D" width="12" height="12"/>
+									</div>
+									
+								</div>
+							
+								</div>			
+							</div>
+				
+						</div>
+					
+				
+				
+				
+					<div id="tips_post">
+						<h4 class="aqua_blue">Got Something To Share?</h4>
+						<textarea class="chatter_area"  id="eBann" name="bannerURL" wrap maxlength="300" cols="160" size="60" onKeyUp="toCount('eBann','sBann','{CHAR} characters left',300); ">Type your advice here</textarea>
+						
+						
+						<div class="categorize">
+						<div class="form_items">
+							<label class="light-grey smaller">Add this tip to:</label>
+							<select class="smaller" >
+							<option>Electricity Saving Tips
+							<option>Water Saving Tips
+							<option>Improving Appliance Efficiency
+							</select>
+						
+						</div>
+						
+						<div class="button_dark"><a href="" <% if demo? %>onclick="demoMessage(); return false;"<% end %>>Share it with the Community</a></div>
+					 	</div>
+					 	
+					 
+					</div>
+					
+				</div><!-- END OF WINDOW -->
+			</div><!-- END OF CONTENT CENTER -->
+		
+		
+		
+		
+		</div><!-- END OF CENTER BLOCK -->
+
+
+
+
+

@@ -1,0 +1,53 @@
+<div id="modal_newMode" class="modal_small" style="display: none;">	
+	<div class="banner">
+		<div class="banner_stub_left"></div>
+		<div class="banner_bg">
+		<h2>What do you want to do?</h2>
+		</div>
+		<div class="banner_stub_right"></div>
+	</div>
+	<div class="new_mode_options">
+		<%= link_to "Create a new Preset from scratch", :action => "new" %>
+		<br>
+		<a href="#" onclick="RedBox.showInline('modal_newMode2'); return false;" style="">Create a new Preset from an existing one</a>
+<!--
+		<br>
+		<a href="#">Create a new preset from the current house state</a>
+-->
+		
+		<div class="content_divider" style="margin-top: 50px;"></div>
+		<div class="button_light"><a href="#" onclick="RedBox.close(); return false;">Cancel</a></div>
+	</div>
+</div>
+   
+   <div id="modal_newMode2" class="modal_small" style="display: none;">	
+	<div class="banner">
+		<div class="banner_stub_left"></div>
+		<div class="banner_bg">
+		<h2>New Preset from existing</h2>
+		</div>
+		<div class="banner_stub_right"></div>
+	</div>
+	
+	<form action="/modes/new_from_existing" id="new_from_existing_form" method="POST">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+		<div class="new_mode_selecter" style="margin-bottom: 25px;">
+			<p>Select a Preset to use as a starting point:</p>
+				<select id="existing_mode_id" name="existing_mode_id" class="redbox_select" title="Select a Preset to use as a starting point">
+					<% Mode.all.each do |mode| %>
+						<option value="<%= mode.id %>"><%= mode.name %></option>
+					<% end %>
+				</select>
+	
+			<div class="content_divider"></div>
+
+			<table align=center>
+				<tr>
+				<td><div class="button_light"><a href="#" onclick="RedBox.close(); return false;">Cancel</a></div></td>
+				<td><div class="button_light"><a href="#" onclick="$('new_from_existing_form').submit(); return false;">Continue</a></td>
+				</tr>
+			</table>
+			
+		</div>
+	</form>
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">  
+	<head>
+		<title>North House</title>
+		
+		<!-- META -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0; height=device-height"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<!-- ICONS -->
+		<link rel="shortcut icon" href="/images/icons/favicon.png" type="image/png" /> <!-- standards-based browsers -->
+		<link rel="shortcut icon" href="/images/icons/favicon.ico" /> <!-- IE6 -->
+
+		<!-- STYLE -->
+		<%= stylesheet_link_tag "mobile/jqtouch" %>
+		<%= stylesheet_link_tag "mobile/mobile" %>
+		<%= stylesheet_link_tag "mobile/ui_elements" %>
+		<%= stylesheet_link_tag "mobile/flot" %>
+		
+		<!-- BEHAVIOUR -->
+		<%= javascript_include_tag "mobile/jquery-1.3.2.min" %>
+		<%= javascript_include_tag "mobile/jqtouch" %>
+		<%= javascript_include_tag "mobile/ui_functions" %>
+		<%= javascript_include_tag "mobile/jquery.touch" %>
+		<%= javascript_include_tag "mobile/jquery.flot.js" %>
+		<%= javascript_include_tag "utility" %>
+		<%= javascript_include_tag "controls_shared" %>
+		
+		<script type="text/javascript" charset="utf-8">
+			//initialize JQTouch with parameters
+	    $(document).jQTouch({
+	        icon: '/images/mobile/iphone_icon.png',
+	        statusBar: 'black-translucent',
+	        fullScreen: true,
+	        iconIsGlossy: true,
+	        fixedViewport: true
+	    });
+	    //detect if the app is running in the browser, and compensate for the Mobile Safari location bar
+/*
+	    alert(navigator.standalone);
+	    if (navigator.standalone) {			
+	    	alert('standalone');    
+		    alert($('#container').css("marginTop"));
+		    $('#container').css("marginTop", "20px"); // doesn't work
+		    alert($('#container').css("marginTop"));			    
+			}
+			else {
+	    	alert('browser');    
+				window.scrollTo(0, 1);
+				alert($('#nav').css("bottom"));
+				$('#nav').css("bottom", "50");
+				alert($('#nav').css("bottom"));
+			}
+*/
+			//set client id for iPhone				
+			window.client_id = "iphone";
+    </script> 
+		
+	</head>
+	<body id="container">
+		<%= yield %>
+		<%= render :partial => "nav/mobile_nav" %>
+		<!-- SCRIPTS -->
+		<script type="text/javascript">
+			initializeControls();
+		<%= update_page do |page|
+				# assign mode settings to javascript variables
+				@modes.each do |mode|					
+					page.assign "mode_#{mode.id}_settings", mode.settings
+				end				
+# 				# make active mode button active
+# 				page["#{set_id}_#{active_id}"].addClassName("button_active");				
+				# assign active mode settings to global controls hash
+				logger.debug "@active_mode.id: " + @active_mode.id.to_s
+				page << "window.controls = recursive_clone(mode_#{@active_mode.id}_settings);" 
+			end
+		%>
+		</script>
+	</body>
+</html>

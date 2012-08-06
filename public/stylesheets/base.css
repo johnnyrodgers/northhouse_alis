@@ -1,0 +1,22 @@
+/* CSS - North House GUI - March 19 2009 - Johnny Rodgers */
+
+/* STRUCTURE */
+html, body {
+	background: #EEE;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+/* CONTAINER */
+div#container {
+	background: #FFF;
+	width: 1000px;
+	margin: 0 auto;	
+	padding: 0;
+}
+
+/* CONTENT */
+div#content {
+	height: 576px;
+}

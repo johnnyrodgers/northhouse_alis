@@ -1,0 +1,46 @@
+<!-- SETTINGS -->
+<div id="settings" class="panel">
+
+	<div class="toolbar">
+    <h1>Settings</h1>
+    <a class="blueButton button" href="#demo_message">Save</a>
+  </div>  
+  
+	<div class="settings">
+		<div class="subpanel">
+				<div class="settings_section first">PERSONAL INFORMATION</div>
+				
+				<table>
+					<tr>
+						<td class="label">HOUSE ID</td>
+						<td><input class="textbox" type="text" value="North House" /></td>
+					</tr>
+					<tr>
+						<td class="label">PASSWORD</td>
+						<td><input class="textbox" type="password" /></td>
+					</tr>
+					<tr>
+						<td class="label">PASSWORD<div class="lightGrey retype_pass">(retype)</div></td>
+						<td><input class="textbox" type="password" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input class="pass_checkbox" type="checkbox" id="disable_pass" /> <label class="pass_label" for="disable_pass">DISABLE PASSWORD</label></td>
+					</tr>
+				</table>
+								
+				<div class="settings_section second">ALERTS</div>
+				<input class="pass_checkbox" type="checkbox" id="receive_damage" checked="checked">
+				<label class="pass_label" for="receive_damage">RECEIVE HOUSE DAMAGE ALERTS</label><br />
+
+				<input class="pass_checkbox" type="checkbox" id="receive_consumption" checked="checked" />
+				<label class="pass_label" for="receive_consumption">RECEIVE HIGH CONSUMPTION ALERTS</label><br />
+				
+				<input class="pass_checkbox" type="checkbox" id="receive_production" checked="checked" />
+				<label class="pass_label" for="receive_production">RECEIVE LOW PRODUCTION ALERTS</label><br />
+				
+				<input class="pass_checkbox" type="checkbox" id="receive_community" checked="checked" />
+				<label class="pass_label" for="receive_community">RECEIVE COMMUNITY NOTIFICATIONS</label><br />
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,319 @@
+/* CSS - North House GUI - August 7 2009 - Kevin Muise */
+
+
+
+/**************************** TEXT COLOR CLASSES  *************************************/
+
+
+#sidebar_left .green{
+color:#99cc66;
+}
+
+.aqua{
+color:#88e1e1;
+}
+
+.red{
+color:#ec1f1f;
+
+}
+
+/**************************** BUTTON CLASSES *************************************/
+
+
+.form_button{
+color:#666;
+font-size:.7em;
+text-decoration:none;
+padding: 5px 10px 5px 10px;
+border:1px solid #ccc;
+-webkit-border-radius:3px; 
+-moz-border-radius: 3px;
+background: -webkit-gradient(linear, left top, left bottom, from(#f2f3f4), to(#dfe0e1), color-stop(0.5, #eff0f0), color-stop(0.5, #e8e9e9));
+           -webkit-background-size:100%;
+cursor: pointer; /* hand-shaped cursor */
+
+}
+
+
+.form_button a:hover, .form_button a.active, .form_button a:link {
+border:1px solid #999;
+background: -webkit-gradient(linear, left top, left bottom, from(#e0dfdf), to(#c9c9c9), color-stop(0.5, #dad9d9), color-stop(0.5, #cecece));
+           -webkit-background-size:100%;
+
+}
+
+
+#sidebar_content .button_dark a, #content_center .button_dark a, .button_dark a   {
+color:#fff !important;
+font-size:.8em;
+
+text-decoration:none;
+text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;
+padding: 4px 10px 5px 10px;
+border:1px solid #222;
+-webkit-box-shadow:rgba(0, 0, 0, 0.2) 0 -1px 0;
+-webkit-border-radius:3px; 
+-moz-border-radius: 3px;
+background-color:#444;
+background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#000), color-stop(0.5, #333), color-stop(0.5, #222));
+           -webkit-background-size:100%;
+}
+
+
+
+#sidebar_content .button_dark a:hover, #sidebar_content .button_dark a.active, #content_center .button_dark a:hover, .button_dark a:hover {
+border:1px solid #3f3f3f;
+background-color:#0463bd;
+background: -webkit-gradient(linear, left top, left bottom, from(#aaaaaa), to(#3f3f3f), color-stop(0.5, #a09f9f), color-stop(0.5, #7d7d7d));
+           -webkit-background-size:100%;
+}
+
+
+
+
+
+.button_light a{
+color:#666;
+font-size:.8em;
+text-decoration:none;
+padding: 5px 10px 5px 10px;
+border:1px solid #ccc;
+background-color:#f2f3f4;
+-webkit-border-radius:3px; 
+-moz-border-radius: 3px;
+background: -webkit-gradient(linear, left top, left bottom, from(#f2f3f4), to(#dfe0e1), color-stop(0.5, #eff0f0), color-stop(0.5, #e8e9e9));
+           -webkit-background-size:100%;
+}
+
+
+.button_light a:hover  {
+border:1px solid #999;
+background-color:#e0dfdf;
+background: -webkit-gradient(linear, left top, left bottom, from(#e0dfdf), to(#c9c9c9), color-stop(0.5, #dad9d9), color-stop(0.5, #cecece));
+           -webkit-background-size:100%;
+}
+
+
+
+#content_center .section_nav .button_arrow{
+margin-top:0px;
+margin-left:-4px;
+}
+
+
+#content_center .button_arrow a{
+color:#fff;
+font-size:.8em;
+
+background-image:url('../images/sub_page/btn_arrow_2.png');
+padding: 5px 20px 7px 20px;
+text-decoration:none;
+text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;
+background-repeat:no-repeat;
+}
+
+#content_center .button_arrow a:hover{
+background-image:url('../images/sub_page/btn_arrow_hover_4.png');
+
+
+}
+
+
+
+#content_center .button_circle_next{
+background-image:url('../images/sub_page/btn_circle_next_hover.png');
+width:25px;
+height:25px;
+
+}
+
+#content_center .button_circle_next:hover{
+background-image:url('../images/sub_page/btn_circle_next.png');
+width:25px;
+height:25px;
+}
+
+
+
+#content_center .button_circle_prev{
+background-image:url('../images/sub_page/btn_circle_prev.png');
+width:25px;
+height:25px;
+
+}
+
+#content_center .button_circle_prev:hover{
+background-image:url('../images/sub_page/btn_circle_prev_hover.png');
+width:25px;
+height:25px;
+}
+
+
+
+/**************************** SIDEBAR LEFT FORMATING *************************************/
+
+
+#sidebar_left{
+position:absolute;
+z-index: 3;
+float:left;
+width:200px;
+height:605px;
+background-color: #333;
+}
+
+
+#sidebar_content{
+margin-top:23px;
+margin-left:10px;
+padding-right:10px;
+}
+
+#sidebar_left .title{
+	letter-spacing: 0px;
+	margin-bottom:-5px;
+}
+
+
+#sidebar_left .section_divider{
+height:1px;
+width:100%;
+border-top:1px solid #282828;
+border-bottom:1px solid #5c5c5c;
+margin-bottom:20px;
+margin-top:20px;
+}
+
+
+#sidebar_left P{
+margin-top:10px;
+margin-bottom:10px;
+
+}
+
+/************************** MAIN CONTENT AREA FORMATING ***********************************/
+
+#center_block{
+position:absolute;
+background-color:#f5f5f5;
+width:1000px;
+height:650px;
+padding-top:0px;
+}
+
+#content_center{
+position:absolute;
+margin-left:220px;
+margin-top:20px;
+width:760px;
+}
+
+#content_center .title{
+font-weight:medium;
+letter-spacing: 0px;
+margin-bottom:5px;
+
+}
+
+#content_center .subtitle{
+font-weight:medium;
+letter-spacing: 0px;
+margin-bottom:10px;
+font-size:1.4em;
+
+}
+
+
+
+/****** SECTION NAVIGATION *******/
+
+.section_nav{
+margin-bottom:5px;
+height:35px;
+-webkit-border-radius:7px; 
+-moz-border-radius: 7px;
+background-image:url('../images/layout/section_nav_bg.jpg');
+background-repeat:repeat-x;
+
+/* background: -webkit-gradient(linear, left top, left bottom, from(#838a94), to(#34383f), color-stop(0.5, #4c5058), color-stop(0.5, #3d434e));
+           -webkit-background-size:100%;*/
+}
+
+
+.section_nav_content_right{
+float:right;
+margin-right:20px;
+margin-top:8px;
+
+}
+
+
+.section_nav_content_center{
+float:right;
+margin-right:240px;
+margin-top:8px;
+
+}
+
+
+.section_nav_content_left{
+float:left;
+margin-left:20px;
+margin-top:8px;
+}
+
+
+.section_nav .form_items{
+
+}
+
+
+#content_center .section_nav label{
+padding-right:3px;
+
+}
+
+
+.section_nav select.form_select{
+
+}
+
+
+
+
+/****** FLOATING WINDOW & CONTENT *******/
+
+.window{
+border: 1px solid #efefef;
+background-color:#fff;
+-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); 
+-webkit-border-radius:7px; 
+height:410px;
+padding:15px;
+}
+
+
+.window_resource{
+border: 1px solid #efefef;
+background-color:#fff;
+-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); 
+-webkit-border-radius:7px;
+height:550px;
+margin-top:-20px;
+padding:5px;
+}
+
+
+.content_divider{
+border-top:1px solid #ccc;
+}
+
+
+
+
+
+
+
+
+

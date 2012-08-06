@@ -1,0 +1,78 @@
+
+
+#resource_usage {
+background-color: #D6D6D6;
+width: 100%;
+height: 603px;
+padding: 0;
+}
+#resource_usage iframe {
+	width: 920px;
+	height: 610px;
+	margin: 0 50px;	
+	border: 0;
+	overflow: hidden;
+}
+.green_resources{
+color:#8fcd37;
+}
+
+.savings{
+margin-left:-8px;
+}
+
+table.energy_savings{
+margin-top:20px;
+width:100%;
+border:none;
+}
+
+table.energy_savings td{
+border:none;
+}
+
+table.energy_peakUse{
+margin-top:20px;
+width:100%;
+border:none;
+}
+
+table.energy_peakUse td{
+border:none;
+padding-top:0px;
+padding-bottom:0px;
+}
+
+table.energy_peakUse td.empty{
+padding-top:10px;
+}
+
+
+/* EARNINGS CLASSES */
+
+#resource_usage .earnings{
+font-family: "Futura", "Futura Book BT", "Verdana", sans-serif;
+}
+
+#sidebar_left .statement{
+font-size:1.1em;
+font-weight: normal;
+margin-bottom:10px;
+}
+
+#sidebar_left .amount{
+font-size:2em;
+letter-spacing: -1px;
+font-weight: normal;
+margin-left:-10px;
+}
+
+#sidebar_left .endStatement{
+font-size:.8em;
+font-weight: lighter;
+margin-top:5px;
+margin-bottom:5px;
+letter-spacing: 1px;
+}
+
+

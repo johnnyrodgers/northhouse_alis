@@ -1,0 +1,20 @@
+<div id="<%= control_id %>_degree_buttons_<%= section %>" class="tilt_degree_buttons <%= section %>" style="display: <% if active %>block<% else %>none<% end %>;" master="<%= master %>" device_id="<%= device_id %>">
+	<% if section == "upper" %>
+		<%= link_to_function "", "setTilt('#{control_id}', '#{section}', 55); pushTilt('#{control_id}', '#{section}', '#{blind_id}', 55)", :class => "tilt55", :id => control_id + "_" + section + "_55" %>
+		<%= link_to_function "", "setTilt('#{control_id}', '#{section}', 90); pushTilt('#{control_id}', '#{section}', '#{blind_id}', 90)", :class => "tilt90", :id => control_id + "_" + section + "_90" %>
+		<%= link_to_function "", "setTilt('#{control_id}', '#{section}', 125); pushTilt('#{control_id}', '#{section}', '#{blind_id}', 125)", :class => "tilt125", :id => control_id + "_" + section + "_125" %>
+		<%= link_to_function "", "setTilt('#{control_id}', '#{section}', 140); pushTilt('#{control_id}', '#{section}', '#{blind_id}', 140)", :class => "tilt160", :id => control_id + "_" + section + "_140" %>
+	<% elsif section == "lower" %>
+		<% if blind_id.is_a?(Integer) then blind_id = blind_id + 1 end %>
+		<%= link_to_function "", "setTilt('#{control_id}', '#{section}', 55); pushTilt('#{control_id}', '#{section}', '#{blind_id}', 55)", :class => "tilt55", :id => control_id + "_" + section + "_55" %>
+		<%= link_to_function "", "setTilt('#{control_id}', '#{section}', 90); pushTilt('#{control_id}', '#{section}', '#{blind_id}', 90)", :class => "tilt90", :id => control_id + "_" + section + "_90" %>
+		<%= link_to_function "", "setTilt('#{control_id}', '#{section}', 125); pushTilt('#{control_id}', '#{section}', '#{blind_id}', 125)", :class => "tilt125", :id => control_id + "_" + section + "_125" %>
+		<%= link_to_function "", "setTilt('#{control_id}', '#{section}', 160); pushTilt('#{control_id}', '#{section}', '#{blind_id}', 160)", :class => "tilt160", :id => control_id + "_" + section + "_160" %>	
+	<% end %>
+	<script type="text/javascript">
+		if (<%= master %>) {
+			//create slaves array
+			var <%= control_id %>_degree_button_slaves = [ '<%= slaves.join("','") %>' ];
+		}
+	</script>  
+</div>

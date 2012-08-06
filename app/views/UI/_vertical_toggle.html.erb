@@ -1,0 +1,28 @@
+<%
+	master = false if local_assigns[:master].nil?
+	slaves = [] if local_assigns[:slaves].nil?
+%>
+<div class="vertical_toggle" id="<%= toggle_id %>">
+	<div class="toggle_bg">
+		<div class="toggle_handle" id="<%= toggle_id %>_handle" device_id="<%= device_id %>">
+			<div class="toggle_value" id="<%= toggle_id %>_value"><%= state %></div>
+		</div>
+	</div>	
+	<%= draggable_element("#{toggle_id}_handle", :revert => false, :constraint => "'vertical'",
+				:onEnd => "pushToggle", 
+				:snap => "function(x, y) {
+		    new_y = (y > 108) ? 108 : ((y < 0) ? 0 : y);
+		    if (new_y < 60) { 
+		    	var state = 'ON'; 
+		    	new_y = 0;
+		    }
+		    else { 
+		    	var state = 'OFF'; 
+		    	new_y = 108;
+		    }	    
+		    $('#{toggle_id}_value').update(state);
+		    setControlValue('lights', '#{toggle_id}', state);				
+		    return [ x, new_y ];
+		  }" ) %>
+	<div class="toggle_label" id="<%= toggle_id %>_label"><%= label %></div>
+</div>

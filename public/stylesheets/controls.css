@@ -1,0 +1,238 @@
+/* CSS - North House GUI - May 1 2009 - Johnny Rodgers */
+
+html, body {
+	background-color: #888;
+	color: #FFF;
+	margin: 0;
+	padding: 0;
+	font-family: "Futura", "Futura Bk BT", sans-serif;
+	font-weight: lighter;
+	font-size: 14px;
+	overflow: hidden;
+}
+#container {
+	background-image: url("/images/controls/page_bg.jpg");
+	background-repeat: repeat-x;
+	margin: 0 auto;
+	padding: 0;
+	width: 1024px;
+	height: 768px;
+}
+h2 {
+	background-image: url("/images/controls/header_bg.jpg");
+	background-repeat: repeat-x;
+	font-size: 1.4em;
+	color: #FFF;
+	font-weight: lighter;
+	height: 20px;
+	padding: 5px 12px 11px 12px;
+	margin: 0;
+}
+h2 img.logo {
+	float: left;
+}
+h2 a.forward_button img {
+	margin: -21px -15px 0 0;
+	padding: 20px;
+}
+h3 {
+	font-size: 1.2em;
+	color: #FFF;
+	font-weight: lighter;
+}
+
+/* LINKS */
+a, a:link, a:visited, a:hover, a:active, a:focus, a img {
+	border: 0;
+	border: none;
+	text-decoration: none;
+	outline: none; /* Hide dotted links around focussed links */
+}
+
+/* NAVIGATION */
+.forward_button {
+	float: right; 
+	width: 40px;
+	margin: -6px -12px 0 0;
+	padding: 5px 5px 0 0;
+	height: 30px;
+}
+.back_button {
+	float: left;
+	margin: -5px 0 0 -4px;
+	height: 30px;
+	color: #CCC;
+	font-size: 0.8em;
+}
+.next_button, .prev_button {
+	width: 42px;
+	height: 356px;
+	margin-top: -24px;
+	padding: 0;
+	background-image: url("/images/controls/next_button_bg.png");
+	background-repeat: repeat-y;
+	float: right;
+	cursor: pointer;
+	text-align: center;
+}
+.prev_button { 
+	background-image: url("/images/controls/prev_button_bg.png"); 
+	float: left;
+}
+#K3_shades .next_button, #K3_shades .prev_button {
+	margin-top: -25px;
+	height: 361px;
+}
+.next_button img, .prev_button img {
+	position: relative;
+	top: 46%;
+	padding-left: 8px;
+}
+.prev_button img {
+	padding-left: 0;
+	padding-right: 10px;
+}
+
+/* ELEMENTS */
+.disabled {
+	opacity: 0.4;
+}
+.disabled a {
+	cursor: default;
+}
+
+/* OVERVIEW PAGE */
+.K1_section {
+	padding: 0;
+}
+#K1_lights {
+	width: 585px;
+	height: 395px;
+	border-right: 1px solid #909090;
+	float: left;
+}
+#K1_shades {
+	width: 438px;
+	height: 395px;
+	float: left;
+}
+#K1_lights h2, #K1_shades h2 {
+	margin-bottom: 15px;
+}
+#K1_climate {
+	width: 1024px;
+	height: 180px;
+	border-top: 1px solid #909090;
+	border-bottom: 1px solid #909090;
+	clear: left;
+}
+#K1_climate table {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+#K1_climate table td {
+	width: 33%;
+	height: 145px;
+	vertical-align: middle;
+}
+#K1_climate table td h3 {
+	float: left;
+	padding-left: 40px;	
+	margin-top: 30px;
+}
+#K1_modes {
+	width: 582px;
+	height: 192px;
+	border-right: 1px solid #909090;
+	float: left;
+}
+#K1_bed {
+	width: 185px;
+	height: 192px;
+	border-right: 1px solid #909090;
+	float: left;
+}
+#K1_bed div {
+	margin-left: 10px;
+}
+#K1_optimization {
+	width: 255px;
+	height: 192px;
+	float: left;
+}
+#K1_optimization_delay_settings {
+	width: 205px;
+	height: 138px;
+ 	position: relative; 
+	top: -3px;
+	left: 0;
+ 	background-color: #444;
+ 	padding: 10px 20px 10px 30px;
+}
+#K1_optimization_delay_settings .up_down_value {
+	color: #FFF;
+}
+/* LIGHTS & SHADES */
+.K2_section, .K3_section {
+	height: 355px;	
+}
+.K2_section h3 {	
+	margin: 10px 0 0 10px;
+}
+.K3_section h3 {
+	padding-left: 50px;
+	margin: 5px 0 -5px 0;
+}
+#K2_interior_lights {
+	width: 875px; 
+	margin: 50px auto;
+}
+#K2_interior_lights h3 {
+	margin-bottom: 50px;
+}
+#K3_shades {
+	background-image: url("/images/controls/section_divider.png");
+	background-repeat: repeat-x;
+	padding-top: 20px;
+	top: 390px;
+	width: 1024px;
+	position: absolute;
+}
+#K3_interior_shades {
+	padding-left: 0;
+}
+#K3_exterior_shades {
+	padding-top: 14px;
+}
+
+/* SHADES */
+.slider_set_label {
+	text-align: center;
+	font-size: 0.9em;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	border-right: 1px solid #888;
+	position: relative;
+	padding-top: 10px;
+	margin: 265px auto 0 auto;
+	height: 8px;
+	width: 98%;
+}
+#lights .slider_set_label {
+	margin: 340px auto 0 auto;
+}
+.slider_set_label .label {
+	background-color: #666;
+	padding: 1px 15px 2px 15px;
+}
+.slider_label img {
+	margin-left: -5px;
+	position: relative;
+	top: -10px;
+}
+.slider_set_label img {
+	margin-left: -5px;
+	position: relative;
+	top: -15px;
+}

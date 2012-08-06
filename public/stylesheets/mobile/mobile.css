@@ -1,0 +1,839 @@
+/* CSS - North House Mobile App - July 2009 - Johnny Rodgers & Kevin Muise */
+
+/* LAYOUT */ 
+body {
+	color: #EEE;
+	font-size: 14px;
+	margin: 20px 0 0 0;
+}      
+p {
+	margin: 0 0 10px 0;
+}
+
+/* NAV */
+#nav {
+	background-image: url("../../images/mobile/nav_bg.png");
+	background-repeat: repeat-x;
+	display: block;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 51px;
+	min-height: 51px !important;
+}
+#nav ul {
+	margin: 0;
+	padding: 0;
+}
+#nav ul li {
+	display: inline;
+}
+#nav ul li a, #nav ul li a:visited {
+	display: block;
+	float: left;
+	width: 64px;
+	height: 51px;
+	color: #888;
+	font-size: 0.7em;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+}
+#nav ul li a:active, #nav ul li a.current {
+	background-image: url("../../images/mobile/nav_highlight.png");
+	background-repeat: no-repeat;
+	color:#fff;
+}
+#nav ul li a img {
+	margin: 2px 0 -5px 0;
+}
+#nav ul li a[selected="progress"] {
+    background-image: none !important;
+}
+#nav ul li img.blocker {
+	position: absolute; 
+	z-index: 100; 
+	width: 64px; 
+	height: 51px;
+}
+
+/* HEADINGS */
+.toolbar h1 img {
+	margin-top: -12px;
+}
+h3 {
+	font-size: 0.8em;
+	color: #CCC;
+}
+
+/* FORMS */
+form label {
+	font-size: 0.7em;
+	/* color: #96d8fb; */
+}
+
+
+/* Menu item subtitles */
+.item_state {
+	color: #96d8fb;
+	font-size: 0.6em;
+	float: right;
+	margin-top: 5px;
+}
+/* Selectable menu items */
+.no_select li a {
+	background: none;
+}
+.no_select li a[selected=true], .no_select li a:active {
+	background-image: url("../../images/mobile/jqtouch/selection.png") !important;
+}
+.check {
+	background-image: url("../../images/mobile/checkmark.png") !important;
+	background-position: right center !important;
+	background-repeat: no-repeat !important;
+}
+.subpanel {
+	width: 320px;
+	height: 355px;
+	padding: 20px;
+	margin: 0 auto;
+	background-image: url("../../images/mobile/subpanel.png");
+	background-repeat: no-repeat;
+}
+.subpanel .section {
+	width: 264px;
+	height: 70px;
+	padding: 20px;
+	margin: 0 auto;
+  border-top: 1px solid #292929;
+  border-bottom: 1px solid #5a5a5a;
+}
+.subpanel :first-child { border-top: none; }
+.subpanel :last-child { border-bottom: none; }
+
+.divider, .graph .divider{
+border-top: 1px solid #383838;
+border-bottom:1px solid #777;
+width:100%;
+}
+
+.graph .divider{
+float:left;
+margin-left:-15px;
+width:310px;
+margin-top:10px;
+
+}
+
+
+.subNav_arrows{
+float:right;
+margin-top:-5px;
+margin-right:-5px;
+}
+
+.subNav_arrows img{
+margin:0px;
+padding:0px;
+
+}
+
+.white{
+color:#fff;
+}
+
+.lightGrey{
+color:#dadada;
+}
+
+.green{
+color:#94ea7f;
+}
+
+.darkGrey{
+color:#c1c1c1;
+}
+
+.orange{
+color:#f4a610;
+}
+
+.details_label{
+font-size:.8em;
+text-shadow: rgba(0, 0, 0, .5) 0px -1px 0;
+}
+
+.details_data{
+font-size: .85em;
+text-shadow: rgba(0, 0, 0, .5) 0px -1px 0;
+}
+
+
+
+/* Community Challenge  ****************   Added by Kmuise Sept. 24, 2009*/
+
+.challenge .subpanel {
+	width: 320px;
+	height: 355px;
+	padding:0px;  
+	margin: 0px;
+	background-image: url("../../images/mobile/challenges/challenge_panel_bg.jpg");
+	background-repeat: no-repeat;
+}        
+
+
+a.leader_btn{
+background-image: url("../../images/mobile/challenges/leaderBoard_btn.png");
+background-repeat:no-repeat;
+padding:8px 52px;
+margin-right:20px;
+}
+
+a.leader_btn:active{
+background-image: url("../../images/mobile/challenges/leaderBoard_btn_active.png");
+background-repeat:no-repeat;
+width:105px;
+height:33px;
+}
+
+
+a.chatter_btn{
+background-image: url("../../images/mobile/challenges/chatter_btn.png");
+background-repeat:no-repeat;
+padding:8px 52px;
+}
+
+
+a.chatter_btn:active{
+background-image: url("../../images/mobile/challenges/chatter_btn_active.png");
+background-repeat:no-repeat;
+width:105px;
+height:33px;
+}
+
+
+.challenge_links{
+margin-top:20px;
+margin-left:45px;
+}
+
+
+
+.challenge_header{
+background: -webkit-gradient(linear, left top, left bottom, from(#349ad5), to(#035687), color-stop(0.5, #046aa6), color-stop(0.5, #035b8e));
+-webkit-background-size:100%;
+height:28px;
+width:100%;
+font-size:.85em;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+padding-left:30px;
+padding-top:15px;
+}
+
+
+.challenge_header .title{
+margin-right:5px;
+}
+
+table.details{
+margin: 5px auto 15px auto;
+}
+
+
+
+table.details td.left{
+padding-right:10px;
+}
+
+table.details td{
+padding-bottom:5px;
+}
+
+/* PROGRESS BAR CLASSES  */
+
+
+.bars{
+margin-left:10px;
+margin-top:13px;
+margin-bottom:20px;
+}
+
+
+.progress_bkg{
+width:295px;
+height:40px;
+background-image: url("../../images/mobile/challenges/progress_bar_bg.png");
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border:1px solid #606060;
+margin-top:-23px;
+
+}
+
+
+.progress_bar_container{ 
+width:295px;/* Use this as the width value to calculate the percentage  */
+
+}
+
+
+.progress_bar{
+float:left;
+height:40px;
+margin-top:-16px;
+margin-left:0px;
+-webkit-border-radius: 5px;
+background-image: url("../../images/mobile/challenges/progress_bar.png");
+
+}
+
+
+ ul.progress_numbers_top,  ul.progress_numbers_bottom {
+font-size:.7em;
+font-weight:bold;
+margin-left:-5px;
+padding-bottom:5px;
+width:310px;
+
+
+}
+
+
+ ul.progress_numbers_top{
+padding-left:2px;
+
+}
+
+ul.progress_numbers_bottom{
+padding-left:0px;
+margin-top:-10px;
+margin-left:-3px;
+}
+
+
+
+
+ul.progress_numbers_top li{
+float:left;
+list-style-type: none;
+margin-left:0;
+margin-right:59px;
+width: 0;
+color:#cecece;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+}
+
+ul.progress_numbers_top li.last{
+float:left;
+list-style-type: none;
+margin-right: 0;
+margin-left: -7px;
+color:#89fa6d;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+}
+
+
+
+
+ul.progress_numbers_bottom li{
+float:left;
+list-style-type: none;
+margin-right:59px;
+width: 0;
+color:#cecece;
+margin-top:5px;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+}
+
+ul.progress_numbers_bottom li.last{
+float:left;
+list-style-type: none;
+margin-right: 0;
+margin-left: -7px;
+color:#89fa6d;
+margin-top:5px;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+}
+
+
+
+ul.progress_tabs_top{
+list-style-type: none;
+margin-top:-15px;
+margin-left:20px;
+width:295px;
+}
+
+
+
+ul.progress_tabs_top li{
+float:left;
+width:3px;
+margin-right:53px;
+margin-top:2px;
+height:4px;
+background-color:#353535;
+border:1px solid #606060;
+border-bottom:none;
+
+}
+
+ul.progress_tabs_bottom{
+margin-left:20px;
+margin-top:0px;
+width:295px;
+}
+
+
+ul.progress_tabs_bottom li{
+list-style-type: none;
+float:left;
+width:3px;
+height:4px;
+margin-top:-1px;
+margin-bottom:0px;
+margin-right:53px;
+background-color:#444444;
+border:1px solid #606060;
+border-top:none;
+}
+
+
+.progress_variable_top, .progress_variable_bottom{
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+font-size:.8em;
+letter-spacing: 1px;
+color:#fff;
+margin-top:0px;
+margin-bottom:0px;
+font-weight:normal;
+}
+
+.progress_variable_bottom {
+margin-top:20px;
+}
+
+
+/* CHATTER CLASSES  */
+
+.chatter_bubbles{
+overflow: auto;
+height:325px;/* Need to adjust (make shorter) when the main nav. is in place */
+background-color:#dbe1ed;
+}
+
+.chatter_box{
+background-image:url("../../images/mobile/challenges/chatter_box_bg.png");
+background-color: #333;
+background-repeat: repeat-x;
+height:42px;
+width:100%;
+margin-top:-1px;
+
+}
+
+.chatter_box input.textbox{
+margin-left:10px;
+margin-right:5px;
+width:240px;
+height:23px;
+float: left;
+-webkit-border-radius:15px; 
+border:none;
+-webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 -2px 0;
+}
+
+.chatter_box a.sendButton{
+background-image:url("../../images/mobile/challenges/send_btn.png");
+background-repeat: no-repeat;
+width:52px;
+height:23px;
+border:none;
+display: block;
+float: left;
+padding-top:5px;
+margin: 5px 0 0 5px;
+}
+
+/* LEADERBOARD CLASSES  */
+
+.leaderboard .subpanel {
+	width: 320px;
+	height: 310px;
+	overflow-y: scroll;
+	padding:0px;
+	padding-top:10px;  
+	margin: 0px;
+	background-image: url("../../images/mobile/challenges/leaderboard_bg.png");
+	background-repeat: no-repeat;
+}        
+
+
+
+.leaderboard .subpanel .challenger{
+border-bottom:1px solid #444;
+height:80px;
+padding-left:9px;
+margin-bottom:15px;
+}
+
+.challenger .name{
+margin-bottom:5px;
+font-size: .85em;
+text-shadow: rgba(0, 0, 0, .5) 0px -1px 0;
+
+}
+
+.challenger .progress_background{
+height:23px;
+width:300px;
+background-image: url("../../images/mobile/challenges/small_progress_bar_bg.png");
+-webkit-border-radius: 5px;
+border:1px solid #606060;
+}
+
+.challenger .container{
+width:300px;
+}
+
+.challenger  .progress_bar{
+margin-top:-24px;
+height:23px;
+background-image: url("../../images/mobile/challenges/small_progress_bar.png");
+background-color: #ccc;
+-webkit-border-radius: 5px;
+}
+
+
+.challenger .details_label{
+margin-right:5px;
+}
+
+/* GRAPHS PAGES  ****************   Added by Kmuise Sept. 24, 2009*/
+
+.graph .subpanel {
+	width: 280px;		
+	margin-left: 0px;
+}
+
+.banner{
+width:320px;
+margin-left:-20px;
+margin-top:-15px;
+}
+
+.stubLeft{
+background-image: url("../../images/mobile/graph/banner_stubLeft.png");
+background-repeat:no-repeat;
+width:5px;
+height:47px;
+float:left;
+}
+
+.stubRight{
+background-image: url("../../images/mobile/graph/banner_stubRight.png");
+background-repeat:no-repeat;
+width:5px;
+height:47px;
+float:left;
+}
+
+.stubCenter{
+background-image: url("../../images/mobile/graph/banner_bg.png");
+background-repeat:repeat-x;
+height:47px;
+width:310px;
+margin-top:4px;
+float:left;
+font-size:.75em;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+padding-top:5px;
+text-align: center;
+}
+
+
+.graph .graphArea{
+background-image: url("../../images/mobile/graph/graph_bg.png");
+background-repeat:repeat-x;
+-webkit-border-radius: 5px;
+border:1px solid #727272;
+width:260px;
+height:135px;
+margin: 5px auto;
+text-align: left;
+}
+
+
+.graph_unit{
+font-size:.7em;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+float:left;
+width: 0;
+display: block;
+clear: left;
+margin-left:10px;
+margin-right:-10px;
+}
+
+.graph .vars{
+font-size:.7em;
+margin: 0 auto;
+text-align: center;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+}
+
+.table_title{
+font-size:.85em;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+margin: 5px auto;
+text-align: center;
+}
+
+.features{
+margin-top:-25px;
+}
+
+.features .mail{
+background-image: url("../../images/mobile/graph/icon_email.png");
+background-repeat: no-repeat;
+margin-left:-5px;
+width:19px;
+height:12px;
+display: block;
+}
+
+
+.features .info{
+background-image: url("../../images/mobile/graph/icon_info.png");
+background-repeat: no-repeat;
+float:right;
+width:15px;
+height:16px;
+margin-top:-15px;
+margin-right:-5px;
+display: block;
+}
+
+.glare{
+background-image: url("../../images/mobile/graph/reflection.png");
+background-repeat: no-repeat;
+width:260px;
+height:84px;
+float:left;
+margin-top:-130px;
+}
+
+
+.optionsHeader{
+padding-top:10px;
+font-size:.9em;
+}
+
+
+.view_options{
+font-size:.8em;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+margin-top:80px;
+}
+
+.option_row{
+width:100%;
+padding-left:40px;
+margin-top:10px;
+}
+
+.options_btn {
+background-image: url("../../images/mobile/graph/option_btn.png");
+background-repeat: no-repeat;
+width:90px;
+height:29px;
+margin-right:20px;
+float:left;
+font-weight:bold;
+padding-top:10px;
+}
+
+.option_row .current_btn {
+background-image: url("../../images/mobile/graph/option_btn_active.png");
+background-repeat: no-repeat;
+width:90px;
+height:32px;
+margin-right:20px;
+float:left;
+font-weight:bold;
+}
+
+
+a.options_btn {
+text-decoration: none;
+font-size:.8em;
+color:#fff;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+}
+
+
+/* SETTING PAGE  ****************   Added by Kmuise Sept. 26, 2009*/
+
+.settings_section{
+height:20px;
+width:298px;
+margin-left:-14px;
+margin-bottom:-5px;
+margin-top:10px;
+font-weight:bold;
+color:#fff;
+font-size:.8em;
+padding: 7px 0 0 10px;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+background: -webkit-gradient(linear, left top, left bottom, from(#363636), to(#222), color-stop(0.5, #2e2e2e), color-stop(0.5, #262626));
+           -webkit-background-size:100%;
+}
+.settings .first{
+	margin-top:-14px;
+	margin-bottom:10px;
+}
+.settings table {
+	margin: 0;
+}
+.settings table td {
+	vertical-align: top;
+	padding-bottom: 13px;
+}
+.settings table td:last-child {
+	padding-bottom: 0;
+}
+.settings input.textbox{
+margin-left:10px;
+margin-right:-5px;
+margin-top:-3px;
+width:200px;
+height:20px;
+-webkit-border-radius:15px; 
+border:none;
+-webkit-box-shadow:rgba(0, 0, 0, 0.3) 0 -2px 0;
+float: right;
+font-size: .85em;
+padding:8px;
+}
+
+
+
+.settings input.pass_checkbox{
+margin-top:15px;
+}
+
+.settings .label{
+font-size:.8em;
+color:#98d3e4;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+}
+
+.pass_label{
+margin-top:-15px;
+margin-left:30px;
+font-size:.8em;
+color:#98d3e4;
+text-shadow: rgba(0, 0, 0, 1) 0px -1px 0;
+
+}
+
+.retype_pass{
+margin-top: 6px;
+font-size:.85em;
+}
+
+
+/* ALERT PAGE  ****************   Added by Kmuise Sept. 28, 2009*/
+
+body > .alertPanel {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #fff;
+    overflow: auto;
+}
+
+
+.alertPanel .edgetoedge > li {
+    position: relative;
+    margin: 0;
+    border-top: none;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 0 8px 10px;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    list-style: none;
+}
+
+.alertPanel  .edgetoedge a, .inset a {
+    display: block;
+    margin: -8px 0 -8px -10px;
+    padding: 8px 32px 8px 10px;
+    
+    text-decoration: none;
+    color: inherit;
+    background: url(../../images/mobile/alerts/alert_chevron.png) no-repeat right center;
+}
+
+.alertPanel .title{
+font-size: 18px;
+color:#000;
+font-weight:bold;
+margin-left:10px;
+margin-top:10px;
+}
+
+.alertPanel li .title{
+font-size: 13px;
+margin-left:15px;
+margin-top:0;
+}
+
+
+
+.alertPanel .teaser{
+color:#999;
+font-size:.7em;
+font-weight:normal;
+width:250px;
+height:30px;
+overflow: hidden;
+margin-top:5px;
+margin-bottom:10px;
+margin-left:15px;
+
+}
+
+.alertPanel .date{
+color:#506c9d;
+font-size:.65em;
+float:right;
+font-weight:normal;
+text-align: right;
+margin-right:-5px;
+margin-top:-62px;
+}
+
+.alertPanel .new{
+ background: url(../../images/mobile/alerts/alert_new.png) no-repeat;
+ background-position-y: 37px;
+ background-position-x: 5px;
+}
+
+
+.alertPanel .full_date{
+color:#999;
+font-size:.9em;
+padding-left:10px;
+padding-top:10px;
+padding-bottom:10px;
+border-bottom: 1px solid #ccc;
+margin-bottom:10px;
+}
+
+.alertPanel p{
+color:#000;
+font-size:.9em;
+margin-left:10px;
+}

@@ -1,0 +1,46 @@
+<div id="sidebar_left">
+	<div id="sidebar_content">
+	<h5 class="title aqua_blue">CURRENT PRESETS</h5>
+	
+	<div class="mode_box">
+		<% @modes.each do |mode| %>		
+			<div class="mode_selector <% if mode.id == @mode.id %>active<% end %>">
+				<div class="mode_delete_link" style="display: none;">
+					<% if demo? %>
+						<%= link_to_function image_tag("/images/modes/delete_mode.png", :alt => "Delete"), "demoMessage()" %>
+					<% else %>
+						<%= link_to image_tag("/images/modes/delete_mode.png", :alt => "Delete"), { :action => "destroy", :id => mode.id }, { :id => "mode_#{mode.id}_delete_link", :confirm => "Are you sure you want to delete the #{mode.name} Preset?", :method => :delete } %>
+					<% end %>
+				</div>
+				<div class="mode_name"><%= link_to mode.name, { :action => "edit", :id => mode }, { :id => "mode_#{mode.id}", :title => "Click to edit the #{mode.name} Preset", :style => "color: ##{mode.colour};" } %></div>
+			</div>		
+		<% end %>
+	</div>
+	
+	<div class="mode_functions">
+		<div class="button_dark"><a href="#" onclick="RedBox.showInline('modal_newMode'); return false;" title="Create a New Preset"><span class="add">+</span></a></div>
+		<div class="button_dark">
+			<%= link_to_function("Edit List", nil, :id => "mode_edit_link") do |page|
+						page.select('.mode_delete_link').each do |link|
+							link.show
+						end
+						page[:mode_edit_link].hide 
+						page[:mode_done_link].show 
+				end %>
+			<%= link_to_function("Done", nil, :id => "mode_done_link", :style => "display: none;") do |page|
+						page.select('.mode_delete_link').each do |link|
+							link.hide
+						end
+						page[:mode_done_link].hide 
+						page[:mode_edit_link].show 
+				end %>
+		</div>		
+	</div><br>	
+	<div class="section_divider"></div>
+	<h5 class="title aqua_blue">DESCRIPTION</h5>
+	<p class="smaller light-grey">  
+	<%= @mode.description %>
+	</p>
+	
+	</div>	
+</div>

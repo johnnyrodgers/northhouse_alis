@@ -1,0 +1,39 @@
+<div id="blind_links" class="mode_subnav light-grey">
+	<%= link_to_function "Interior Blind Masters", "switch_sections('blinds_masters', 'blind_links', 'blind_section')", :id => "blinds_masters_link", :class => "active" %> |
+	<%= link_to_function "West", "switch_sections('blinds_west', 'blind_links', 'blind_section')", :id => "blinds_west_link" %> |
+	<%= link_to_function "South-West", "switch_sections('blinds_southwest', 'blind_links', 'blind_section')", :id => "blinds_southwest_link" %> |
+	<%= link_to_function "South-East", "switch_sections('blinds_southeast', 'blind_links', 'blind_section')", :id => "blinds_southeast_link" %> |
+	<%= link_to_function "East", "switch_sections('blinds_east', 'blind_links', 'blind_section')", :id => "blinds_east_link" %>
+</div>  				
+
+<div id="blinds_masters" class="blind_section">
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_blind_W", :value => @mode.settings[:blinds][:K3_blind_W], :label => "<img src='/images/modes/nf_west.jpg' alt='West Blinds' />", :master => true, :slaves => ["K3_1_blind_W1", "K3_1_blind_W2", "K3_1_blind_W3", "K3_1_blind_W4"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_blind_SW", :value => @mode.settings[:blinds][:K3_blind_SW], :label => "<img src='/images/modes/nf_southWest.jpg' alt='South-West Blinds' />", :master => true, :slaves => ["K3_1_blind_SW1", "K3_1_blind_SW2", "K3_1_blind_SW3", "K3_1_blind_SW4"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_blind_SE", :value => @mode.settings[:blinds][:K3_blind_SE], :label => "<img src='/images/modes/nf_southEast.jpg' alt='South-East Blinds' />", :master => true, :slaves => ["K3_1_blind_SE1", "K3_1_blind_SE2", "K3_1_blind_SE3", "K3_1_blind_SE4"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_blind_E", :value => @mode.settings[:blinds][:K3_blind_E], :label => "<img src='/images/modes/nf_east.jpg' alt='East Blinds' />", :master => true, :slaves => ["K3_1_blind_E1", "K3_1_blind_E2", "K3_1_blind_E3"], :f => f } %>
+</div>
+<div id="blinds_west" class="blind_section" style="display: none;">
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_W1", :value => @mode.settings[:blinds][:K3_1_blind_W1], :label => "W1", :slave => true, :masters => ["K3_blind_W"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_W2", :value => @mode.settings[:blinds][:K3_1_blind_W2], :label => "W2", :slave => true, :masters => ["K3_blind_W"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_W3", :value => @mode.settings[:blinds][:K3_1_blind_W3], :label => "W3", :slave => true, :masters => ["K3_blind_W"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_W4", :value => @mode.settings[:blinds][:K3_1_blind_W4], :label => "W4", :slave => true, :masters => ["K3_blind_W"], :f => f } %>
+</div>
+<div id="blinds_southwest" class="blind_section" style="display: none;">
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_SW1", :value => @mode.settings[:blinds][:K3_1_blind_SW1], :label => "SW1", :slave => true, :masters => ["K3_blind_SW"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_SW2", :value => @mode.settings[:blinds][:K3_1_blind_SW2], :label => "SW2", :slave => true, :masters => ["K3_blind_SW"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_SW3", :value => @mode.settings[:blinds][:K3_1_blind_SW3], :label => "SW3", :slave => true, :masters => ["K3_blind_SW"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_SW4", :value => @mode.settings[:blinds][:K3_1_blind_SW4], :label => "SW4", :slave => true, :masters => ["K3_blind_SW"], :f => f } %>
+</div>
+<div id="blinds_southeast" class="blind_section" style="display: none;">
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_SE1", :value => @mode.settings[:blinds][:K3_1_blind_SE1], :label => "SE1", :slave => true, :masters => ["K3_blind_SE"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_SE2", :value => @mode.settings[:blinds][:K3_1_blind_SE2], :label => "SE2", :slave => true, :masters => ["K3_blind_SE"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_SE3", :value => @mode.settings[:blinds][:K3_1_blind_SE3], :label => "SE3", :slave => true, :masters => ["K3_blind_SE"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_SE4", :value => @mode.settings[:blinds][:K3_1_blind_SE4], :label => "SE4", :slave => true, :masters => ["K3_blind_SE"], :f => f } %>
+</div>
+<div id="blinds_east" class="blind_section" style="display: none;">
+	<div style="float: left; margin-left: 100px;">
+		<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_E1", :value => @mode.settings[:blinds][:K3_1_blind_E1], :label => "E1", :slave => true, :masters => ["K3_blind_E"], :f => f } %>
+		<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_E2", :value => @mode.settings[:blinds][:K3_1_blind_E2], :label => "E2", :slave => true, :masters => ["K3_blind_E"], :f => f } %>
+		<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :slider_id => "K3_1_blind_E3", :value => @mode.settings[:blinds][:K3_1_blind_E3], :label => "E3", :slave => true, :masters => ["K3_blind_E"], :f => f } %>
+	</div>
+</div>

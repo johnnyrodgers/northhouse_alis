@@ -1,0 +1,314 @@
+<div id="shades" style="display: none;">
+	<h2>
+		<%= link_to_function(image_tag("/images/controls/main_screen.png"), nil, :class => "back_button") do |page| 
+					page.visual_effect :fade, :shades, :duration => 0.25
+					page.delay(0.25) do
+						page.visual_effect :appear, :index, :duration => 0.25
+					end
+			end %>
+	</h2>
+	<div id="K3_blinds" class="K3_section">
+		<div id="K3_blinds_masters" class="K3_section">
+			<h3>Interior Blinds: Masters</h3>
+			<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_blinds_masters_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_blinds_masters, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_east, :duration => 0.25
+						end
+					end %>
+			<div style="margin-left: 50px; float: left;">
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 1, :group => ["K3_1_blind_W1", "K3_1_blind_W2", "K3_1_blind_W3", "K3_1_blind_W4"], :slider_id => "K3_blind_W", :value => @mode.settings[:blinds][:K3_blind_W], :label => "<img src='/images/icons/west.png' alt='West Blinds' />", :master => true, :slaves => ["K3_1_blind_W1", "K3_1_blind_W2", "K3_1_blind_W3", "K3_1_blind_W4"], :slave => true, :masters => ["K1_blind_all"] } %>
+			</div>
+			<div style="margin-left: 120px; float: left;">
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :group => ["K3_1_blind_SW1", "K3_1_blind_SW2", "K3_1_blind_SW3", "K3_1_blind_SW4"], :slider_id => "K3_blind_SW", :value => @mode.settings[:blinds][:K3_blind_SW], :label => "<img src='/images/icons/southwest.png' alt='South-West Blinds' />", :master => true, :slaves => ["K3_1_blind_SW1", "K3_1_blind_SW2", "K3_1_blind_SW3", "K3_1_blind_SW4"], :slave => true, :masters => ["K1_blind_all"] } %>
+			</div>
+			<div style="margin-left: 120px; float: left;">
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :group => ["K3_1_blind_SE1", "K3_1_blind_SE2", "K3_1_blind_SE3", "K3_1_blind_SE4"], :slider_id => "K3_blind_SE", :value => @mode.settings[:blinds][:K3_blind_SE], :label => "<img src='/images/icons/southeast.png' alt='South-East Blinds' />", :master => true, :slaves => ["K3_1_blind_SE1", "K3_1_blind_SE2", "K3_1_blind_SE3", "K3_1_blind_SE4"], :slave => true, :masters => ["K1_blind_all"] } %>
+			</div>
+			<div style="margin-left: 120px; float: left;">
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 3,  :group => ["K3_1_blind_E1", "K3_1_blind_E2", "K3_1_blind_E3"], :slider_id => "K3_blind_E", :value => @mode.settings[:blinds][:K3_blind_E], :label => "<img src='/images/icons/east.png' alt='East Blinds' />", :master => true, :slaves => ["K3_1_blind_E1", "K3_1_blind_E2", "K3_1_blind_E3"], :slave => true, :masters => ["K1_blind_all"] } %>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_blinds_masters_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_blinds_masters, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_west, :duration => 0.25
+						end
+					end %>
+		</div>
+				
+		<div id="K3_blinds_west" class="K3_section" style="display: none;">
+			<h3>Interior Blinds: West</h3>
+			<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_blinds_west_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_blinds_west, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_masters, :duration => 0.25
+						end
+					end %>
+			<div style="float: left; margin-left: 50px;">
+				<div style="float: left;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 1, :blind_id => 1, :slider_id => "K3_1_blind_W1", :value => @mode.settings[:blinds][:K3_1_blind_W1], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_W"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 1, :blind_id => 2, :slider_id => "K3_1_blind_W2", :value => @mode.settings[:blinds][:K3_1_blind_W2], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_W"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 1, :blind_id => 3, :slider_id => "K3_1_blind_W3", :value => @mode.settings[:blinds][:K3_1_blind_W3], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_W"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 1, :blind_id => 4, :slider_id => "K3_1_blind_W4", :value => @mode.settings[:blinds][:K3_1_blind_W4], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_W"] } %>
+				</div>
+				<div class="slider_set_label">
+					<%= image_tag "/images/icons/west.png", :alt => "West Blinds" %>
+				</div>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_blinds_west_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_blinds_west, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_southwest, :duration => 0.25
+						end
+					end %>
+		</div>
+
+		<div id="K3_blinds_southwest" class="K3_section" style="display: none;">
+			<h3>Interior Blinds: South West</h3>
+			<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_blinds_southwest_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_blinds_southwest, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_west, :duration => 0.25
+						end
+					end %>
+			<div style="float: left; margin-left: 50px;">
+				<div style="float: left;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :blind_id => 1, :slider_id => "K3_1_blind_SW1", :value => @mode.settings[:blinds][:K3_1_blind_SW1], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_SW"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :blind_id => 2, :slider_id => "K3_1_blind_SW2", :value => @mode.settings[:blinds][:K3_1_blind_SW2], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_SW"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :blind_id => 3, :slider_id => "K3_1_blind_SW3", :value => @mode.settings[:blinds][:K3_1_blind_SW3], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_SW"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :blind_id => 4, :slider_id => "K3_1_blind_SW4", :value => @mode.settings[:blinds][:K3_1_blind_SW4], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_SW"] } %>
+				</div>
+				<div class="slider_set_label">
+					<%= image_tag "/images/icons/southwest.png", :alt => "South West Blinds" %>
+				</div>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_blinds_southwest_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_blinds_southwest, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_southeast, :duration => 0.25
+						end
+					end %>
+		</div>
+		
+		<div id="K3_blinds_southeast" class="K3_section" style="display: none;">
+			<h3>Interior Blinds: South East Blinds</h3>
+			<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_blinds_southeast_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_blinds_southeast, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_southwest, :duration => 0.25
+						end
+					end %>
+			<div style="float: left; margin-left: 50px;">
+				<div style="float: left;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :blind_id => 5, :slider_id => "K3_1_blind_SE1", :value => @mode.settings[:blinds][:K3_1_blind_SE1], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_SE"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :blind_id => 6, :slider_id => "K3_1_blind_SE2", :value => @mode.settings[:blinds][:K3_1_blind_SE2], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_SE"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :blind_id => 7, :slider_id => "K3_1_blind_SE3", :value => @mode.settings[:blinds][:K3_1_blind_SE3], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_SE"] } %>
+				</div>
+				<div style="float: left; margin-left: 120px;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 2, :blind_id => 8, :slider_id => "K3_1_blind_SE4", :value => @mode.settings[:blinds][:K3_1_blind_SE4], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_SE"] } %>
+				</div>
+				<div class="slider_set_label" style="width: 96%;">
+					<%= image_tag "/images/icons/southeast.png", :alt => "South East Blinds" %>
+				</div>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_blinds_southeast_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_blinds_southeast, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_east, :duration => 0.25
+						end
+					end %>
+		</div>
+
+		<div id="K3_blinds_east" class="K3_section" style="display: none;">
+			<h3>Interior Blinds: East</h3>
+			<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_blinds_east_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_blinds_east, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_southeast, :duration => 0.25
+						end
+					end %>
+			<div style="float: left;">
+				<div style="margin-left: 180px; float: left;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 3, :blind_id => 1, :slider_id => "K3_1_blind_E1", :value => @mode.settings[:blinds][:K3_1_blind_E1], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_E"] } %>
+				</div>
+				<div style="margin-left: 100px; float: left;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 3, :blind_id => 2, :slider_id => "K3_1_blind_E2", :value => @mode.settings[:blinds][:K3_1_blind_E2], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_E"] } %>
+				</div>
+				<div style="margin-left: 100px; float: left;">
+					<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "blinds", :device_id => DEVICES["interior_blinds"], :command => "EXTENT", :facade_id => 3, :blind_id => 3, :slider_id => "K3_1_blind_E3", :value => @mode.settings[:blinds][:K3_1_blind_E3], :label => "", :slave => true, :masters => ["K1_blind_all", "K3_blind_E"] } %>
+				</div>
+				<div class="slider_set_label" style="width: 75%; margin-left: 180px;">
+					<%= image_tag "/images/icons/east.png", :alt => "East Blinds" %>
+				</div>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_blinds_east_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_blinds_east, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_blinds_masters, :duration => 0.25
+						end
+					end %>
+		</div>
+	
+	</div>
+
+	<div id="K3_shades" class="K3_section">
+
+		<div id="K3_shades_masters">
+			<h3>Exterior Shades: Masters</h3>
+				<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_shades_masters_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_shades_masters, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_east, :duration => 0.25
+						end
+					end %>	
+			<div>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_shade_W_tilt", :state => @mode.settings[:shades][:K3_shade_W_tilt], :master => true, :slaves => ["K3_1_shade_W1_tilt", "K3_1_shade_W2_tilt", "K3_1_shade_W3_tilt", "K3_1_shade_W4_tilt"], :device_id => DEVICES["exterior_shades"], :blind_id => "W" } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_shade_W", :value => @mode.settings[:shades][:K3_shade_W], :label => "<img src='/images/icons/west.png' alt='West Shades' />", :master => true, :slaves => ["K3_1_shade_W1", "K3_1_shade_W2", "K3_1_shade_W3", "K3_1_shade_W4"], :slave => true, :masters => ["K1_shade_all"], :device_id => DEVICES["exterior_shades"], :blind_id => "W" } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_shade_SW_tilt", :state => @mode.settings[:shades][:K3_shade_SW_tilt], :master => true, :slaves => ["K3_1_shade_SW1_tilt", "K3_1_shade_SW2_tilt", "K3_1_shade_SW3_tilt", "K3_1_shade_SW4_tilt"], :device_id => DEVICES["exterior_shades"], :blind_id => "SW" } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_shade_SW", :value => @mode.settings[:shades][:K3_shade_SW], :label => "<img src='/images/icons/southwest.png' alt='South-West Shades' />", :master => true, :slaves => ["K3_1_shade_SW1", "K3_1_shade_SW2", "K3_1_shade_SW3", "K3_1_shade_SW4"], :slave => true, :masters => ["K1_shade_all"], :device_id => DEVICES["exterior_shades"], :blind_id => "SW" }  %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_shade_SE_tilt", :state => @mode.settings[:shades][:K3_shade_SE_tilt], :master => true, :slaves => ["K3_1_shade_SE1_tilt", "K3_1_shade_SE2_tilt", "K3_1_shade_SE3_tilt", "K3_1_shade_SE4_tilt"], :device_id => DEVICES["exterior_shades"], :blind_id => "SE" } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_shade_SE", :value => @mode.settings[:shades][:K3_shade_SE], :label => "<img src='/images/icons/southeast.png' alt='South-East Shades' />", :master => true, :slaves => ["K3_1_shade_SE1", "K3_1_shade_SE2", "K3_1_shade_SE3", "K3_1_shade_SE4"], :slave => true, :masters => ["K1_shade_all"], :device_id => DEVICES["exterior_shades"], :blind_id => "SE" }  %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_shade_E_tilt", :state => @mode.settings[:shades][:K3_shade_E_tilt], :master => true, :slaves => ["K3_1_shade_E1_tilt", "K3_1_shade_E2_tilt", "K3_1_shade_E3_tilt"], :device_id => DEVICES["exterior_shades"], :blind_id => "E" } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_shade_E", :value => @mode.settings[:shades][:K3_shade_E], :label => "<img src='/images/icons/east.png' alt='East Shades' />", :master => true, :slaves => ["K3_1_shade_E1", "K3_1_shade_E2", "K3_1_shade_E3"], :slave => true, :masters => ["K1_shade_all"], :device_id => DEVICES["exterior_shades"], :blind_id => "E" }  %>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_shades_masters_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_shades_masters, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_west, :duration => 0.25
+						end
+					end %>
+		</div>
+
+		<div id="K3_shades_west" style="display: none;">
+			<h3>Exterior Shades: West</h3>
+				<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_shades_west_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_shades_west, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_masters, :duration => 0.25
+						end
+					end %>	
+			<div style="float: left;">
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_W1_tilt", :state => @mode.settings[:shades][:K3_1_shade_W1_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 1 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_W1", :value => @mode.settings[:shades][:K3_1_shade_W1], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_W"], :device_id => DEVICES["exterior_shades"], :blind_id => 2 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_W2_tilt", :state => @mode.settings[:shades][:K3_1_shade_W2_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 3 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_W2", :value => @mode.settings[:shades][:K3_1_shade_W2], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_W"], :device_id => DEVICES["exterior_shades"], :blind_id => 4 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_W3_tilt", :state => @mode.settings[:shades][:K3_1_shade_W3_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 5 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_W3", :value => @mode.settings[:shades][:K3_1_shade_W3], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_W"], :device_id => DEVICES["exterior_shades"], :blind_id => 6 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_W4_tilt", :state => @mode.settings[:shades][:K3_1_shade_W4_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 7 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_W4", :value => @mode.settings[:shades][:K3_1_shade_W4], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_W"], :device_id => DEVICES["exterior_shades"], :blind_id => 8 } %>
+				<div class="slider_set_label">
+					<%= image_tag "/images/icons/west.png", :alt => "West Shades" %>
+				</div>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_shades_west_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_shades_west, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_southwest, :duration => 0.25
+						end
+					end %>
+		</div>
+
+		<div id="K3_shades_southwest" style="display: none;">
+			<h3>Exterior Shades: South West</h3>
+				<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_shades_southwest_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_shades_southwest, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_west, :duration => 0.25
+						end
+					end %>	
+			<div style="float: left;">
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SW1_tilt", :state => @mode.settings[:shades][:K3_1_shade_SW1_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 9 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_SW1", :value => @mode.settings[:shades][:K3_1_shade_SW1], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_SW"], :device_id => DEVICES["exterior_shades"], :blind_id => 10 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SW2_tilt", :state => @mode.settings[:shades][:K3_1_shade_SW2_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 11 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_SW2", :value => @mode.settings[:shades][:K3_1_shade_SW2], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_SW"], :device_id => DEVICES["exterior_shades"], :blind_id => 12 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SW3_tilt", :state => @mode.settings[:shades][:K3_1_shade_SW3_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 13 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_SW3", :value => @mode.settings[:shades][:K3_1_shade_SW3], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_SW"], :device_id => DEVICES["exterior_shades"], :blind_id => 14 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SW4_tilt", :state => @mode.settings[:shades][:K3_1_shade_SW4_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 15 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_SW4", :value => @mode.settings[:shades][:K3_1_shade_SW4], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_SW"], :device_id => DEVICES["exterior_shades"], :blind_id => 16 } %>
+				<div class="slider_set_label">
+					<%= image_tag "/images/icons/southwest.png", :alt => "South West Shades" %>
+				</div>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_shades_southwest_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_shades_southwest, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_southeast, :duration => 0.25
+						end
+					end %>
+		</div>
+
+		<div id="K3_shades_southeast" style="display: none;">
+			<h3>Exterior Shades: South East</h3>
+				<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_shades_southeast_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_shades_southeast, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_southwest, :duration => 0.25
+						end
+					end %>	
+			<div style="float: left;">
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SE1_tilt", :state => @mode.settings[:shades][:K3_1_shade_SE1_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 17 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_SE1", :value => @mode.settings[:shades][:K3_1_shade_SE1], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_SE"], :device_id => DEVICES["exterior_shades"], :blind_id => 18 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SE2_tilt", :state => @mode.settings[:shades][:K3_1_shade_SE2_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 19 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_SE2", :value => @mode.settings[:shades][:K3_1_shade_SE2], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_SE"], :device_id => DEVICES["exterior_shades"], :blind_id => 20 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SE3_tilt", :state => @mode.settings[:shades][:K3_1_shade_SE3_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 21 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_SE3", :value => @mode.settings[:shades][:K3_1_shade_SE3], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_SE"], :device_id => DEVICES["exterior_shades"], :blind_id => 22 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SE4_tilt", :state => @mode.settings[:shades][:K3_1_shade_SE4_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 23 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_SE4", :value => @mode.settings[:shades][:K3_1_shade_SE4], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_SE"], :device_id => DEVICES["exterior_shades"], :blind_id => 24 } %>
+				<div class="slider_set_label">
+					<%= image_tag "/images/icons/southeast.png", :alt => "South East Shades" %>
+				</div>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_shades_southeast_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_shades_southeast, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_east, :duration => 0.25
+						end
+					end %>
+		</div>
+
+		<div id="K3_shades_east" style="display: none;">
+			<h3>Exterior Shades: East</h3>
+				<%= link_to_function(image_tag("/images/controls/previous.png"), nil, :id => "K3_shades_east_previous", :class => "prev_button") do |page|
+						page.visual_effect :fade, :K3_shades_east, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_southeast, :duration => 0.25
+						end
+					end %>	
+			<div style="margin-left: 110px; float: left;">
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_E1_tilt", :state => @mode.settings[:shades][:K3_1_shade_E1_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 25 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_E1", :value => @mode.settings[:shades][:K3_1_shade_E1], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_E"], :device_id => DEVICES["exterior_shades"], :blind_id => 26 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_E2_tilt", :state => @mode.settings[:shades][:K3_1_shade_E2_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 27 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_E2", :value => @mode.settings[:shades][:K3_1_shade_E2], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_E"], :device_id => DEVICES["exterior_shades"], :blind_id => 28 } %>
+				<%= render :partial => "UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_E3_tilt", :state => @mode.settings[:shades][:K3_1_shade_E3_tilt], :device_id => DEVICES["exterior_shades"], :blind_id => 29 } %>
+				<%= render :partial => "UI/vertical_slider", :locals => { :subsystem => "shades", :slider_id => "K3_1_shade_E3", :value => @mode.settings[:shades][:K3_1_shade_E3], :label => "", :slave => true, :masters => ["K1_shade_all", "K3_shade_E"], :device_id => DEVICES["exterior_shades"], :blind_id => 30 } %>
+				<div class="slider_set_label">
+					<%= image_tag "/images/icons/east.png", :alt => "East Shades" %>
+				</div>
+			</div>
+			<%= link_to_function(image_tag("/images/controls/next.png"), nil, :id => "K3_shades_east_next", :class => "next_button") do |page|
+						page.visual_effect :fade, :K3_shades_east, :duration => 0.25
+						page.delay(0.25) do
+							page.visual_effect :appear, :K3_shades_masters, :duration => 0.25
+						end
+					end %>
+		</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,192 @@
+/* CSS - North House GUI - April 28 2009 - Johnny Rodgers */
+
+/* REDBOX - Craig Ambrose - http://blog.craigambrose.com/articles/2006/09/22/redbox-release-2 */
+#RB_overlay {
+  position: absolute;
+  z-index:100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height:100%;
+  background-color: #000;
+  opacity: .6;
+  filter: alpha(opacity=60);
+}
+
+#RB_redbox {
+  width: 100%;
+  position: absolute;
+  top: 0;  
+}
+
+#RB_window {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 102;
+}
+
+#RB_loading {
+	width: 100px;
+	height: 100px;
+  text-align: center;
+  background: #FFF url("../images/icons/ajax_loader.gif") no-repeat center center;
+}
+.redbox_contents {
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+
+
+/* MODAL WINDOWS */
+.modal {
+	background-color:#fff;
+	width: 600px;
+	height: 500px;
+	text-align: left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4); 
+}
+
+.modal .close{
+float:right;
+margin-right:10px;
+margin-top:-10px;
+
+}
+
+
+.modal_close {
+	float: right;
+	background-image:url('../images/layout/button_close2.png');
+	width: 24px;
+	height: 24px;
+	display: block;
+	margin: -60px -8px 0 0;	
+	padding: 0;
+}
+
+
+.modal_close:hover{
+background-image:url('../images/layout/button_close_active2.png');
+}
+.modal_close a{
+display:none;
+}
+
+
+.modal_contents {
+	padding: 0;
+}
+
+.modal_form_buttons {
+	padding: 20px 5 10px 10px;
+}
+
+.modal_form_buttons input{
+font-size:.8em;
+margin-top:10px;
+margin-bottom:5px;
+margin-left:10px;
+}
+
+
+.modal_form_contents {
+	background-color:#fff;
+	padding: 10px;
+	overflow-y: auto;
+	max-height: 400px;
+	border: 1px solid #a8a8a8;
+	margin-left:10px;
+	margin-right:10px;
+	margin-top:5px;
+	min-height:350px;
+	
+}
+
+
+
+.modal_small{
+background-color:#fff;
+	margin-top:100px;
+	width: 400px;
+	min-height: 225px;
+	text-align: left;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4); 
+}
+
+
+
+.modal_small h2{
+color: #FFF;
+margin-top:9px;
+margin-left:10px;
+text-shadow: rgba(15, 90, 125, 0.3) 0px -1px 0;
+}
+
+
+.modal h2 {
+color: #FFF;
+margin-top:9px;
+margin-left:10px;
+text-shadow: rgba(15, 90, 125, 0.3) 0px -1px 0;
+}
+
+
+
+
+
+.banner{
+padding-top:5px;
+}
+
+
+.banner_stub_left{
+background-image:URL('../images/sub_page/popup_banner_left.png');
+background-repeat:no-repeat;
+width:13px;
+height:42px;
+float:left;
+margin-left:-13px;
+margin-top:2px;
+}
+
+.modal .banner_stub_left{
+margin-top:2px;
+}
+
+
+
+.banner_stub_right{
+background-image:URL('../images/sub_page/popup_banner_right.png');
+background-repeat:no-repeat;
+width:14px;
+height:42px;
+float:left;
+margin-left:400px;
+margin-top:-40px;
+}
+
+.modal .banner_stub_right{
+margin-left:600px;
+}
+
+.banner_bg{
+background-image:URL('../images/sub_page/popup_banner_bg.png');
+background-repeat:repeat-x;
+width:400px;
+height:42px;
+float:left;
+}
+
+.modal .banner_bg{
+width:600px;
+}

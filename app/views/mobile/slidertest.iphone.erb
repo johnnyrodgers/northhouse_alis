@@ -1,0 +1,9 @@
+<div id="lights_dining" class="panel" selected="true">
+	<div class="toolbar">
+    <h1>Lights</h1>
+    <a class="back button" href="#lights">Back</a>
+  </div>
+  <div class="subpanel">
+  	<%= render :partial => "mobile/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_dining_area", :device_id => DEVICES["lights_dining"], :label => "Dining Area", :value => 100 } %>
+  </div>	
+</div>

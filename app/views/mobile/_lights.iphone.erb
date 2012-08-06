@@ -1,0 +1,57 @@
+<!-- LIGHTS: Main -->
+<div id="lights" class="panel">
+	<div class="toolbar">
+    <h1>Lights</h1>
+    <a class="back button" href="#main">Back</a>
+  </div>
+	<ul class="edgetoedge">
+    <li><a href="#lights_dining">Dining <!-- <span id="lights_dining_status" class="item_state">50%</span> --></a></li>
+    <li><a href="#lights_kitchen">Kitchen</a></li>
+    <li><a href="#lights_lounge">Lounge <!-- <span id="lights_living_area_status" class="item_state">ON</span> --></a></li>
+    <li><a href="#lights_sleeping_area">Sleeping Area <!-- <span id="lights_sleeping_area_status" class="item_state">ON</span> --></a></li>
+  </ul> 
+</div>
+
+<!-- LIGHTS: Dining Area -->
+<div id="lights_dining" class="panel">
+	<div class="toolbar">
+    <h1>Lights</h1>
+    <a class="back button" href="#lights">Back</a>
+  </div>
+  <div class="subpanel">
+  	<%= render :partial => "mobile/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_dining_area", :device_id => DEVICES["lights_dining"], :label => "Dining", :value => 100 } %>
+  </div>	
+</div>
+
+<!-- LIGHTS: Kitchen Area -->
+<div id="lights_kitchen" class="panel">
+	<div class="toolbar">
+    <h1>Lights</h1>
+    <a class="back button" href="#lights">Back</a>
+  </div>
+  <div class="subpanel">
+  	<%= render :partial => "mobile/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_kitchen", :device_id => DEVICES["lights_kitchen"], :label => "Kitchen", :value => 100 } %>
+  </div>	
+</div>
+
+<!-- LIGHTS: Living Area -->
+<div id="lights_lounge" class="panel">
+	<div class="toolbar">
+    <h1>Lights</h1>
+    <a class="back button" href="#lights">Back</a>
+  </div>
+  <div class="subpanel">
+  	<%= render :partial => "mobile/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_lounge", :device_id => DEVICES["lights_lounge"], :label => "Lounge", :value => 100 } %>
+	</div>
+</div>
+
+<!-- LIGHTS: Sleeping Area -->
+<div id="lights_sleeping_area" class="panel">
+	<div class="toolbar">
+    <h1>Lights</h1>
+    <a class="back button" href="#lights">Back</a>
+  </div>
+  <div class="subpanel">
+		<%= render :partial => "mobile/UI/vertical_slider", :locals => { :subsystem => "lights", :slider_id => "K1_light_sleeping_area", :label => "Sleeping Area", :device_id => DEVICES["lights_sleeping"], :value => 100 } %>
+	</div>
+</div>

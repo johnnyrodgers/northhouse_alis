@@ -1,0 +1,293 @@
+<% title("Overview") %>
+
+<div id="electricity_earnings">
+	<div class="box_left center">
+		<div class="content">
+			<div class="earnings statement grey" >YOU HAVE <% if @energy_earnings < 0 %>SPENT<% else %>EARNED<% end %></div>
+			<div class="earnings amount green">$<% if @energy_earnings < 0 then @energy_earnings = @energy_earnings * -1 end %><%= money(@energy_earnings) %></div>
+			<div class="earnings endStatement grey">ON ELECTRICITY TODAY</div><br />
+			<div class="earnings yesterday mid-grey">(up $<%= money(@energy_earnings_difference) %> from yesterday)</div>	
+		</div>
+	</div>
+	
+	<div class="box_center">
+		<div class="grey content small">
+			<div class="row">
+			Today's top electricity consumer is your space cooling system. <%= link_to image_tag("/images/icons/icon_graph.png", :alt => "Analyze in Resource Usage"), :controller => "resources" %>
+			</div>
+			<div class="row">
+			North House can produce nearly 10,940 kWh of energy per year.  In Ontario that's up to $8,752 in annual revenue.  <%= link_to image_tag("/images/icons/icon_graph.png", :alt => "Analyze in Resource Usage"), :controller => "resources" %>
+			</div>
+			<div class="row_last">
+			<span class="dark-grey"><b>TIP:</b></span> Your hot water consumes more electricity in one day than your lights in one month.  Reducing shower times can decrease your overall electrical use, and save you money.
+			</div>
+		
+		</div>
+	</div>
+	<div class="box_right">
+		<div class="content">
+			<h5 class="grey">TODAY'S ENERGY ACTIVITY (last 24 hrs)</h5>
+			 	<div id="electricityGraph" style="width:415px;height:180px;"></div>
+		  <script id="source" language="javascript" type="text/javascript">
+				$j(function () {
+
+					var energyDateMax = <%= Time.now.to_time.to_i*1000 %> - (60*60*12);
+					//console.log(energyDateMax);
+					var energyDateMin = <%= (Time.now - (60*60*24)).to_time.to_i*1000 %> - (60*60*24);
+					//console.log(energyDateMin);
+
+				 var userEnergy = [];
+				 <% (0..24).each do |i| %>
+				 		userEnergy.push([energyDateMin + (60 * 60 * <%= i %> * 1000), <%= @energy_graph_data[i] %>]); 	
+				 <% end %>
+/*
+				console.log(userEnergy);
+				 var userEnergy = [
+					 	[energyDateMin, -1], -1, -1, 2, 1, 3, 5, 6, 5 ,5, 1, -1, -2, -4
+					 	[energyDateMin + (60 * 60 * 1 * 1000), -1], 
+					 	[energyDateMin + (60 * 60 * 2 * 1000), 2], 
+					 	[energyDateMin + (60 * 60 * 3 * 1000), 1], 
+					 	[energyDateMin + (60 * 60 * 4 * 1000), -3], 
+					 	[energyDateMin + (60 * 60 * 5 * 1000), 5], 
+					 	[energyDateMin + (60 * 60 * 6 * 1000), 6],
+					 	[energyDateMin + (60 * 60 * 7 * 1000), 5], 
+					 	[energyDateMin + (60 * 60 * 8 * 1000), 5], 
+					 	[energyDateMin + (60 * 60 * 9 * 1000), 1], 
+					 	[energyDateMin + (60 * 60 * 10 * 1000), -1], 
+					 	[energyDateMin + (60 * 60 * 11 * 1000), -2], 
+					 	[energyDateMin + (60 * 60 * 12 * 1000), -4] 
+				 ];
+				console.log(userEnergy);
+*/
+
+				var graphOptions = {      
+				 	grid: { hoverable: true, clickable: true},
+					xaxis: { mode: "time", minTickSize: [1, "hour"], min: energyDateMin, max: energyDateMax }, 
+					lines: { show: true, fill: true },
+					points: { show: true },
+					timeformat: "%h"
+				};
+
+
+
+
+						  $j.plot($j("#electricityGraph"), [{ data: userEnergy, label: "Your Energy Activity", color:"#8fcd37" }], graphOptions );
+
+
+
+
+
+							function showTooltip(x, y, contents) {
+									$j('<div id="tooltip">' + '<div class="point"></div>' + '<span class="tooltip_content">' + contents + '</span></div>').css( {
+ 
+ 										 display: 'none',
+  									top: y - 30,
+  									left: x + 7,
+										opacity: 1
+									}).appendTo("body").fadeIn(200);
+								}
+
+							var previousPoint = null;
+							$j("#electricityGraph").bind("plothover", function (event, pos, item) {
+								$j("#x").text(pos.x.toFixed(2));
+								$j("#y").text(pos.y.toFixed(2));
+
+
+  								if (item) {
+      							if (previousPoint != item.datapoint) {
+          						previousPoint = item.datapoint;
+          
+          						$j("#tooltip").remove();
+          						var x = item.datapoint[0].toFixed(2),
+              					y = item.datapoint[1].toFixed(2);
+          
+          						showTooltip(item.pageX, item.pageY,
+                      			item.series.label + " = " + y + "KwH");
+      							}
+  								}
+  							else {
+      						$j("#tooltip").remove();
+      						previousPoint = null;            
+  							}
+						});   
+
+				});
+		</script>
+		
+		
+		
+		
+		</div>
+	</div>
+</div>
+<div id="water_earnings">
+	<div class="box_left center">
+		<div class="content">
+			<div class="earnings statement grey" >YOU HAVE USED</div>
+	<div class="earnings amount blue">80 L</div>
+	<div class="earnings endStatement grey">OF CLEAN WATER TODAY</div>
+	<div class="earnings yesterday mid-grey">(up 20L from yesterday)</div>
+	
+		</div>
+	</div>
+	
+	<div class="box_center">
+		<div class="grey content small">
+			<div class="row">
+			Today’s Clean water use is equivalent to taking 2 average sized baths<img src="../images/icons/icon_graph_water.png">
+			</div>
+			<div class="row">
+			Your grey water production has saved you a potential $1 today. Over a year, that’s $365<img src="../images/icons/icon_graph_water.png">
+			</div>
+			<div class="row_last">
+			<span class="dark-grey"><b>TIP:</b></span> To conserve water when washing the dishes by hand, fill the sink up with water rather than letting the water flow from the tap.
+			</div>
+		
+		</div>
+	</div>
+	<div class="box_right">
+		<div class="content">
+			<h5 class="grey">TODAY'S WATER USAGE BY AREA</h5>
+			 <div id="waterGraph" style="width:415px;height:150px;"></div>
+
+
+
+	<script id="source" language="javascript" type="text/javascript">
+		$j(function () {
+
+				 var clearWater = [[2, 3], [4, 8], [6, 5], [8, 4]];
+				 var greyWater = [[10, 7], [12, 2]];
+				 var typical = [[2, 4], [4, 5], [6, 6], [8, 7], [10, 3], [12, 1]];
+
+			var graphOptions = {      
+					 grid: { hoverable: true, clickable: true,  tickColor: "#fff" }, 
+				 points: { show: false },
+				 yaxis: { ticks: 0 },
+				 xaxis: {ticks: [0, [2, "Laundry"], [4, "Dishes"], [6, "Shower"], [8, "Other"],[10, "Toilet"],[12, "Garden"] ] }
+			 };
+
+
+
+				$j.plot($j("#waterGraph"), [{ data: clearWater, label: "Clean Water Use", color: "#4cc4e4", bars: { show: true } } , { data: greyWater, label: "Grey Water Use", color: "#bcbdc0", bars: { show: true } }, { data: typical, label: "Typical Use", color: "rgba(161,161,161,0.3)", points: { show: true, fill: true} }], graphOptions );
+
+
+		   function showTooltip(x, y, contents) {
+					 $j('<div id="tooltip">' + '<div class="point"></div>' + '<span class="tooltip_content">' + contents + '</span></div>').css( { display: 'none', top: y - 30, left: x + 7, opacity: 1}).appendTo("body").fadeIn(200);
+			  }
+
+			 var previousPoint = null;
+			 $j("#waterGraph").bind("plothover", function (event, pos, item) {
+				 $j("#x").text(pos.x.toFixed(2));
+				 $j("#y").text(pos.y.toFixed(2));
+
+
+				  if (item) {
+     			 if (previousPoint != item.datapoint) {
+        		  previousPoint = item.datapoint;
+          
+          			$j("#tooltip").remove();
+         				 var x = item.datapoint[0].toFixed(2),
+            			  y = item.datapoint[1].toFixed(2);
+          
+         				 showTooltip(item.pageX, item.pageY,
+                      item.series.label + " = " + y + "Gal");
+    			 }
+  		}
+  				else {
+     				 $j("#tooltip").remove();
+     				 previousPoint = null;            
+ 						 }
+  
+  			});   
+
+
+	});
+</script>
+
+			
+			
+			
+		</div>
+	</div>
+</div>
+<div id="personal_challenge">
+	<div class="content">
+	<h3 class="white">CHALLENGE: <span class="lightGreen">PRODUCE <%= @production_goal.to_i %> kWh OF ELECTRICITY BY OCTOBER 18th</span></h3>
+	<div class="challenge_info">
+		<span class="grey">&nbsp;|&nbsp;</span> ELECTRICITY PRODUCED: <span class="lightGreen"><b><%= sprintf("%.2f", @energy_produced) %></b> kWh</span> 
+		<span class="grey">&nbsp;|&nbsp;</span> TIME REMAINING: <span class="lightGreen"><b><%= (DateTime.new(2009,10,19) - (DateTime.now - 1)).to_i %></b> Days</span>	
+	</div>
+	
+	<div class="overview_challenge"><!-- START OF SELF_PROGRESS -->
+			
+			
+			<div class="participant">
+				
+				
+				<div class="bars">	
+					
+					<div class="progress_variable_top">ELECTRICITY (kWh)</div>
+					
+					<ul class="progress_numbers_top">
+						<li>0</li>
+						<li><%= @production_goal.to_i / 5 %></li>
+						<li><%= (@production_goal.to_i / 5) * 2 %></li>
+						<li><%= (@production_goal.to_i / 5) * 3 %></li>
+						<li><%= (@production_goal.to_i / 5) * 4 %></li>
+						<li class="green last"><%= @production_goal.to_i %></li>
+					</ul>
+					<br>
+					
+					<ul class="progress_tabs_top">
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+						<li class="progress_tabs_top"></li>
+					</ul>
+				
+					<div class="progress_bkg">
+						<div class="progress_bar_container">
+							<div class="progress_stub_light" ></div><div style="width: <%= if ((@energy_produced / @production_goal) * 100) >= 100 then "100" else ((@energy_produced / @production_goal) * 100) end %>%;"  class="progress_bar" ></div>
+						</div>
+					</div>
+			<div class="progress_variable_bottom">PRODUCTION (%)</div>
+					<ul class="progress_tabs_top">
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+						<li class="progress_tabs_bottom"></li>
+					</ul>
+					
+					<ul class="progress_numbers_bottom">
+						<li>0</li>
+						<li>20</li>
+						<li>40</li>
+						<li>60</li>
+						<li>80</li>
+						<li class="green last">100</li>
+					</ul>
+					
+					
+				</div>
+			</div>
+
+			</div><!-- END OF SELF_PROGRESS -->
+			<div class="leader_button">
+				<div class="button_light"><%= link_to "See Leader Board", :controller => "community", :action => "challenges" %></div>
+	</div>
+
+	</div>
+
+</div>

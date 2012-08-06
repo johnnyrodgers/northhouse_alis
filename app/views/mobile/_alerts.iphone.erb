@@ -1,0 +1,48 @@
+<!-- ALERTS -->
+<div id="alerts" class="panel alertPanel">
+	<div class="toolbar">
+    <h1>Alerts</h1>    
+  </div>
+	<ul class="edgetoedge">
+		<% @notifications.each do |notification| %>
+	  	<li class="new">
+	  		<a href="#notification_<%= notification.id %>" onclick="$(this).parent().removeClass('new');">
+	  			<div class="title"><%= notification.title %></div>
+	  			<div class="teaser">
+	  				<%= truncate(notification.message, 50, "...") %>
+	  			</div>
+				<div class="date"><b><%= time_ago_in_words(notification.updated_at).capitalize %> ago</b></div>
+	  			<div ></div>
+	  		</a>		    	
+	  	</li>
+		<% end %>
+ 	</ul> 
+</div>
+
+<% @notifications.each_with_index { |notification, index| %>
+	<div id="notification_<%= notification.id %>" class="alertPanel">
+	  <div class="toolbar">
+	    <h1><%= index + 1 %> of <%= @notifications.size %></h1>
+	    <a class="backButton button" href="#alerts">Back</a>
+	    <div class="subNav_arrows">
+	    	<% if notification == @notifications.first %>
+	    		<img src="../images/mobile/subNav_up_inactive.png">
+	    	<% else %>
+	    		<a href="#notification_<%= @notifications[index - 1].id %>"><img src="../images/mobile/subNav_up_active.png"></a>
+	    	<% end %>
+	    	<% if notification == @notifications.last %>
+	    		<img src="../images/mobile/subNav_down_inactive.png">
+	    	<% else %>
+	    		<a href="#notification_<%= @notifications[index + 1].id %>"><img src="../images/mobile/subNav_down_active.png"></a>
+	    	<% end %>		    		
+	    </div>
+	  </div>
+	 <div class="title"><%= notification.title %></div>
+	 <div class="full_date"><%= notification.updated_at.strftime("%B %e, %Y, %I:%M %p") %></div>
+	 <p><b>Priority:</b> <%= notification.priority_as_text.capitalize %></p>
+	 <p>
+	 	<b>Details:</b><br>
+	 	<%= notification.message %>
+	 </p>
+	</div>
+<% } %>

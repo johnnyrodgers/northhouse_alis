@@ -1,0 +1,28 @@
+<!-- CONTROLS -->
+<div id="controls" class="panel">
+	<div class="toolbar">
+    <h1>Controls</h1>
+  </div>
+	<ul class="edgetoedge">
+    <li><a href="#modes">Presets <span id="mode_status" class="item_state"><%= @active_mode.name.upcase %></span></a></li>
+    <li><a href="#climate">Climate <span id="climate_status" class="item_state"><%= @current_temp %>&deg;C <span style="color: #888">&nbsp; / &nbsp;</span> <%= @current_RH %>% R.H.</span></a></li>
+    <li><a href="#lights">Lights</a></li>
+    <li><a href="#blinds">Interior Blinds</a></li>
+    <li><a href="#shades">Exterior Shades</a></li>
+  </ul> 
+</div>
+
+<!-- MODES -->
+<%= render :partial => "modes.iphone.erb" %>
+
+<!-- CLIMATE -->
+<%= render :partial => "climate.iphone.erb" %>
+
+<!-- LIGHTS -->
+<%= render :partial => "lights.iphone.erb" %>
+
+<!-- BLINDS -->
+<%= render :partial => "blinds.iphone.erb" %>
+
+<!-- SHADES -->
+<%= render :partial => "shades.iphone.erb" %>

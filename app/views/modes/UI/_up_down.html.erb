@@ -1,0 +1,26 @@
+<div id="<%= control_id %>_up_down" class="up_down">
+	<div style="float: left;">		
+		<div class="up_down_value">
+			<span id="<%= control_id %>_value_and_units"><span id="<%= control_id %>_value"><% if key == "temperature" then convert_temp(value, "C") else value end %><%= value %></span><%= units %></span>
+		</div>
+	</div>
+	<div class="up_down_buttons">
+		<%= link_to_function("", 
+					"$('mode_#{key}').value = parseFloat($('mode_#{key}').value) + 0.5;
+					set#{key.capitalize}('#{control_id}', $('mode_#{key}').value)", 
+					:id => "#{control_id}_up", 
+					:class => "button up"
+				) 
+		%>
+		<%= link_to_function("", 
+					"$('mode_#{key}').value = parseFloat($('mode_#{key}').value) - 0.5;
+					set#{key.capitalize}('#{control_id}', $('mode_#{key}').value)", 
+					:id => "#{control_id}_down", 
+					:class => "button down"
+				) 
+		%>
+	</div>
+</div>
+<%= f.hidden_field key %>
+
+	

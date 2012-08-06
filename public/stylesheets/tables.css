@@ -1,0 +1,16 @@
+/* CSS - North House GUI - March 19 2009 - Johnny Rodgers */
+
+/* TABLES */
+table {
+	border: 1px solid #BBB;
+	border-spacing: 0px;
+}
+table th, table td {
+	padding: 5px;
+	margin: 0;
+	text-align: left;
+}
+table th {
+	background-color: #C8DC5B;
+	font-weight: normal;
+}

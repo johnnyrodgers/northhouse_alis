@@ -1,0 +1,64 @@
+<%
+	master = false if local_assigns[:master].nil?
+	slaves = [] if local_assigns[:slaves].nil?
+	slave = false if local_assigns[:slave].nil?
+	masters = [] if local_assigns[:masters].nil?
+%>
+<div class="vertical_slider <%= subsystem %>" id="<%= slider_id %>">
+	<div class="slider_bg">
+		<div class="slider_handle" id="<%= slider_id %>_handle" subsystem="<%= subsystem %>" master="<%= master %>" slave="<%= slave %>">
+			<div class="slider_value">
+				<span  id="<%= slider_id %>_master_status" class="master_status" style="display: none;">*</span>
+				<span  id="<%= slider_id %>_value"><%= value %></span>
+			</div>
+			<div id="<%= slider_id %>_mirror" class="slider_mirror" style="display: none;"><%= value %></div>
+		</div>
+	</div>	
+	<%= draggable_element("#{slider_id}_handle", :revert => false, :constraint => "'vertical'", 
+				:onEnd => "modeSliderCallback", 
+				:snap => "function(x, y) {
+					$('#{slider_id}_mirror').show();
+			    new_y = (y > 206) ? 206 : ((y < 0) ? 0 : y);
+			    new_value = flipValue(parseInt((new_y / 206) * 100));
+			    subsystem = '#{subsystem}';
+			    if (subsystem == 'lights') {
+				    new_value = Math.round(new_value / 5.0) * 5;
+				    display_value = new_value;
+						if (new_value == 100) { display_value = 'ON'; }
+						else if (new_value == 0) { display_value = 'OFF'; }
+						else { display_value = new_value + '%'; }
+					}
+					else if (subsystem == 'blinds') {
+				    new_value = Math.round(new_value / 20.0) * 20;
+					}
+					if (subsystem == 'blinds' || subsystem == 'shades') {
+				    display_value = new_value;
+						if (new_value == 100) { display_value = 'UP'; }
+						else if (new_value == 0) { display_value = 'DOWN'; }
+						else { display_value = new_value + '%'; }
+					}
+					$('mode_#{slider_id}').value = new_value;
+			    $('#{slider_id}_value').update(display_value);
+			    $('#{slider_id}_mirror').update(display_value);
+			    return [ x, new_y ]; 
+			  }" ) %>
+	<script type="text/javascript">
+		if (<%= master %>) {
+			//create slaves array
+			var <%= slider_id %>_slaves = [ '<%= slaves.join("','") %>' ];
+		}
+		if (<%= slave %>) {
+			//create masters array
+			var <%= slider_id %>_masters = [ '<%= masters.join("','") %>' ];
+			//set master_status
+			<%= slider_id %>_masters.each(function(e) {
+				if (window.controls['<%= subsystem %>'][e] != window.controls.<%= subsystem %>.<%= slider_id %>) {
+					//add to functions to be called on document load - see addLoadEvent() in utility.js and initializeControls() in controls.js
+					addLoadEvent('showMasterStatus("' + e + '");');
+				}				
+			});			
+		}
+	</script>  
+	<div class="slider_label" id="<%= slider_id %>_label"><%= label %></div>
+	<%= f.hidden_field slider_id, :value => value %>
+</div>

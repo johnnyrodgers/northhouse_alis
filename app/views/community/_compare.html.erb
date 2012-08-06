@@ -1,0 +1,119 @@
+      						<div id="neighbourhood_energy">
+      							<div class="window"> 
+      						
+      							 <div class="cal_nav">
+      								<img src="../images/community/cal_prev.png"
+      								 <span class="date_text">December 2 – 7, 2009</span>
+      							 	<img src="../images/community/cal_next.png"
+      							 
+      							 </div>
+      							 
+      							 
+      							 <div id="communityGraph" style="width:700px; height:250px;"></div>
+
+   
+
+						<script id="source" language="javascript" type="text/javascript">
+ 								$j(function () {
+    
+   								 var userEnergy = [[1196463600000, 2], [1196550000000, 3], [1196636400000, 3], [1196722800000, 4],[1196809200000, 3], [1196895600000, 2], [1196982000000, 2]];
+
+   								 var communityEnergy = [[1196463600000, -1], [1196550000000, 0], [1196636400000, 2], [1196722800000, 2], [1196809200000, 2], [1196895600000, 1], [1196982000000,1]];
+
+								var graphOptions = {      
+     							 grid: { hoverable: true, clickable: true, markings: weekendAreas },
+      							 xaxis: { mode: "time", minTickSize: [1, "day"], min: (new Date("2007/12/01")).getTime(), max: (new Date("2007/12/07")).getTime() }, 
+     							 yaxis: { tickColor: "#fff" },
+     							 lines: { show: true },
+	   							 points: { show: true }
+	  							 };
+	    
+	  							// helper for returning the weekends in a period
+   							function weekendAreas(axes) {
+        						var markings = [];
+       							 var d = new Date(axes.xaxis.min);
+      							  // go to the first Saturday
+       							 d.setUTCDate(d.getUTCDate() - ((d.getUTCDay() + 1) % 7))
+       							 d.setUTCSeconds(0);
+       							 d.setUTCMinutes(0);
+       							 d.setUTCHours(0);
+      							  var i = d.getTime();
+       							 do {
+           					 		// when we don't set yaxis the rectangle automatically
+           							 // extends to infinity upwards and downwards
+           							 markings.push({ xaxis: { from: i, to: i + 2 * 24 * 60 * 60 * 1000 } });
+           							 i += 7 * 24 * 60 * 60 * 1000;
+        						} while (i < axes.xaxis.max);
+
+        						return markings;
+   							 }
+
+
+
+      						$j.plot($j("#communityGraph"), [{ data: userEnergy, label: "Your Energy Activity", color:"#8fcd37" },{data: communityEnergy, label: "Community Energy Activity",color: "#ddedc6", lines: { show: true, fill: true } }], graphOptions );
+									//workaround for flot display: none; bug - see http://github.com/thenduks/flot
+									$('compare').hide();
+      
+      
+
+
+
+    
+    					function showTooltip(x, y, contents) {
+        					$j('<div id="tooltip">' + '<div class="point"></div>' + '<span class="tooltip_content">' + contents + '</span></div>').css( {display: 'none', top: y - 30, left: x + 7, opacity: 1 }).appendTo("body").fadeIn(200); 
+        				}
+
+   					   var previousPoint = null;
+    					$j("#communityGraph").bind("plothover", function (event, pos, item) {
+        				$j("#x").text(pos.x.toFixed(2));
+        				$j("#y").text(pos.y.toFixed(2));
+
+        
+            			if (item) {
+               			 if (previousPoint != item.datapoint) {
+                   		 previousPoint = item.datapoint;
+                    
+                    	 $j("#tooltip").remove();
+                    	 var x = item.datapoint[0].toFixed(2),
+                         y = item.datapoint[1].toFixed(2);
+                    
+                    	 showTooltip(item.pageX, item.pageY,
+                                item.series.label + " = " + y + "KwH");
+                			}
+           			    }
+            			else {
+                			$j("#tooltip").remove();
+                			previousPoint = null;            
+           			 	}
+   					 });   
+    
+					});
+				</script>
+      			<div class="legend_container  aqua_blue">Legend:</div>		
+      			<div class="graph_options  aqua_blue">Graphing Options:<br>
+      				<table><tr>
+      				<td><label>Units:</label>
+      					<select name="units">
+      						<option selected value"kwh">kWh</option>
+      						<option value"Dollars">Dollars</option>
+      					</select>
+      				</td>
+      				<td><label>Resource:</label>
+      					<select name="resource">
+      						<option selected value"Electricity">Electricity</option>
+      						<option value"Water">Water</option>
+      					</select>
+      				</td>
+					<td><label>View By:</label>
+      					<select name="date_view">
+      						<option selected value"Week">Week</option>
+      						<option  value"Month">Month</option>
+      						<option value"Year">Year</option>
+      					</select>
+      				</td>
+      				</tr></table>
+      			
+      			</div>				
+      						
+      							</div><!-- END OF WINDOW -->
+      						</div><!--END OF COMMUNITY GRAPH-->

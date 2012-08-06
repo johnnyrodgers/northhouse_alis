@@ -1,0 +1,46 @@
+<div id="nav">
+	<div id="secondary">
+		<% if secondary_nav = generate_secondary_nav %>
+			<% secondary_nav.each do |link|
+				# set link_id
+				link_id = link[:name].sub(" ", "_").downcase
+				if link[:controller] %>
+					<%= link_to link[:name], { :controller => link[:controller], :action => link[:action] }, { "id" => link_id } %>
+				<% else %>
+					<%= link_to link[:name], { :action => link[:action] }, { "id" => link_id } %>
+				<% end %>				
+				<% if controller.action_name == link[:action] || link[:controller] == controller.controller_name %>
+					<script type="text/javascript">$("<%= link_id %>").addClassName("current");</script>
+				<% end %>				
+			<% end %>
+		<% end %>
+	</div>	
+	<div id="primary">
+		<img src="/images/nav/nav_arrow.png" alt="" id="arrow" />
+		<% if controller.controller_name == "main" && controller.action_name == "overview" %>		
+			<%= link_to "<img src='/images/nav/icons/overview_active.png' alt='Overview' title='Overview' /><br />Overview", { :controller => "main", :action => "overview" }, { "class" => "current" } %>
+		<% else %>
+			<%= link_to "<img src='/images/nav/icons/overview.png' alt='Overview' title='Overview' /><br />Overview", { :controller => "main", :action => "overview" } %>
+		<% end %>
+		<% if controller.controller_name == "resources" %>		
+			<%= link_to "<img src='/images/nav/icons/resources_active.png' alt='Resource Usage' title='Resource Usage' /><br />Resource Usage", { :controller => "resources" }, { "class" => "current" } %>
+		<% else %>
+			<%= link_to "<img src='/images/nav/icons/resources.png' alt='Resource Usage' title='Resource Usage' /><br />Resource Usage", :controller => "resources" %>
+		<% end %>
+		<% if controller.controller_name == "modes" || controller.controller_name == "schedules" %>		
+			<%= link_to "<img src='/images/nav/icons/settings_active.png' alt='House Settings' title='House Settings' /><br />House Settings", { :controller => "modes" }, { "class" => "current" } %>
+		<% else %>
+			<%= link_to "<img src='/images/nav/icons/settings.png' alt='House Settings' title='House Settings' /><br />House Settings", :controller => "modes" %>
+		<% end %>
+		<% if controller.controller_name == "community" %>		
+			<%= link_to "<img src='/images/nav/icons/community_active.png' alt='Neighbourhood Network' title='Neighbourhood Network' /><br />Neighbourhood Network", { :controller => "community" }, { "class" => "current" } %>
+		<% else %>
+		<%= link_to "<img src='/images/nav/icons/community.png' alt='Neighbourhood Network' title='Neighbourhood Network' /><br />Neighbourhood Network", :controller => "community" %>
+		<% end %>
+		<% if controller.controller_name == "main" && controller.action_name == "preferences" %>		
+			<%= link_to "<img src='/images/nav/icons/preferences_active.png' alt='Application Preferences' title='Application Preferences' /><br />Application Preferences", { :controller => "main", :action => "preferences" }, { "class" => "current" } %>
+		<% else %>
+			<%= link_to "<img src='/images/nav/icons/preferences.png' alt='Application Preferences' title='Application Preferences' /><br />Application Preferences", :controller => "main", :action => "preferences" %>
+		<% end %>
+	</div>	
+</div>

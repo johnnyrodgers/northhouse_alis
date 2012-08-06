@@ -1,0 +1,24 @@
+/* CSS - North House GUI - April 28 2009 - Johnny Rodgers */
+
+/*
+#notifications_form {
+	background-color: #EEE;
+}
+*/
+#notifications_form ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#notifications_form ul li {
+	list-style-type: none;
+	border-bottom: 1px dashed #e6e6e6;
+	padding: 10px 10px 10px 10px;
+	font-size:.9em;
+}
+#notifications_form ul li input {
+	float: left;
+	margin: 2px 10px 15px 0;
+	font-size:.8em;
+	
+}

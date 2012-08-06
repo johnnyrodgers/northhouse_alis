@@ -1,0 +1,98 @@
+/* CSS - North House GUI - March 19 2009 - Johnny Rodgers */
+
+/* TEXT */
+html {
+	font-family: "Helvetica", "Univers", sans-serif;
+	font-size: 13px;
+	color: #444;
+}
+p {
+	margin: 0 0 15px 0;
+}
+
+/* GENERAL CLASSES */
+.center {
+	text-align: center;
+}
+.green {
+	color: #8fcd37;
+}
+.blue {
+	color: #5bd0ed;
+}
+
+.timestamp {
+	color: #999;
+	font-style: italic;
+}
+
+/* !!!! added by Kevin August 7 */
+.light-grey{
+color:#ccc;
+}
+
+.mid-grey{
+color:#999;
+}
+
+.grey{
+color:#666;
+}
+
+.dark-grey{
+color:#333;
+}
+
+.white{
+color:#fff;
+}
+
+.lightGreen{
+color:#9adf58
+}
+
+/* added kevin end */
+
+/* !!!! added by Jenny Sept 14 */
+.aqua_blue{
+color:#60b1c3;
+}
+/* added Jenny end */
+
+
+
+/* SIZE CLASSES */
+.smaller{ font-size:0.85em;} /* !!! added by Kevin August 7 */
+.small { font-size: 0.95em; }
+.medium { font-size: 1.1em; }
+.large { font-size: 1.3em; }
+
+
+/* LINKS */
+a, a:link, a:visited {
+	color: #0061BD;
+	text-decoration: none;
+	outline: none;
+}
+a:hover, a:active, a:focus {
+	/* text-decoration: underline; */
+}
+a img {
+	border: none;
+}
+
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Futura Bk BT", "Verdana", sans-serif;
+	letter-spacing: 0px;
+	font-weight: lighter;
+	color: #222;
+	margin: 0 0 10px 0;
+}
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.3em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1.1em; letter-spacing: normal; }

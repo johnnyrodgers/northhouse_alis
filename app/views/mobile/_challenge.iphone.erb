@@ -1,0 +1,185 @@
+<!-- CHALLENGE -->
+<div id="challenge" class="panel">
+	<div class="toolbar">
+    <h1>Challenge</h1>
+  </div>
+	  <div class="challenge">
+	  		<div class="challenge_header">
+				<span class="title white">CHALLENGE:</span><span class="subtitle lightGrey">PRODUCE <%= @production_goal.to_i %> kWh OF ENERGY</span>
+			
+			</div>
+			<div class="divider"></div>
+	 		<div class="subpanel">
+			
+			<br />
+			<div class="bars">	
+    							
+			<center><div class="progress_variable_top">ELECTRICITY (kWh)</div></center>
+			
+			<ul class="progress_numbers_top">
+				<li>0</li>
+				<li><%= @production_goal.to_i / 5 %></li>
+				<li><%= (@production_goal.to_i / 5) * 2 %></li>
+				<li><%= (@production_goal.to_i / 5) * 3 %></li>
+				<li><%= (@production_goal.to_i / 5) * 4 %></li>
+				<li class="green last"><%= @production_goal.to_i %></li>
+			</ul>
+			<br />
+			
+			<ul class="progress_tabs_top">
+				<li class="progress_tabs_top"></li>
+				<li class="progress_tabs_top"></li>
+				<li class="progress_tabs_top"></li>
+				<li class="progress_tabs_top"></li>
+				
+				
+				
+			</ul>
+		
+			
+			<div class="progress_bkg">
+				<div class="progress_bar_container"><br />
+					<div style="width: <%= (@energy_produced / @production_goal) * 100 %>%;"  class="progress_bar" ></div>
+				</div>
+			</div>
+	
+			<ul class="progress_tabs_bottom">
+				<li class="progress_tabs_bottom"></li>
+				<li class="progress_tabs_bottom"></li>
+				<li class="progress_tabs_bottom"></li>
+				<li class="progress_tabs_bottom"></li>
+			
+			</ul>
+			
+			<ul class="progress_numbers_bottom">
+				<li>0</li>
+				<li>20</li>
+				<li>40</li>
+				<li>60</li>
+				<li>80</li>
+				<li class="green last">100</li>
+			</ul>
+			<center><div class="progress_variable_bottom">PRODUCTION (%)</div></center>
+			
+	</div>
+	<center>
+		<table class="details">
+<!--
+		<tr>
+			<td class="left"><div class="details_label darkGrey">COMMUNITY RANKINGS</div></td><td><div class="details_data green"><b>2nd</b> place</div></td>
+		</tr>
+-->
+		<tr>
+			<td class="left"><div class="details_label darkGrey">ELECTRICITY PRODUCED</div></td><td><div class="details_data white"><b><%= @energy_produced.to_i %></b> kWh</div></td>
+		</tr>
+		<tr>
+			<td class="left" ><div class="details_label darkGrey">TIME REMAINING</div></td><td><div class="details_data white"><b><%= (DateTime.new(2009,10,19) - (DateTime.now - 1)).to_i %></b> Days</div></td>
+		</tr>
+		</table>
+	</center>			
+	
+		<div class="divider"></div>
+			<div class="challenge_links">
+				<a class="leader_btn" href="#leader_board"></a>
+				<a class="chatter_btn" href="#chatter"></a>	
+			</div>	
+		</div>
+	</div>
+</div>
+
+<div id="leader_board" class="panel">
+  <div class="toolbar">
+    <h1>Leader Board</h1>
+    <a class="back button" href="#challenge">Back</a>
+  </div>
+  
+  <div class="leaderboard">
+  	<div class="challenge_header">
+			<span class="title white">CHALLENGE:</span><span class="subtitle lightGrey">REDUCE ELECTRICITY BY 10%</span>
+		</div>
+	<div class="divider"></div>
+  	<div class="subpanel">
+		<div class="board">
+		<div class="challenger">
+			<div class="name white">1. LOGAN HOUSEHOLD</div>
+			<div class="progress_background"></div>
+			<div class="container"><div class="progress_bar" style="width:90%;"></div></div>
+			<table width="300px">
+			<tr>
+			<td ><div class="details"><span class="details_label darkGrey">REDUCTION:</span><span class="details_data green"><b>9% / 58</b> kWh</span></div></td>
+			<td align="right"><div class="time_details"><span class="details_label darkGrey">TIME LEFT:</span><span class="details_data white"><b>5</b> Days</span></div></td>
+			</tr>
+			</table>
+		</div>
+		<div class="challenger">
+			<div class="name orange">2. YOU</div>
+			<div class="progress_background"></div>
+			<div class="container"><div class="progress_bar" style="width:80%;"></div></div>
+			<table width="300px">
+			<tr>
+			<td ><div class="details"><span class="details_label darkGrey">REDUCTION:</span><span class="details_data green"><b>8% / 44</b> kWh</span></div></td>
+			<td align="right"><div class="time_details"><span class="details_label darkGrey">TIME LEFT:</span><span class="details_data white"><b>2</b> Days</span></div></td>
+			</tr>
+			</table>
+		</div>
+		<div class="challenger">
+			<div class="name white">3. THE ECO SAVERS</div>
+			<div class="progress_background"></div>
+			<div class="container"><div class="progress_bar" style="width:50%;"></div></div>
+			<table width="300px">
+			<tr>
+			<td ><div class="details"><span class="details_label darkGrey">REDUCTION:</span><span class="details_data green"><b>5% / 23</b> kWh</span></div></td>
+			<td align="right"><div class="time_details"><span class="details_label darkGrey">TIME LEFT:</span><span class="details_data white"><b>8</b> Days</span></div></td>
+			</tr>
+			</table>
+		</div>
+		<div class="challenger">
+			<div class="name white">4. THE GREEN THUMBS</div>
+			<div class="progress_background"></div>
+			<div class="container"><div class="progress_bar" style="width:40%;"></div></div>
+			<table width="300px">
+			<tr>
+			<td ><div class="details"><span class="details_label darkGrey">REDUCTION:</span><span class="details_data green"><b>4% / 18</b> kWh</span></div></td>
+			<td align="right"><div class="time_details"><span class="details_label darkGrey">TIME LEFT:</span><span class="details_data white"><b>2</b> Days</span></div></td>
+			</tr>
+			</table>
+		</div>
+			<div class="challenger">
+			<div class="name white">5. ANDREW & MEG</div>
+			<div class="progress_background"></div>
+			<div class="container"><div class="progress_bar" style="width:10%;"></div></div>
+			<table width="300px">
+			<tr>
+			<td ><div class="details"><span class="details_label darkGrey">REDUCTION:</span><span class="details_data green"><b>1% / 5</b> kWh</span></div></td>
+			<td align="right"><div class="time_details"><span class="details_label darkGrey">TIME LEFT:</span><span class="details_data white"><b>10</b> Days</span></div></td>
+			</tr>
+			</table>
+		</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+<div id="chatter" class="panel">
+  <div class="toolbar">
+    <h1>Challenge Chatter</h1>
+    <a class="back button" href="#challenge">Back</a>
+  </div>
+  
+  <div class="challenge">
+  	<div class="subpanel">
+	<div class="chatter_bubbles">
+	<img src="../images/mobile/challenges/chatter_talk.png">
+	</div>
+	<div class="chatter_box">
+		<form>
+		<input class="textbox" type="text" name="chatter" onclick="$('#nav').hide();" onblur="$('#nav').show();">
+		<a class="sendButton" href="#demo_message" onclick="$('#nav').show();"></a>
+		</form>
+	</div>	
+		
+		
+		
+	</div>
+  </div>
+</div>

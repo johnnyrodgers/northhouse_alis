@@ -1,0 +1,66 @@
+/* CSS - North House Mobile App - September 2009 - Johnny Rodgers & Kevin Muise */
+
+
+/* Vertical */
+h3.label {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-left: -10px;
+}
+.vertical_slider {
+	text-align: center;
+	height: 253px;
+	padding: 0;
+	margin: 5px auto 5px -25px;
+}
+.vertical_slider .slider_bg, .vertical_slider.lights .slider_bg {
+	height: 250px;
+	padding: 0;
+	background-image: url("/images/controls/light_slider_bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.vertical_slider.blinds .slider_bg, .vertical_slider.shades .slider_bg { 
+	height: 250px;
+	/* margin-top: 10px; */
+	background-image: url("/images/controls/blind_slider_bg_open.png"); 
+}
+.vertical_slider .slider_handle, .vertical_slider.lights .slider_handle {
+	width: 80px;
+	height: 54px;
+	position: absolute;
+	left: 101px;
+	top: 85px;
+	padding: 20px;
+	margin: 0;
+	cursor: pointer;
+	background-image: url("/images/controls/light_slider_handle_bg.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.vertical_slider.blinds .slider_handle, .vertical_slider.shades .slider_handle {
+	height: 45px;
+	background-image: url("/images/controls/blind_slider_handle_bg.png");
+	background-position: center;
+}
+.vertical_slider .slider_value, .vertical_slider.lights .slider_value {
+	width: 60px;
+	height: 25px;
+	position: relative;
+	left: 5px;
+	top: 20px;
+	font-size: 1em;
+	text-align: center;
+	cursor: pointer;
+	color: #FFF;
+}
+.vertical_slider.blinds .slider_value, .vertical_slider.shades .slider_value {
+	padding: 12px 0 0 5px;
+}
+.vertical_slider .slider_label {
+	text-align: center;
+	padding-top: 10px;
+	width: 80px;
+	margin-left: -5px;
+	color: #FFF;
+}

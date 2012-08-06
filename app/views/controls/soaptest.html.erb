@@ -1,0 +1,12 @@
+<h1>mServer SOAP Test</h1>
+
+<h2>Devices</h2>
+<p>
+<% @dataset["mControlDatabase"]["Devices"]["Device"].each do |device| %>
+	<%= device["name"] %> (<%= device["id"] %>)<br />
+<% end %>
+</p>
+
+<h2>Service Methods</h2>
+<p><%= @service.methods.sort.join(", ") %></p>
+

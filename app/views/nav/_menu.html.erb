@@ -1,0 +1,24 @@
+<div id="menu">
+
+	<div id="logo">
+		<%= link_to image_tag("/images/nh_logo.png", :alt => "North House", :title => "North House"), :controller => "main", :action => "overview" %>
+	</div>
+
+	<div id="alerts" class="subsection">
+	 <%= render :partial => "overlays/alerts_button" %>
+	 <%= render :partial => "overlays/alerts" %>
+	</div>
+
+	<div id="system" class="subsection">
+	 <%= render :partial => "overlays/system_button" %>
+	 <%= render :partial => "overlays/system" %>
+	</div>
+
+	<div id="weather" class="subsection">
+	 <%= #render :partial => "overlays/weather_button" 
+	 %>
+	 <%= #render :partial => "overlays/weather" 
+	 %>
+	</div>
+
+</div>

@@ -1,0 +1,52 @@
+<div id="system_overlay" class="overlay" style="display: none;" >
+	<div class="content">
+		<%= image_tag "/images/icons/icon_sysDetails_large.png", :alt => "System Details" %>
+		<div class="system_title">TODAY'S SYSTEM DETAILS</div>
+		<table>
+		<th>SOLAR</th>
+		<tr>
+			<td class="data_label" >Solar Irradiance </td>
+			<td class="yellow" align="left"><%= @system_data[:solar_irradiance][:value] %> <%= @system_data[:solar_irradiance][:units] %></td>
+		</tr>
+		<tr>
+			<td class="data_label">Solar Insolation*</td>
+			<td class="yellow" align="left"><%= @system_data[:solar_insolation][:value] %> <%= @system_data[:solar_insolation][:units] %></td>
+		</tr>
+		<tr>
+			<td class="data_label">Solar Thermal Energy*</td>
+			<td class="yellow" align="left"><%= @system_data[:solar_thermal_energy][:value] %> <%= @system_data[:solar_thermal_energy][:units] %></td>
+		</tr>
+		<tr>
+			<td class="data_label">Solar Electric Power</td>
+			<td class="yellow" align="left"><%= @system_data[:solar_electric_power][:value] %> <%= @system_data[:solar_electric_power][:units] %></td>
+		</tr>
+		<tr>
+			<td class="data_label">Solar Electric Energy*</td>
+			<td class="yellow" align="left"><%= @system_data[:solar_electric_energy][:value] %> <%= @system_data[:solar_electric_energy][:units] %></td>
+		</tr>
+		<th>NET ELECTRICITY</th>
+		<tr>
+			<td class="data_label" >Net Grid Power </td>
+			<td class="yellow" align="left"><%= @system_data[:net_grid_power][:value] %> <%= @system_data[:net_grid_power][:units] %></td>
+		</tr>
+		<tr>
+			<td class="data_label">Net Grid Energy*</td>
+			<td class="yellow" align="left"><%= @system_data[:net_grid_energy][:value] %> <%= @system_data[:net_grid_energy][:units] %></td>
+		</tr>
+		<th>WATER</th>
+		<tr>
+			<td class="data_label" >Total Consumption*</td>
+			<td class="yellow" align="left"><%= @system_data[:water_consumption][:value] %> <%= @system_data[:water_consumption][:units] %></td>
+		</tr>
+		<tr>
+			<td class="data_label">Hot Water Consumption*</td>
+			<td class="yellow" align="left"><%= @system_data[:hot_water_consumption][:value] %> <%= @system_data[:hot_water_consumption][:units] %></td>
+		</tr>
+		<tr>
+			<td class="data_label">Cold Water Consumption*</td>
+			<td class="yellow" align="left"><%= @system_data[:cold_water_consumption][:value] %> <%= @system_data[:cold_water_consumption][:units] %></td>
+		</tr>		
+	</table>
+	<div class="light-grey small" style="margin: 15px 0 -10px 0;">(* Cumulative values since midnight)</div>
+	</div>
+</div>

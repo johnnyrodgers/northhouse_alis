@@ -1,0 +1,67 @@
+<% title("House Schedule") %>
+
+<div id="sidebar_left">
+	<div id="sidebar_content">
+		<h5 class="title aqua_blue">CURRENT PRESETS</h5>
+		
+		<form action="/schedules/index" method="POST" id="calendar_form">
+				<!-- hidden checkbox necessary to submit calendars hash as a form parameter -->
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+			<div class="mode_box">
+				<input type="checkbox" style="display: none;" id="presets[hidden]" name="presets[hidden]" checked="checked" />
+				<% @modes.each do |mode| %>		
+					<div class="mode_selector">
+						<input class="cal_preset preset_checkbox" type="checkbox" id="presets[<%= mode.name %>]" name="presets[<%= mode.name %>]" <% if @checked_presets.include?(mode.name) %>checked="checked"<% end %>>
+						<div class="cal_name" style="color: #<%= mode.colour %>;"><%= image_tag "/images/icons/cal_icon.png", :alt => "Calendar" %><%= mode.name %> Preset</div>
+					</div>		
+				<% end %>
+			</div>
+	
+			<div class="section_divider"></div>
+			<h5 class="title aqua_blue">GOOGLE CALENDARS</h5>
+			<br>
+			<div class="imported_cal">
+				<!-- hidden checkbox necessary to submit calendars hash as a form parameter -->
+				<input type="checkbox" style="display: none;" id="calendars[hidden]" name="calendars[hidden]" checked="checked" />
+				<div class="mode_selector">
+					<input class="cal_preset calendar_checkbox" type="checkbox" id="calendars[personal]" name="calendars[personal]" <% if @checked_calendars.include?("personal") %>checked="checked"<% end %>>
+					<div class="cal_name" style="color: #1B887A;"><img src="../images/icons/cal_icon.png">Personal</div>
+				</div>
+				<div class="mode_selector">
+					<input class="cal_preset calendar_checkbox" type="checkbox" id="calendars[work]" name="calendars[work]" <% if @checked_calendars.include?("work") %>checked="checked"<% end %>>
+					<div class="cal_name" style="color: #4E5D6C;"><img src="../images/icons/cal_icon.png">Work</div>
+				</div>
+			</div>
+		</form>
+		
+		<div class="cal_functions">
+			<%= link_to_function image_tag("/images/icons/refresh.png", :alt => "Refresh", :class => "refresh"), "$('calendar_form').submit();" %>
+		</div>	
+		<br><br>	
+		<div class="section_divider"></div>
+		<h5 class="title aqua_blue">DESCRIPTION</h5>
+		<p class="smaller light-grey">  
+		The house schedule is used to program the date and time of your presets. You can also import your Google calendars to help you make decisions on when a preset should be activated or deactivated.
+		</p>
+		
+	</div>	
+</div>
+
+<div id="center_block">	
+	<div id="content_center">		
+		<h1 class="title dark-grey">HOUSE SCHEDULE</h1>				
+		<div id ="calendar">		
+			<div class="window"> 
+				<iframe 
+					id="googleCal" 
+					style="border-width:0;" 
+					width="730" 
+					height="465" 
+					frameborder="0" 
+					scrolling="no"
+					src="http://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=465&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;<%= @calendar_src %><%= @preset_src %>ctz=America%2FVancouver">
+				</iframe>
+			</div>
+		</div>
+	</div>
+</div>

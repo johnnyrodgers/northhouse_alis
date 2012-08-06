@@ -1,0 +1,306 @@
+/* CSS - North House GUI - March 19 2009 - Johnny Rodgers */
+
+/* SLIDERS */
+
+/* Vertical */
+.vertical_slider {
+	width: 80px;
+	height: 253px;
+	padding: 20px 0;
+	margin: 0 20px;
+	float: left;
+}
+.vertical_slider .slider_bg, .vertical_slider.lights .slider_bg {
+	height: 250px;
+	padding: 0;
+	background-image: url("/images/controls/light_slider_bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.vertical_slider.blinds .slider_bg, .vertical_slider.shades .slider_bg { 
+	height: 250px;
+	/* margin-top: 10px; */
+	background-image: url("/images/controls/blind_slider_bg_open.png"); 
+}
+.vertical_slider .slider_handle, .vertical_slider.lights .slider_handle {
+	width: 68px;
+	height: 45px;
+	margin-top: -1px;
+	float: left;
+	cursor: pointer;
+	background-image: url("/images/controls/light_slider_handle_bg.png");
+	background-repeat: no-repeat;
+	padding: 10px;
+	background-position: center;
+	margin: -10px 0 0 -10px;
+}
+.vertical_slider.blinds .slider_handle, .vertical_slider.shades .slider_handle {
+	height: 45px;
+	background-image: url("/images/controls/blind_slider_handle_bg.png");
+	background-position: center;
+}
+.vertical_slider .slider_value, .vertical_slider.lights .slider_value {
+	width: 60px;
+	height: 25px;
+	padding: 13px 0;
+	font-size: 1em;
+	text-align: center;
+	cursor: pointer;
+	color: #FFF;
+}
+.vertical_slider.blinds .slider_value, .vertical_slider.shades .slider_value {	
+	padding: 14px 0 0 6px;
+	font-size: 0.85em;
+}
+.vertical_slider.lights .slider_mirror, .vertical_slider.blinds .slider_mirror, .vertical_slider.shades .slider_mirror {	
+	float: right; 
+	position: relative; 
+	left: 43px;
+	top: -37px;
+}
+.vertical_slider.blinds .slider_mirror, .vertical_slider.shades .slider_mirror {	
+	left: 50px;
+	top: -25px; 
+	font-size: 0.85em;
+}
+.vertical_slider .master_status {
+	float: left;
+	position: absolute;
+	left: 18px;
+	top: 22px;
+	font-size: 1.6em;
+	text-align: center;
+	color: #FFF;	
+}
+.vertical_slider .slider_label {
+	text-align: center;
+	padding-top: 10px;
+	width: 80px;
+	margin-left: -5px;
+	color: #FFF;
+}
+
+/* Tilt Buttons */
+.tilt_section_buttons {
+	position: relative;
+	top: 19px;
+	width: 100px;
+	height: 250px;
+	float: left;
+	color: #CCC;
+	text-align: right;
+	margin: 0 -5px 0 20px;
+	font-size: 0.8em;
+}
+.tilt_section_buttons .section_button {
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 90px;
+	height: 24px;
+	float: right;
+	clear: left;
+	text-align: center;
+	margin-bottom: 12px;
+	padding-top: 9px;
+	color: #FFF;
+	display: block;
+}
+.section_button { background-image: url("/images/controls/tilt_section_button.png"); }
+.section_button.active { background-image: url("/images/controls/tilt_section_button_active.png"); }
+.tilt_degree_buttons {
+	padding-bottom: 0px;
+	height: 160px;
+	width: 100px;
+}
+.tilt_degree_buttons a {
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 35px;
+	height: 22px;
+	padding: 10px;
+	margin: -10px -10px 10px 0;
+	float: right;
+	clear: both;
+	display: block;
+}
+.tilt_degree_buttons a.tilt55 { background-image: url("/images/controls/tilt_55.png"); }
+.tilt_degree_buttons a.tilt90 { background-image: url("/images/controls/tilt_90.png"); }
+.tilt_degree_buttons a.tilt125 { background-image: url("/images/controls/tilt_125.png"); }
+.tilt_degree_buttons a.tilt160 { background-image: url("/images/controls/tilt_160.png"); }
+.tilt_degree_buttons a.tilt55:active, .tilt_degree_buttons a.tilt55.active { background-image: url("/images/controls/tilt_55_active.png"); }
+.tilt_degree_buttons a.tilt90:active, .tilt_degree_buttons a.tilt90.active { background-image: url("/images/controls/tilt_90_active.png"); }
+.tilt_degree_buttons a.tilt125:active, .tilt_degree_buttons a.tilt125.active { background-image: url("/images/controls/tilt_125_active.png"); }
+.tilt_degree_buttons a.tilt160:active, .tilt_degree_buttons a.tilt160.active { background-image: url("/images/controls/tilt_160_active.png"); }
+
+/* TOGGLES */
+/* VERTICAL */
+/* Vertical */
+.vertical_toggle {
+	width: 65px;
+	height: 245px;
+	padding: 20px;
+	float: left;
+}
+.vertical_toggle .toggle_bg {
+	width: 61px;
+	height: 246px;
+	background-image: url("/images/controls/light_toggle_bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 2px 5px 2px 4px;
+}
+.vertical_toggle .toggle_handle {
+	width: 60px;
+	height: 140px;
+	cursor: pointer;
+	background-image: url("/images/controls/light_toggle_handle_bg.png");
+	background-repeat: no-repeat;
+}
+.vertical_toggle .toggle_value {
+	width: 60px;
+	height: 25px;
+	padding: 60px 0;
+	font-size: 1em;
+	text-align: center;
+	cursor: pointer;
+	color: #FFF;
+}
+.vertical_toggle .toggle_label {
+	text-align: center;
+	padding-top: 10px;
+	width: 80px;
+	margin-left: -5px;
+	color: #FFF;
+}
+
+/* BUTTONS */
+.binary_buttons {
+	margin-top: 20px;
+	padding: 0 15px;
+	width: 180px;
+	float: left;
+}
+.binary_buttons .button {
+	width: 60px;
+	height: 60px;
+	background-image: url("/images/controls/binary_button.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 20px;
+	margin-right: -10px;
+	text-align: center;
+	color: #FFF;
+	cursor: pointer;
+}
+.binary_buttons .button_active { background-image: url("/images/controls/binary_button_active.png"); }
+
+/* UP/DOWN CONTROL */
+.up_down {
+	float: left;
+}
+.up_down_value {
+	width: 72px;
+	height: 19px;
+	text-align: center;
+	padding: 20px 10px 25px 10px;
+	margin: 16px 10px 0 15px;
+	background-image: url("/images/controls/up_down_value_bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	font-size: 1.4em;
+	color: #68d9fd;	
+}
+.up_down_status {
+	color: #68d9fd;	
+	text-align: center;
+	font-weight: lighter;
+	font-size: 1em;
+	height: 12px;
+	width: 100px;
+	margin: 3px 5px 0 0;
+	float: right;
+}
+.up_down_buttons {
+	float: left;
+	width: 50px;
+	margin-top: 14px;
+}
+.up_down_buttons .button {
+	width: 50px;
+	height: 34px;
+	display: block;
+	margin-left: -5px;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+.up_down_buttons .up { 
+	background-image: url("/images/controls/up.png"); 
+	padding: 10px 10px 0 10px;
+	margin-top: -10px;
+}
+.up_down_buttons .down { 
+	background-image: url("/images/controls/down.png"); 
+	padding: 0 10px 10px 10px;
+}
+.current {
+	text-align: center;
+	font-weight: lighter;
+	font-size: 0.7em;
+	color: #AAA;	
+}
+#delay_save_settings {
+	background-image: url("/images/controls/black_button.png");
+	background-position: center;
+	text-align: center;
+	color: #FFF;
+	padding: 6px 10px 10px 10px;
+	float: left;
+	width: 90px;
+	height: 17px;
+	clear: left;
+	margin: -7px 0 0 6px;
+}
+
+/* MODE BUTTONS */
+.button_set {
+	padding: 20px;
+}
+.button_set .button {
+	float: left;
+	width: 60px;
+	height: 60px;
+	background-image: url("/images/controls/large_button.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 40px 20px 0 20px;
+	text-align: center;
+	color: #FFF;
+	cursor: pointer;
+}
+.button_set .button_active, .button_set a.button:hover, .button_set a.button:active { background-image: url("/images/controls/large_button_active.png"); }
+
+/* OPTIMIZATION BUTTONS */
+#K1_optimization_buttons div {
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+#K1_optimization_button {
+	display: block;
+	width: 70px;
+	height: 85px;
+	margin: 0 auto 4px auto;	
+	background-image: url("/images/controls/optimization.png");
+}
+#K1_optimization_delay {
+	display: block;
+}
+#K1_optimization_button.active {
+	background-image: url("/images/controls/optimization_active.png");
+}
+#optimization_status, #delay_status {	
+	color: #FFF;
+	font-weight: lighter;
+	font-size: 1.1em;
+}

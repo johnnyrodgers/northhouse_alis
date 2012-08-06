@@ -1,0 +1,12 @@
+/* CSS - North House GUI - April 22 2009 - Johnny Rodgers */
+
+/* FORMS */
+form {
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+
+/* NOTIFICATIONS */
+form#notifications_form {
+	padding: 10px 0;
+}

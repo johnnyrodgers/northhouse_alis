@@ -1,0 +1,22 @@
+<% get_system_data %>
+<%= link_to_function(image_tag("/images/icons/icon_sysDetails.png", :alt => "System Details", :title => "System Details", :id => "system_image", :style => "margin-top: -2px;"), nil, :id => "system_button_show") do |page|
+			# hide alerts
+	    page.hide "alerts_overlay"
+			page.show "alerts_button_show"
+			page.hide "alerts_button_hide"
+			# hide weather
+	    page.hide "weather_overlay"
+			page.show "weather_button_show"
+			page.hide "weather_button_hide"
+			# show system details
+	    page.toggle "system_overlay"
+			page.show "system_button_hide"
+			page.hide "system_button_show"
+	  end
+ %>
+<%= link_to_function("&mdash;", nil, :id => "system_button_hide", :style => "display: none;" ) do |page|
+	    page.toggle "system_overlay"
+			page.show "system_button_show"
+			page.hide "system_button_hide"
+	  end
+ %>

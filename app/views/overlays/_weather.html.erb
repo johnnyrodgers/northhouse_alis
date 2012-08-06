@@ -1,0 +1,64 @@
+<div id="weather_overlay" class="overlay" style="display: none;">
+
+	<div id="weather_today">
+
+		<p id="current_weather">
+			<%= image_tag("/images/icons/weather/100x70/" + @weather.condition.text.gsub(/\/\w+/, "").gsub(" ", "_").downcase + ".png", :alt => @weather.condition.text, :title => @weather.condition.text) %> 
+			<%= @weather.condition.temp %>&deg;<%= @weather.units.temperature.upcase %>
+		</p>
+		<p id="weather_text">
+			<%= @weather.condition.text %><br />
+			<span id="location"><%= @forecast.forecast_information.city %></span>
+		</p>	
+
+		<table id="weather_details">
+			<tr>
+				<td style="width: 20%">High</td>
+				<td style="width: 30%"><%= @weather.forecasts[0].high %>&deg; <%= @weather.units.temperature %></td>
+				<td style="width: 20%">Wind</td>
+				<td style="width: 30%"><%= convert_direction(@weather.wind.direction) %> <%= @weather.wind.speed %><%= @weather.units.speed %></td>
+			</tr>
+			<tr>
+				<td>Low</td>
+				<td><%= @weather.forecasts[0].low %>&deg; <%= @weather.units.temperature %></td>
+				<td>Humidity</td>
+				<td><%= @weather.atmosphere.humidity %>%</td>
+			</tr>
+			<tr>
+				<td>Sunrise</td>
+				<td><%= @weather.astronomy.sunrise.strftime("%I:%M") %></td>
+				<td>Pressure</td>
+				<td>
+					<%= @weather.atmosphere.pressure %> <%= @weather.units.pressure %>
+					<% if @weather.atmosphere.rising == 1 %>
+						&uarr; <!-- rising - up-arrow -->
+					<% elsif @weather.atmosphere.rising == 2 %>
+						&darr; <!-- falling - down-arrow -->
+					<% else %>
+						&mdash; <!-- steady - em-dash -->
+					<% end %>				
+				</td>
+			</tr>
+			<tr>
+				<td>Sunset</td>
+				<td><%= @weather.astronomy.sunset.strftime("%I:%M") %></td>
+				<td>Visibility</td>
+				<td><%= @weather.atmosphere.visibility / 10 %> <%= @weather.units.distance %></td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="weather_forecast">
+		<ul>
+			<% @forecast.forecast_conditions.each do |day| %>
+				<li>
+					<%= day.day_of_week %><br />
+					<%= image_tag("/images/icons/weather/36x36/" + day.icon.gsub("/ig/images/weather/", "").gsub(" ", "_").gsub(".gif", ".png").downcase, :alt => day.condition, :title => day.condition) %><br />
+					<span class="forecast_high"><%= convert_temp(day.high.to_i, "F") %>&deg;</span><br />
+					<span class="forecast_low"><%= convert_temp(day.low.to_i, "F") %>&deg;</span>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	
+</div>

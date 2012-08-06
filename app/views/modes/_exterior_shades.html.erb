@@ -1,0 +1,120 @@
+<div id="shade_links" class="mode_subnav light-grey">
+	<%= link_to_function "Exterior Shade Masters", "switch_sections('shades_masters', 'shade_links', 'shade_section')", :id => "shades_masters_link", :class => "active" %> |
+	<%= link_to_function "West", "switch_sections('shades_west', 'shade_links', 'shade_section')", :id => "shades_west_link" %> |
+	<%= link_to_function "South-West", "switch_sections('shades_southwest', 'shade_links', 'shade_section')", :id => "shades_southwest_link" %> |
+	<%= link_to_function "South-East", "switch_sections('shades_southeast', 'shade_links', 'shade_section')", :id => "shades_southeast_link" %> |
+	<%= link_to_function "East", "switch_sections('shades_east', 'shade_links', 'shade_section')", :id => "shades_east_link" %>
+</div>  				
+
+<div id="shades_masters" class="shade_section">
+	<div id="mode_shades_masters_1">
+		<div class="mode_shade_subsection">
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_shade_W_tilt", :state => @mode.settings[:shades][:K3_shade_W_tilt], :master => true, :slaves => ["K3_1_shade_W1_tilt", "K3_1_shade_W2_tilt", "K3_1_shade_W3_tilt", "K3_1_shade_W4_tilt"], :device_id => DEVICES["exterior_shades"], :blind_id => "W", :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_shade_W", :value => @mode.settings[:shades][:K3_shade_W], :label => "<img src='/images/modes/nf_west.jpg' alt='West Shades' />", :master => true, :slaves => ["K3_1_shade_W1", "K3_1_shade_W2", "K3_1_shade_W3", "K3_1_shade_W4"], :f => f } %>
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_shade_SW_tilt", :state => @mode.settings[:shades][:K3_shade_SW_tilt], :master => true, :slaves => ["K3_1_shade_SW1_tilt", "K3_1_shade_SW2_tilt", "K3_1_shade_SW3_tilt", "K3_1_shade_SW4_tilt"], :device_id => DEVICES["exterior_shades"], :blind_id => "SW", :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_shade_SW", :value => @mode.settings[:shades][:K3_shade_SW], :label => "<img src='/images/modes/nf_southWest.jpg' alt='South-West Shades' />", :master => true, :slaves => ["K3_1_shade_SW1", "K3_1_shade_SW2", "K3_1_shade_SW3", "K3_1_shade_SW4"], :f => f } %>
+		</div>
+		<%= link_to_function("", nil, :class => "control_browser_next") do |page|
+					page["mode_shades_masters_1"].hide
+					page["mode_shades_masters_2"].show 
+				end %>
+	</div>
+	<div id="mode_shades_masters_2" style="display: none;">
+	<%= link_to_function("", nil, :class => "control_browser_prev") do |page|
+				page["mode_shades_masters_2"].hide
+				page["mode_shades_masters_1"].show 
+			end %>
+		<div class="mode_shade_subsection">
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_shade_SE_tilt", :state => @mode.settings[:shades][:K3_shade_SE_tilt], :master => true, :slaves => ["K3_1_shade_SE1_tilt", "K3_1_shade_SE2_tilt", "K3_1_shade_SE3_tilt", "K3_1_shade_SE4_tilt"], :device_id => DEVICES["exterior_shades"], :blind_id => "SE", :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_shade_SE", :value => @mode.settings[:shades][:K3_shade_SE], :label => "<img src='/images/modes/nf_southEast.jpg' alt='South-East Shades' />", :master => true, :slaves => ["K3_1_shade_SE1", "K3_1_shade_SE2", "K3_1_shade_SE3", "K3_1_shade_SE4"], :f => f } %>
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_shade_E_tilt", :state => @mode.settings[:shades][:K3_shade_E_tilt], :master => true, :slaves => ["K3_1_shade_E1_tilt", "K3_1_shade_E2_tilt", "K3_1_shade_E3_tilt"], :device_id => DEVICES["exterior_shades"], :blind_id => "E", :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_shade_E", :value => @mode.settings[:shades][:K3_shade_E], :label => "<img src='/images/modes/nf_east.jpg' alt='East Shades' />", :master => true, :slaves => ["K3_1_shade_E1", "K3_1_shade_E2", "K3_1_shade_E3"], :f => f } %>
+		</div>
+	</div>
+</div>
+<div id="shades_west" class="shade_section" style="display: none;">
+	<div id="mode_shades_west_1">
+		<div class="mode_shade_subsection">
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_W1_tilt", :state => @mode.settings[:shades][:K3_1_shade_W1_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_W1", :value => @mode.settings[:shades][:K3_1_shade_W1], :label => "W1", :slave => true, :masters => ["K3_shade_W"], :f => f } %>
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_W2_tilt", :state => @mode.settings[:shades][:K3_1_shade_W2_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_W2", :value => @mode.settings[:shades][:K3_1_shade_W2], :label => "W2", :slave => true, :masters => ["K3_shade_W"], :f => f } %>
+		</div>
+		<%= link_to_function("", nil, :class => "control_browser_next") do |page|
+					page["mode_shades_west_1"].hide
+					page["mode_shades_west_2"].show 
+				end %>
+	</div>
+	<div id="mode_shades_west_2" style="display: none;">
+	<%= link_to_function("", nil, :class => "control_browser_prev") do |page|
+				page["mode_shades_west_2"].hide
+				page["mode_shades_west_1"].show 
+			end %>
+		<div class="mode_shade_subsection">
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_W3_tilt", :state => @mode.settings[:shades][:K3_1_shade_W3_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_W3", :value => @mode.settings[:shades][:K3_1_shade_W3], :label => "W3", :slave => true, :masters => ["K3_shade_W"], :f => f } %>
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_W4_tilt", :state => @mode.settings[:shades][:K3_1_shade_W4_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_W4", :value => @mode.settings[:shades][:K3_1_shade_W4], :label => "W4", :slave => true, :masters => ["K3_shade_W"], :f => f } %>
+		</div>
+	</div>
+</div>
+<div id="shades_southwest" class="shade_section" style="display: none;">
+	<div id="mode_shades_southwest_1">
+		<div class="mode_shade_subsection">
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SW1_tilt", :state => @mode.settings[:shades][:K3_1_shade_SW1_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_SW1", :value => @mode.settings[:shades][:K3_1_shade_SW1], :label => "SW1", :slave => true, :masters => ["K3_shade_SW"], :f => f } %>
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SW2_tilt", :state => @mode.settings[:shades][:K3_1_shade_SW2_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_SW2", :value => @mode.settings[:shades][:K3_1_shade_SW2], :label => "SW2", :slave => true, :masters => ["K3_shade_SW"], :f => f } %>
+		</div>
+		<%= link_to_function("", nil, :class => "control_browser_next") do |page|
+					page["mode_shades_southwest_1"].hide
+					page["mode_shades_southwest_2"].show 
+				end %>
+	</div>
+	<div id="mode_shades_southwest_2" style="display: none;">
+	<%= link_to_function("", nil, :class => "control_browser_prev") do |page|
+				page["mode_shades_southwest_2"].hide
+				page["mode_shades_southwest_1"].show 
+			end %>
+		<div class="mode_shade_subsection">
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SW3_tilt", :state => @mode.settings[:shades][:K3_1_shade_SW3_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_SW3", :value => @mode.settings[:shades][:K3_1_shade_SW3], :label => "SW3", :slave => true, :masters => ["K3_shade_SW"], :f => f } %>
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SW4_tilt", :state => @mode.settings[:shades][:K3_1_shade_SW4_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_SW4", :value => @mode.settings[:shades][:K3_1_shade_SW4], :label => "SW4", :slave => true, :masters => ["K3_shade_SW"], :f => f } %>
+		</div>
+	</div>
+</div>
+<div id="shades_southeast" class="shade_section" style="display: none;">
+	<div id="mode_shades_southeast_1">
+		<div class="mode_shade_subsection">
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SE1_tilt", :state => @mode.settings[:shades][:K3_1_shade_SE1_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_SE1", :value => @mode.settings[:shades][:K3_1_shade_SE1], :label => "SE1", :slave => true, :masters => ["K3_shade_SE"], :f => f } %>
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SE2_tilt", :state => @mode.settings[:shades][:K3_1_shade_SE2_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_SE2", :value => @mode.settings[:shades][:K3_1_shade_SE2], :label => "SE2", :slave => true, :masters => ["K3_shade_SE"], :f => f } %>
+		</div>
+		<%= link_to_function("", nil, :class => "control_browser_next") do |page|
+					page["mode_shades_southeast_1"].hide
+					page["mode_shades_southeast_2"].show 
+				end %>
+	</div>
+	<div id="mode_shades_southeast_2" style="display: none;">
+	<%= link_to_function("", nil, :class => "control_browser_prev") do |page|
+				page["mode_shades_southeast_2"].hide
+				page["mode_shades_southeast_1"].show 
+			end %>
+		<div class="mode_shade_subsection">
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SE3_tilt", :state => @mode.settings[:shades][:K3_1_shade_SE3_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_SE3", :value => @mode.settings[:shades][:K3_1_shade_SE3], :label => "SE3", :slave => true, :masters => ["K3_shade_SE"], :f => f } %>
+			<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_SE4_tilt", :state => @mode.settings[:shades][:K3_1_shade_SE4_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+			<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_SE4", :value => @mode.settings[:shades][:K3_1_shade_SE4], :label => "SE4", :slave => true, :masters => ["K3_shade_SE"], :f => f } %>
+		</div>
+	</div>
+</div>
+<div id="shades_east" class="shade_section" style="display: none;">
+	<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_E1_tilt", :state => @mode.settings[:shades][:K3_1_shade_E1_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_E1", :value => @mode.settings[:shades][:K3_1_shade_E1], :label => "E1", :slave => true, :masters => ["K3_shade_E"], :f => f } %>
+	<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_E2_tilt", :state => @mode.settings[:shades][:K3_1_shade_E2_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_E2", :value => @mode.settings[:shades][:K3_1_shade_E2], :label => "E2", :slave => true, :masters => ["K3_shade_E"], :f => f } %>
+	<%= render :partial => "modes/UI/tilt_buttons", :locals => { :control_id => "K3_1_shade_E3_tilt", :state => @mode.settings[:shades][:K3_1_shade_E3_tilt], :device_id => DEVICES["exterior_shades"], :f => f } %>
+	<%= render :partial => "modes/UI/vertical_slider", :locals => { :subsystem => "shades", :device_id => DEVICES["exterior_shades"], :slider_id => "K3_1_shade_E3", :value => @mode.settings[:shades][:K3_1_shade_E3], :label => "E3", :slave => true, :masters => ["K3_shade_E"], :f => f } %>
+</div>

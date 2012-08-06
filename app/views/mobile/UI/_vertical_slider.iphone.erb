@@ -1,0 +1,25 @@
+<div class="vertical_slider <%= subsystem %>" id="<%= slider_id %>">
+	<h3 class="label" id="title"><%= label %></h3>	
+	<div class="slider_bg">
+		<div class="slider_handle" id="<%= slider_id %>_handle" subsystem="<%= subsystem %>" device_id="<%= device_id %>">
+			<div class="slider_value" id="<%= slider_id %>_value"><%= value %>%</div> 
+		</div>
+	</div>		
+  <script type="text/javascript">
+  	$('#<%= "#{slider_id}_handle" %>').touch({
+		    animate: false,
+		    sticky: true,
+		    dragx: false,
+		    dragy: true,
+		    rotate: false,
+		    resort: true,
+		    scale: false
+		});
+		//alert('window.controls.lights.<%= slider_id %>: ' + eval(window.controls.lights.<%= slider_id %>));
+		//alert('setting ' + <%= slider_id %> + ' to ' + <%= value %>);
+		<%= #logger.debug "@active_mode.settings" + @active_mode.settings[:lights][:K1_light_dining_area].inspect 
+		%>
+		//setSliderPosition('<%= slider_id %>', <%= value %>);
+	</script>
+	
+</div>

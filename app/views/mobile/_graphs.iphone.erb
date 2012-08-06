@@ -1,0 +1,226 @@
+<div id="graph_line" class="panel" selected="true">
+  <div class="toolbar">
+    <h1><%= image_tag "/images/mobile/north_house_logo.png", :alt => "North House" %></h1>
+  </div>
+  <div class="graph">
+  <div class="subpanel">
+		
+	<div class="banner">
+		<div class="stubLeft"></div>
+		<div class="stubCenter white">ELEC. CONSUMPTION vs. SOLAR PRODUCTION<Br>OVER THE PAST WEEK</div>
+		<div class="stubRight"></div>
+	</div>
+	<div class="graph_unit white">kWh</div>
+	<p class="vars white">DAYS OF THE WEEK</p>
+	
+	<div class="graphArea">
+		 <div id="lineGraph" style="width:250px;height:120px;"></div>
+		 <div class="glare"></div>
+		<script id="source" language="javascript" type="text/javascript">
+					$(function () {
+
+					 var production = [[2, 22], [4, 24], [6, 21], [8, 15], [10, 22], [12, 23], [14, 26]];
+					 var consumption = [[2, 18], [4, 19], [6, 18], [8, 18],[10, 17], [12, 20], [14, 21]];
+							
+						var graphOptions = {      
+ 							 grid: { hoverable: false, clickable: false,  tickColor: "#666" }, 
+							 points: { show: false },							 
+							 xaxis: {ticks: [0, [2, "M"], [4, "T"], [6, "W"], [8, "T"],[10, "F"],[12, "S"],[14, "S"] ] }
+						 };
+
+  						$.plot($("#lineGraph"), [
+  								{ data: production, label: "Solar Production", color: "#63f92f", lines: { show: true } }, 
+									{ data: consumption, label: "Elec. Consumption", color: "#fca704", lines: { show: true } }
+							], graphOptions );  
+
+					   function showTooltip(x, y, contents) {
+   						 $('<div id="tooltip">' + '<div class="point"></div>' + '<span class="tooltip_content">' + contents + '</span></div>').css( { display: 'none', top: y - 30, left: x + 7, opacity: 1}).appendTo("body").fadeIn(200);
+						  }
+
+						 var previousPoint = null;
+						 $("#waterGraph").bind("plothover", function (event, pos, item) {
+   					 $("#x").text(pos.x.toFixed(2));
+   					 $("#y").text(pos.y.toFixed(2));
+
+    
+      				  if (item) {
+           			 if (previousPoint != item.datapoint) {
+              		  previousPoint = item.datapoint;
+                
+                			$("#tooltip").remove();
+               				 var x = item.datapoint[0].toFixed(2),
+                  			  y = item.datapoint[1].toFixed(2);
+                
+               				 showTooltip(item.pageX, item.pageY,
+                            item.series.label + " = " + y + "Gal");
+          			 }
+        		}
+        				else {
+           				 $("#tooltip").remove();
+           				 previousPoint = null;            
+       						 }
+        
+			  			});   
+
+
+				});
+			</script>
+	</div>
+	<div class="vars">
+		<span class="green">SOLAR PRODUCTION</span>
+		<span class="darkGrey"> | </span>
+		<span class="orange">ELEC. CONSUMPTION</span>
+	</div>
+
+	<div class="divider"></div><br>
+	<div class="table_title white">THIS WEEK'S ACTIVITY</div>
+	<table class="details">	
+			<tr>
+			<td class="left"><div class="details_label darkGrey">NET-ZERO:</div></td><td><div class="details_data "><b>+ 22</b> kWh</div></td>
+			</tr>
+			<tr>
+			<td class="left"><div class="details_label darkGrey">BEST GAIN:</div></td><td><div class="details_data"><b>SUN.</b> ( <b>+5</b> kWh)</div></td>
+			</tr>
+			<tr>
+			<td class="left" ><div class="details_label darkGrey">WORST LOSS:</div></td><td><div class="details_data "><b>THURS.</b> ( <b>- 3</b> kWh)</div></td>
+			</tr>
+	</table>
+
+	<div class="features">
+		<a href="#demo_message" class="mail"></a>
+		<a href="#graph_info" class="info"></a>
+	</div>
+	
+	  </div>
+  </div>
+</div>
+
+<div id="graph_bar" class="panel" style="display: block; visibility: hidden;">
+  <div class="toolbar">
+    <h1><%= image_tag "/images/mobile/north_house_logo.png", :alt => "North House" %></h1>
+  </div>
+  <div class="graph">
+  <div class="subpanel">
+		
+	<div class="banner">
+		<div class="stubLeft"></div>
+		<div class="stubCenter white">ELEC. CONSUMPTION vs. SOLAR PRODUCTION<Br>OVER THE PAST WEEK</div>
+		<div class="stubRight"></div>
+	</div>
+	<center>
+	<div class="graph_unit white">kWh</div>
+	<div class="vars white">DAYS OF THE WEEK</div>
+	
+	<div class="graphArea">
+		 <div id="barGraph" style="width:250px;height:120px;"></div><div class="glare"></div>
+		<script id="source" language="javascript" type="text/javascript">
+					$(function () {
+
+					 var production = [[2, 22], [4, 24], [6, 21], [8, 15], [10, 22], [12, 23], [14, 26]];
+					 var consumption = [[2, -18], [4, -19], [6, -18], [8, -18],[10, -17], [12, -20], [14, -21]];
+							
+						var graphOptions = {      
+ 							 grid: { hoverable: false, clickable: false,  tickColor: "#666" }, 
+							 points: { show: false },
+							 xaxis: {ticks: [0, [2, "M"], [4, "T"], [6, "W"], [8, "T"],[10, "F"],[12, "S"],[12, "S"] ] }
+						 };
+ 
+  						$.plot($("#barGraph"), [
+  							{ data: production, label: "Solar Production", color: "#63f92f", bars: { show: true } }, 
+  							{ data: consumption, label: "Elec. Consumption", color: "#fca704",  bars: { show: true } }
+  						], graphOptions );
+
+					   function showTooltip(x, y, contents) {
+   						 $('<div id="tooltip">' + '<div class="point"></div>' + '<span class="tooltip_content">' + contents + '</span></div>').css( { display: 'none', top: y - 30, left: x + 7, opacity: 1}).appendTo("body").fadeIn(200);
+						  }
+
+						 var previousPoint = null;
+						 $("#waterGraph").bind("plothover", function (event, pos, item) {
+   					 $("#x").text(pos.x.toFixed(2));
+   					 $("#y").text(pos.y.toFixed(2));
+
+    
+      				  if (item) {
+           			 if (previousPoint != item.datapoint) {
+              		  previousPoint = item.datapoint;
+                
+                			$("#tooltip").remove();
+               				 var x = item.datapoint[0].toFixed(2),
+                  			  y = item.datapoint[1].toFixed(2);
+                
+               				 showTooltip(item.pageX, item.pageY,
+                            item.series.label + " = " + y + "Gal");
+          			 }
+        		}
+        				else {
+           				 $("#tooltip").remove();
+           				 previousPoint = null;            
+       						 }
+        
+			  			});   
+				});
+			</script>
+	</div>
+	<div class="vars">
+		<span class="green">SOLAR PRODUCTION</span>
+		<span class="darkGrey"> | </span>
+		<span class="orange">ELEC. CONSUMPTION</span>
+	</div>
+
+	<div class="divider"></div><br>
+	<div class="table_title white">THIS WEEK'S ACTIVITY</div>
+	<table class="details">	
+			<tr>
+			<td class="left"><div class="details_label darkGrey">NET-ZERO:</div></td><td><div class="details_data "><b>+ 22</b> kWh</div></td>
+			</tr>
+			<tr>
+			<td class="left"><div class="details_label darkGrey">BEST GAIN:</div></td><td><div class="details_data"><b>SUN.</b> ( <b>+5</b> kWh)</div></td>
+			</tr>
+			<tr>
+			<td class="left" ><div class="details_label darkGrey">WORST LOSS:</div></td><td><div class="details_data "><b>THURS.</b> ( <b>- 3</b> kWh)</div></td>
+			</tr>
+			</table>
+
+	</center>
+	<div class="features">
+		<a href="#demo_message" class="mail"></a>
+		<a href="#graph_info" class="info"></a>
+	</div>
+	
+	  </div>
+  </div>
+</div>
+
+<div id="graph_info" class="panel">
+  <div class="toolbar">
+    <h1>Graph Options</h1>
+    <a class="blueButton button" href="#graph_line" id="graph_line_done_btn">Done</a>
+    <a class="blueButton button" href="#graph_bar" id="graph_bar_done_btn" style="display: none;">Done</a>
+  </div>
+  <div class="graph">
+  <div class="subpanel">
+		
+	<div class="banner">
+		<div class="stubLeft"></div>
+		<div class="stubCenter white optionsHeader">VIEWING OPTIONS</div>
+		<div class="stubRight"></div>
+	</div>
+		<center>
+		<div class="view_options">UNIT OF MEASURE</div>
+		<div class="option_row">
+			<a class="options_btn" href="#demo_message">Dollars</a>
+			<a class="options_btn current_btn">kWh</a>
+		</div>
+		
+		
+		<div class="view_options">GRAPH VIEW</div>
+		<div class="option_row">
+			<a onclick="$(this).addClass('current_btn'); $('#line_graph_btn').removeClass('current_btn'); $('#nav_graphs').attr('href', '#graph_bar'); $('#graph_line_done_btn').hide(); $('#graph_bar_done_btn').show(); $('#graph_bar').css('visibility', 'visible'); return false;" id="bar_chart_btn" class="options_btn">Bar Chart</a>
+			<a onclick="$(this).addClass('current_btn'); $('#bar_chart_btn').removeClass('current_btn'); $('#nav_graphs').attr('href', '#graph_line'); $('#graph_bar_done_btn').hide(); $('#graph_line_done_btn').show(); return false;" id="line_graph_btn" class="options_btn current_btn">Line Graph</a>
+		</div>
+		</center>		
+		
+	
+	  </div>
+  </div>
+</div>

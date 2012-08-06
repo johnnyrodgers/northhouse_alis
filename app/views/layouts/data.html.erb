@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>North House | <%= yield(:title) %></title>
+		
+		<!-- META -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Refresh" content="10" />
+
+		<!-- ICONS -->
+		<link rel="shortcut icon" href="/images/icons/favicon.png" type="image/png" /> <!-- standards-based browsers -->
+		<link rel="shortcut icon" href="/images/icons/favicon.ico" /> <!-- IE6 -->
+		
+		<!-- STYLE -->
+		<%= stylesheet_link_tag "data" %>
+		
+	</head>
+	<body>
+		<div id="container">
+			<%= yield %>
+		</div>
+	</body>
+</html>

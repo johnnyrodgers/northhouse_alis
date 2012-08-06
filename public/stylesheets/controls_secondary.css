@@ -1,0 +1,16 @@
+#container {
+	width: 800px;
+	height: 600px;
+}
+#N1_lights, #E1_lights {
+	width: 100%;
+	height: 390px;
+	border-right: 1px solid #909090;
+	float: left;
+}
+#N1_modes, #E1_modes {
+	width: 100%;
+	height: 210px;
+	border-right: 1px solid #909090;
+	float: left;
+}

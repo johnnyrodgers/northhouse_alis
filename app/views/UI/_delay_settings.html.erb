@@ -1,0 +1,40 @@
+<div id="<%= control_id %>_up_down" class="up_down">
+	<span style="font-size: 1.1em;">Return to optimized state in:</span>
+	<div style="float: left;">
+		<div class="up_down_value">
+			<span id="<%= control_id %>_value_and_units"><span id="<%= control_id %>_value"><%= value %></span> <%= units %></span>
+		</div>
+		<div id="<%= control_id %>_status" class="up_down_status"></div>
+	</div>
+	<div class="up_down_buttons">
+		<%= link_to_function("", 
+					"newValue = parseInt($('#{control_id}_value').innerHTML) + 1;
+					if (newValue > 5) { newValue = 5; }
+					$('#{control_id}_value').update(newValue);
+					if (newValue > 1) { displayValue = newValue + ' Hours'; }
+					else { displayValue = newValue + ' Hour'; } 
+					$('delay_status').update(displayValue)", 
+					:id => "#{control_id}_up", 
+					:class => "button up"
+				) 
+		%>
+		<%= link_to_function("", 
+					"newValue = parseInt($('#{control_id}_value').innerHTML) - 1;
+					if (newValue < 1) { newValue = 1; }
+					$('#{control_id}_value').update(newValue);
+					if (newValue > 1) { displayValue = newValue + ' Hours'; }
+					else { displayValue = newValue + ' Hour'; } 
+					$('delay_status').update(displayValue)", 
+					:id => "#{control_id}_down", 
+					:class => "button down"
+				) 
+		%>
+	</div>
+	<%= link_to_function("Save Setting", 
+				"closeDelaySettings('#{control_id}'); setOptimizationDelay(parseInt($('#{control_id}_value').innerHTML))", 
+				:id => "delay_save_settings",
+				:class => "button"
+			) 
+	%>
+</div>
+	

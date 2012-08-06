@@ -1,0 +1,12 @@
+<div id="alerts_overlay" class="overlay" style="display: none;">
+	<% if @notifications %>
+		<ul>
+			<% @notifications[0..4].each do |notification| %>
+				<li class="<%= notification.priority_as_text %>"><%= notification.message %> <span class="timestamp"><%= time_ago_in_words(notification.updated_at).capitalize %> ago</span></li>
+			<% end %>
+			<li><div class="button_dark"><%= link_to_redbox("See all Notifications (#{@notifications.size})", "notifications_modal") %></div></li>
+		</ul>	
+	<% else %>
+		There are currently no notifications to display.
+	<% end %>
+</div>

@@ -1,0 +1,18 @@
+<h1>Ambient Canvas Test</h1
+
+<p>
+This test sends the following to mServer (where <%= DEVICES["ambient_canvas"] %> is the Device ID of the Ambient Canvas).<br />
+This tests 6 different duty cycles (0, 102, 204, 306, 408, 512) for the 6 active channels of the Ambient Canvas:
+</p>
+<ul>
+<li>SendCommand.new(<%= DEVICES["ambient_canvas"] %>, "SETPWM 0 1")</li>
+<li>SendCommand.new(<%= DEVICES["ambient_canvas"] %>, "SETPWM 102 2")</li>
+<li>SendCommand.new(<%= DEVICES["ambient_canvas"] %>, "SETPWM 204 3")</li>
+<li>SendCommand.new(<%= DEVICES["ambient_canvas"] %>, "SETPWM 306 4")</li>
+<li>SendCommand.new(<%= DEVICES["ambient_canvas"] %>, "SETPWM 408 5")</li>
+<li>SendCommand.new(<%= DEVICES["ambient_canvas"] %>, "SETPWM 512 6")</li>
+</ul>
+<p>These commands can be modified in the <em>ambientcanvastest</em> method in <strong>app/controllers/controls_controller.rb</strong>.</p>
+<p>This HTML output can be modified in <strong>app/views/controls/ambientcanvastest.html.erb</strong>.</p>
+<p>The results of the commands can be monitored in the <strong>mServer Log</strong> in the <strong>mControl Service Manager</strong>.</p>
+<p>Changes can be made 'on-the-fly' and only require a page refresh - not a server restart.</p>

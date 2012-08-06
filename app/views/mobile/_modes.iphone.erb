@@ -1,0 +1,23 @@
+<div id="modes" class="panel">
+  <div class="toolbar">
+    <h1>Presets</h1>
+    <a class="back button" href="#main">Back</a>
+  </div>
+  <ul class="edgetoedge no_select" id="mode_list">
+  	<% @modes.each do |mode| %>
+  		<li>
+  			<% link_to mode.name, 
+					{ :controller => "controls", :action => "set_mode", :id => mode.id }, 
+					{ :id => "mode_#{mode.id}", :class => "mode_item", :onclick => "setActiveItem('mode', #{mode.id});" } 
+  			%>
+  			<!-- THIS REMOTE IS NOT BEING SENT - SEE JQTOUCH.JS -->
+  			<%= link_to_remote mode.name,
+				    :url => { :controller => "controls", :action => "set_mode", :id => mode.id },
+				    :update => nil,
+				    :html => { :id => "mode_#{mode.id}", :class => "mode_item", :onclick => "setActiveItem('mode', #{mode.id});" } 
+  			%>
+  		</li>
+  	<% end %>
+		<script type="text/javascript">setActiveItem("mode", <%= @active_mode.id %>);</script>
+  </ul>
+</div>  

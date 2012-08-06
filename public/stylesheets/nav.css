@@ -1,0 +1,88 @@
+/* CSS - North House GUI - March 26 2009 - Johnny Rodgers */
+
+/* Global Navigation */
+div#nav {
+	font-family: "Futura", "Futura Book BT", sans-serif;
+	height: 117px;
+}
+
+/* Primary */
+div#nav div#primary {
+	background-image: url("../images/nav/global_nav_bg.jpg");
+	background-repeat: repeat-x;
+	border-top: 1px solid #222;
+	height: 88px;
+	position: relative;
+	font-size: 1em;
+}
+div#nav div#primary a, div#nav div#primary a:link, div#nav div#primary a:visited {
+	float: left;	
+	height: 88px;
+	width: 200px;
+	text-align: center;
+	color: #aeaeae;
+	text-decoration: none;
+}
+div#nav div#primary a:hover, div#nav div#primary a:active, div#nav div#primary a.current {
+	background-image: url("../images/nav/global_nav_bg_active.jpg");
+}
+div#nav div#primary a.current {
+	font-size: 1em;
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.4) 0px 2.5px 0;
+}
+div#nav div#primary a img {
+	margin-top:10px;
+	height: 50px;
+}
+div#nav div#primary a:first-child {
+	border-left: none;
+	width: 199px;
+}
+div#nav div#primary a:last-child {
+	border-right: none;
+	width: 199px;
+}
+
+/* Secondary */
+div#nav div#secondary {
+	height: 27px;
+	position: relative;
+	z-index: 10;
+}
+div#nav div#secondary a, div#nav div#secondary a:link, div#nav div#secondary a:visited {
+	background-image: url("../images/nav/secondary_nav_bg.png");
+	background-repeat: repeat-x;
+	color: #fff;
+	float: left;
+	border-left: 1px solid #BBB;
+	border-collapse: collapse;
+	padding: 4px 20px 5px 20px;
+	min-width: 100px;
+	font-size: 0.95em;
+	text-align: center;
+	text-decoration: none;
+	margin-top:3px;
+}
+div#nav div#secondary a:hover, div#nav div#secondary a:active {
+	background-image: url("../images/nav/secondary_nav_bg_active.png");
+	background-repeat: repeat-x;
+}
+div#nav div#secondary a.current {
+	background-image: url("../images/nav/secondary_nav_bg_active.png");
+	background-repeat: repeat-x;
+	text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0;
+	color:#66ccff;
+}
+div#nav div#secondary a:first-child { border-left: none; }
+
+/* Nav Arrow */
+div#nav img#arrow { 
+	display: hidden;
+	height: 10px;
+	width: 22px;
+	margin: -10px 0 0 0;
+	float: left;
+	position: absolute;
+	z-index: 1001;
+}

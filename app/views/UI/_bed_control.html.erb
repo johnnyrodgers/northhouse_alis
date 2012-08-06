@@ -1,0 +1,4 @@
+<div id="<%= control_id %>_buttons" class="button_set">
+	<%= link_to_function("", "setBedPosition(#{device_id}, '#{control_id}')", :id => "#{control_id}_button", :class => "button", :style => "background-image: url('/images/controls/bed_icon.png');") %>
+	<%= image_tag "/images/controls/bed_icon_active.png", :alt => "Bed Control", :id => "#{control_id}_disabled_button", :style => "display: none; margin: 5px 0 0 6px;" %>
+</div>

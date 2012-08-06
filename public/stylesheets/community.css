@@ -1,0 +1,1123 @@
+
+/* CSS - North House GUI - September 10 2009 - Jenny Thai */
+
+
+
+/**************************** SIDEBAR LEFT FORMATING *************************************/
+.profile{
+padding:0px;
+background-image:url('../images/community/profile_image_02.jpg');
+background-repeat: no-repeat;
+margin-top:10px;
+margin-bottom:10px;
+height:176px;
+width:177px;
+-webkit-border-radius:7px; 
+}
+
+.profile_edit{
+background-image:url('../images/community/profile_edit.png');
+height:176px;
+width:177px;
+float:left;
+-webkit-border-radius:7px; 
+color:#fff;
+}
+
+.profile_edit a{
+margin-left:5px;
+margin-top:7px;
+
+}
+
+#sidebar_left .profile_links .button_dark{
+float:right;
+margin-right:5px;
+}
+
+
+
+.achievement_row{
+margin-top:22px;
+margin-bottom:10px;
+}
+
+.achievement_row2{
+margin-top:22px;
+margin-left:4px;
+}
+
+
+.trophy{
+padding-right:10px;
+float:left;
+}
+
+.achievement_row .smaller{
+vertical-align:top;
+margin-top:5px;
+}
+
+/********** SIDEBAR DETAILS FORMATING ************/
+
+table.household_profile{
+margin-top:0px;
+margin-bottom:0px;
+width:85%;
+border:none;
+}
+
+table.household_occupants td{
+border:none;
+}
+
+table.household_details{
+margin-top:5px;
+margin-bottom:-5px;
+width:100%;
+border:none;
+}
+
+table.household_details td{
+border:none;
+padding-top:0px;
+padding-bottom:0px;
+}
+
+table.household_details td.empty{
+padding-top:10px;
+}
+
+/**************************** CENTER CLASSES *************************************/
+
+.challenge_user_profile{
+float:left;
+}
+
+.user_profile{
+float:left;
+margin-right:10px;
+}
+
+
+/****** NEIGHBOURHOOD TOP NAVIGATION SECTIONS ********/
+
+
+.community_profile_sections{
+margin-top:3px;
+}
+
+.community_profile_sections a{
+font-family: "Futura", "Futura Bk BT";
+font-size:1.2em;
+color:#fff;
+margin-left:40px;
+}
+
+.community_profile_sections a:hover, .community_profile_sections a.active {
+color:#66ccff;
+text-decoration:none;
+}
+
+
+
+
+/**************************** MAIN CONTENT AREA *************************************/
+
+
+
+.comment_link{
+float:left;
+margin-top:0px;
+margin-right:10px;
+}
+
+.comment_link a{
+background-repeat:no-repeat;
+margin-left:-10px;
+padding-right:2px;
+margin-right:15px;
+}
+
+
+#tips_fullview .rating{
+float:left;
+margin-right:10px;
+}
+
+
+
+
+
+
+
+
+
+
+.vote_count{
+padding-left:20px;
+font-style:italic;
+font-size:.8em;
+
+}
+
+
+
+.scroll_div{
+ background-color:#ffffff;
+ overflow:auto;
+border: 1px solid #ccc;
+}
+
+
+.row_item{
+border-bottom:1px dashed #e3e3e3;
+min-height:45px;
+width:95;
+padding:15px;
+}
+
+
+
+.row_item .title{
+font-size:.95em;
+font-weight:bold;
+padding-bottom:5px;
+}
+
+
+
+.row_item .title_desc{
+font-weight:normal;
+font-size:.95em;
+padding-left:5px;
+
+}
+
+.row_item .title a{
+font-size:.95em;
+font-weight:bold;
+padding-bottom:5px;
+}
+
+
+.row_item p{
+margin-bottom:0px;
+}
+
+
+.rows .even{
+background-color:#fff;
+}
+
+.rows .odd{
+background-color:#f4fcfe;
+}
+
+
+
+
+.row_item .fullview a{
+background-image:url('../images/community/icon_chevron.png');
+background-repeat:no-repeat;
+padding:7px;
+float:right;
+margin-right:-10px;
+margin-top:-20px;
+}
+
+
+
+
+
+
+.row_close a{
+background-image:url('../images/community/icon_close_active.png');
+background-repeat:no-repeat;
+padding:7px;
+float:right;
+margin-right:-10px;
+margin-top:-25px;
+}
+
+.row_close a:hover{
+background-image:url('../images/community/icon_close.png');
+}
+
+
+
+
+.search{
+float:right;
+margin-top:-37px;
+}
+.search table{
+border:none;
+}
+
+.search input.searching{
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border: 1px solid #ccc;
+height:20px;
+margin-right:5px;
+}
+
+.search .button_light {
+float:right;
+margin-top:-5px;
+}
+
+
+
+/********* Community Challenge Board ***********/
+
+#leaderboard .scroll_div{
+ margin-left:5px;
+ margin-top:0px;
+ width:735px;
+ height:316px;
+
+ border:none;
+ }
+
+
+.participant{
+margin-top:0px;
+margin-bottom:0px;
+}
+
+
+.bars{
+margin-left:100px;
+height:100px;
+}
+
+
+
+.names{
+margin-left:-50px;
+margin-top:55px;
+font-size:.8em;
+font-weight:bold;
+width:100px;
+float:left;
+color:#333;
+}
+
+
+
+
+.progress_variable_top{
+float:left;
+font-size:.6em;
+color:#acacac;
+margin-top:0px;
+margin-bottom:5px;
+margin-left:0px;
+font-weight:bold;
+}
+
+ul.progress_numbers_top{
+font-size:.7em;
+font-weight:bold;
+margin-left:80px;
+padding-bottom:5px;
+}
+
+ul.progress_numbers_top li{
+float:left;
+list-style-type: none;
+margin-right:71px;
+color:#acacac;
+}
+
+ul.progress_numbers_top li.last{
+float:left;
+list-style-type: none;
+margin-right:0px;
+color:#66cc00;
+}
+
+
+
+
+
+ul.progress_tabs_top{
+list-style-type: none;
+margin-top:-15px;
+margin-left:80px;
+}
+
+
+ul.progress_tabs_top li{
+float:left;
+width:3px;
+margin-right:39px;
+height:4px;
+background-color:#e8e8e8;
+border:1px solid #dddddd;
+
+}
+
+
+
+.progress_bar{
+float:left;
+margin-top:-20px;
+margin-left:117px;
+border-left:1px solid #afaeae;
+-webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+background-image: url("../images/community/progress_bar.jpg");
+}
+
+
+.progress_stub_light{
+margin-top:0px;
+width:117px;
+height:20px;
+-webkit-border-bottom-left-radius: 5px;
+-webkit-border-top-left-radius: 5px;
+background-image: url("../images/community/others_progress_stub_bg.jpg");
+}
+
+
+.progress_bkg{
+width:565px;
+height:20px;
+background-image: url("../images/community/others_progress_bar_bg.jpg");  
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border:1px solid #dddddd;
+margin-top:-23px;
+
+}
+
+
+
+
+
+ul.progress_tabs_bottom{
+list-style-type: none;
+margin-top:-15px;
+margin-left:71px;
+}
+
+
+ul.progress_tabs_bottom li{
+float:left;
+width:3px;
+margin-right:34px;
+height:4px;
+background-color:#f3f3f3;
+border:1px solid #dddddd;
+
+}
+
+
+ul.progress_numbers_bottom{
+font-size:.7em;
+font-weight:bold;
+margin-left:80px;
+padding-bottom:5px;
+}
+
+ul.progress_numbers_bottom li{
+float:left;
+list-style-type: none;
+margin-right:83px;
+color:#acacac;
+margin-top:5px;
+}
+
+ul.progress_numbers_bottom li.last{
+float:left;
+list-style-type: none;
+margin-right:0px;
+color:#66cc00;
+margin-top:5px;
+}
+
+
+.progress_variable_bottom{
+float:left;
+font-size:.6em;
+color:#acacac;
+margin-top:7px;
+margin-bottom:5px;
+margin-left:0px;
+font-weight:bold;
+}
+
+
+
+
+
+.self_progress{
+background-image: url("../images/community/self_progress_bg.jpg");
+border-top:1px solid #888;
+margin-top:0px;
+width:739px;
+height:93px;
+margin-left:-15px;
+padding-left:21px;
+padding-top:15px;
+-webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); 
+-webkit-border-bottom-left-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-bottomleft: 5px;
+-moz-border-radius-bottomright: 5px;
+}
+
+
+.self_progress .names{
+margin-left:-50px;
+margin-top:55px;
+font-size:.8em;
+font-weight:bold;
+width:100px;
+float:left;
+color:#fff;
+}
+
+.self_progress ul.progress_numbers_top li{
+float:left;
+list-style-type: none;
+margin-right:71px;
+color:#e7e7e7;
+}
+
+.self_progress ul.progress_numbers_top li.last{
+float:left;
+list-style-type: none;
+margin-right:0px;
+color:#a7f160;
+
+}
+
+
+.self_progress .progress_variable_top{
+float:left;
+font-size:.6em;
+color:#e7e7e7;
+margin-top:0px;
+margin-bottom:5px;
+margin-left:0px;
+font-weight:bold;
+}
+
+
+
+.self_progress .progress_bar{
+float:left;
+margin-top:-20px;
+margin-left:117px;
+-webkit-border-top-right-radius: 5px;
+-webkit-border-bottom-right-radius: 5px;
+-moz-border-radius-topright: 5px;
+-moz-border-radius-bottomright: 5px;
+background-image: url("../images/community/progress_bar.jpg");
+}
+
+
+
+.self_progress .progress_stub_light{
+margin-top:0px;
+width:117px;
+height:20px;
+-webkit-border-bottom-left-radius: 5px;
+-webkit-border-top-left-radius: 5px;
+background-image: url("../images/community/progress_stub_bg.jpg");
+}
+
+
+.self_progress .progress_bkg{
+width:565px;
+height:20px;
+background-image: url("../images/community/progress_bar_bg.jpg");
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border:1px solid #8f8f8f;
+margin-top:-23px;
+
+}
+
+
+ .self_progress ul.progress_tabs_top li{
+float:left;
+width:3px;
+margin-right:41px;
+margin-top:2px;
+height:4px;
+background-color:#4c4c4c;
+border:none;
+}
+
+.self_progress ul.progress_tabs_top li.progress_tabs_bottom{
+float:left;
+width:3px;
+margin-right:41px;
+margin-top:0px;
+height:4px;
+background-color:#696969;
+border:none;
+}
+
+
+
+
+
+.self_progress ul.progress_numbers_bottom li{
+float:left;
+list-style-type: none;
+margin-right:83px;
+color:#e7e7e7;
+margin-top:5px;
+}
+
+.self_progress ul.progress_numbers_bottom li.last{
+float:left;
+list-style-type: none;
+margin-right:0px;
+color:#a7f160;
+margin-top:5px;
+}
+
+
+.self_progress .progress_variable_bottom{
+float:left;
+font-size:.6em;
+color:#e7e7e7;
+margin-top:7px;
+margin-bottom:5px;
+margin-left:0px;
+font-weight:bold;
+}
+
+
+
+
+/********* Community chatter ***********/
+
+#chatter .scroll_div{
+ margin-left:12px;
+ margin-top:0px;
+ margin-bottom:20px;
+ width:700px;
+ height:290px;
+ float:left;
+ }
+
+#chatter{
+
+}
+
+.row_item .post_content{
+font-size:.8em;
+
+}
+
+.user_post .username {
+color:#f7941d;
+}
+
+
+.row_item .time{
+margin-top:5px;
+font-size:10px;
+font-style:italic;
+color:#999;
+}
+
+.row_item .username{
+font-weight:bold;
+font-size:.8em;
+padding-right:3px;
+color:#333;
+}
+
+.rows .user_post{
+background-color:#fffff5;
+}
+
+
+
+#chatter_post{
+margin-left:12px;
+
+}
+
+#chatter_post h4{
+margin-bottom:3px;
+color:#60b1c3;
+margin-top:20px;
+}
+
+#chatter_post .button_light a{
+float:right;
+margin-top:-15px;
+margin-right:15px;
+}
+
+#chatter_post textarea{
+width:700px;
+height:50px;
+border-color:#ccc;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+font-size:1em;
+color:#666;
+resize: none;
+}
+
+
+.char_text {
+font-size:.7em;
+margin-top:5px;
+color:#999;
+}
+
+.disable {
+  color: #CF110C;
+  font-weight: bold;
+  
+}
+
+
+
+/********* Community Previous Challenges ***********/
+
+
+
+#previous_challenges .scroll_div{
+ margin-left:12px;
+ margin-top:0px;
+ width:700px;
+ height:400px;
+ }
+
+
+
+
+
+#previous_challenges .odd:hover, #previous_challenges .even:hover, #tips_search .odd:hover, #tips_search .even:hover, #tips .odd:hover, #tips .even:hover {
+background-color:#eeeeee;
+cursor: pointer;
+}
+
+
+
+/********* Challenge start page ***********/
+
+#challenge_options h2{
+margin-top:40px;
+margin-bottom:0px;
+}
+
+#challenge_options .form_items{
+margin-left:10px;
+margin-top:25px;
+margin-bottom:30px;
+}
+
+
+#challenge_options select{
+margin-bottom:20px;
+margin-left:10px;
+}
+
+#challenge_options input.radio{
+margin-left:20px;
+}
+
+#challenge_options .button_light{
+margin-top:20px;
+margin-left:190px;
+
+}
+
+#challenge_options .button_light a{
+font-size:.85em;
+}
+
+
+
+/********* Tips ***********/
+
+
+
+#tips .scroll_div{
+ margin-left:12px;
+ margin-top:0px;
+ width:400px;
+ height:400px;
+ float:left;
+ margin-right:20px;
+ }
+ 
+ 
+ #tips_fullview .scroll_div{
+ margin-left:12px;
+ margin-top:0px;
+ width:400px;
+ height:400px;
+ float:left;
+ margin-right:20px;
+ padding: 10px 0 0 10px;
+ }
+ 
+ #tips_fullview h4{
+ margin-bottom:10px;
+ }
+ 
+ #tips_fullview p{
+ margin-left:5px;
+ margin-right:15px;
+ }
+ 
+ #tips_fullview .user_comments{
+ border-top: 1px solid #999;
+ margin-left:-10px;
+ }
+ 
+ #tips_fullview .user_comments .title{
+ font-weight:bold;
+ font-size:.8em;
+ margin-left:5px;
+ margin-bottom:-3px;
+ }
+ 
+
+ #tips_fullview .rows{
+
+ }
+ 
+ 
+ 
+
+#tips_post textarea, #tips_reply textarea{
+width:270px;
+height:310px;
+border-color:#ccc;
+padding:5px;
+-moz-border-radius-topleft:5px;
+-moz-border-radius-topright:5px;
+-webkit-border-top-left-radius:5px;
+-webkit-border-top-right-radius:5px;
+font-size:1em;
+color:#666;
+resize: none;
+
+}
+
+#tips_post textarea{
+ height:275px;
+ border-color:#ccc;
+ 
+}
+
+.form-items{
+margin-bottom:-5px;
+
+}
+
+.categorize{
+margin-left:434px;
+margin-top:-3px;
+width:262px;
+height:56px;
+padding:10px;
+-moz-border-radius-bottomleft:5px;
+-moz-border-radius-bottomright:5px;
+-webkit-border-bottom-left-radius:5px;
+-webkit-border-bottom-right-radius:5px;
+background-color:#333;
+text-align:center;
+}
+
+
+#tips_post .categorize{
+height:70px;
+
+}
+
+
+#tips_reply .categorize{
+margin-left:444px;
+margin-top:-3px;
+width:262px;
+height:30px;
+padding:10px;
+-moz-border-radius-bottomleft:5px;
+-moz-border-radius-bottomright:5px;
+-webkit-border-bottom-left-radius:5px;
+-webkit-border-bottom-right-radius:5px;
+background-color:#333;
+text-align:center;
+}
+
+#tips_post  .button_dark{
+padding-top:15px;
+}
+
+#tips_reply  .button_dark{
+padding-top:5px;
+}
+
+
+
+
+
+#tips_post h4{
+margin-bottom:3px;
+}
+
+#tips_search .category_title{
+font-weight:normal;
+}
+
+.tip_poster{
+margin-left:5px;
+font-weight:bold;
+margin-bottom:5px;
+}
+
+
+/********* COMMUNITY UPDATES ***********/
+
+
+#profile_updates .scroll_div{
+ margin-left:12px;
+ margin-top:0px;
+ margin-bottom:10px;
+ width:727px;
+ height:420px;
+ float:left;
+ border:none;
+ }
+ 
+ #profile_updates .row_item{
+ width: 660px;
+ float:left;
+ }
+ 
+.user_thumbnail{      /*user profile thumbnail*/
+padding:8px 8px 8px 8px;
+width:50px;
+height:50px;
+float:left;
+border:none;
+ }
+ 
+ .user_thumbnail_small{      /*user profile thumbnail smaller version for commentors*/
+margin-right:10px;
+width:32px;
+height:32px;
+float:left;
+border:none;
+ }
+
+.row_item_content .title_link{	/*blue links within content*/
+font-weight: bold; 
+color:#60b1c3;				/*blue*/
+padding-left:3px;
+text-decoration:none;
+font-size:.8em;
+
+}
+
+
+.row_item_content .time{		/*time within comment content*/
+margin-top:5px;
+margin-left:0px;
+margin-right:5px;
+margin-bottom:10px;
+margin-top:10px;
+font-style:italic;
+color:#999;
+font-size:10px;
+}
+
+.row_item_content .user_comments{
+margin-left:20px;
+margin-bottom:5px;
+font-size:.8em;
+border:none;
+}
+
+.row_item_content{
+float:left;
+width:585px;
+padding-top:5px;
+
+}
+
+.row_item_content a:hover{
+color:#999;
+
+}
+
+.row_item_content .read_more{		/*read more link*/
+color:#60b1c3;
+text-decoration:none;
+}
+
+
+
+.post_comment_group{		/*The listing/groups of written comments under an update*/
+margin-top:5px;
+margin-left:10px;
+margin-bottom:-3px;
+width:510px;
+padding:12px;
+
+}
+
+.post_comment{			/*one of the posted/written comments*/
+margin-top:5px;
+margin-bottom:-3px;
+width:510px;
+padding:12px;
+background-color:#f4fcfe;
+
+}
+
+.post_comment .button_light {
+float:right;
+margin-top:5px;
+margin-left:10px;
+margin-right:25px;
+}
+
+.post_comment textarea{
+width:400px;
+border-color:#ccc;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+padding:4px;
+font-size:.8em;
+color:#666;
+resize: none;
+margin-left:10px;
+background-color:white;
+}
+
+.post_comment_close a{
+background-image:url('../images/layout/button_close2.png');
+background-repeat:no-repeat;
+padding:12px;
+float:right;
+margin-right:-25px;
+margin-top:-25px;
+}
+
+.post_comment_close a:hover{
+background-image:url('../images/layout/button_close_active2.png');
+}
+
+.post_comment .time{		/*time within comment content*/
+margin-top:5px;
+margin-left:40px;
+margin-right:5px;
+margin-bottom:10px;
+font-style:italic;
+color:#999;
+font-size:10px;
+}
+
+a.add_comment {			/*Add Comment text link*/
+color:#60b1c3;
+text-decoration:none;
+font-size:1em;
+margin-left:5px;
+}
+
+a.add_comment a:hover{		/*Add Comment text link hover state*/
+text-decoration:none;
+}
+
+
+/********* Neighbourhood Graph page ***********/
+
+
+
+#neighbourhood_energy .window{
+height:435px;
+}
+
+.cal_nav {
+width:90%;
+height:25px;
+text-align: center;
+margin-bottom: 10px;
+}
+
+.cal_nav  img{
+padding-top:0px;
+margin-top:-2px;
+}
+
+.cal_nav .date_text{
+vertical-align: top;
+font-weight:bold;
+font-size:.9em;
+margin: 10px 10px 0 15px;
+}
+
+
+#communityGraph{
+margin-left:10px;
+}
+
+
+.legend_container{
+margin-top:25px;
+border-bottom:1px dashed #e3e3e3;
+border-top:1px dashed #e3e3e3;
+height:20px;
+padding:10px;
+font-size:1.1em;
+
+
+}
+
+.graph_options{
+padding-top:10px;
+padding-left:10px;
+font-size:1.1em;
+}
+
+.graph_options table{
+border:0px;
+margin-top:10px;
+color:#999;
+font-weight:bold;
+font-size:.7em;
+width:90%;
+}
+
+
+/********* POPUP WINDOW ***********/
+
+.edit_profile_content{
+padding: 50px 15px 0 15px;
+}
+
+.edit_profile_content .content_divider{
+margin-top:20px;
+margin-bottom:10px;
+}
+
+.edit_profile_content label{
+margin-right:10px;
+font-weight:bold;
+}
+
+
+
+
+
+

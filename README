@@ -2,7 +2,7 @@
 
 This application is intended to be run on the local network of North House.  It provides a GUI for the control of the house systems (lights, blinds, shades, climate control, bed control) and a prototype feedback system to monitor the energy footprint of the house and its occupants.
 
-Documentation on the architecture and use of the application is available in */doc*.
+Documentation on the architecture and use of the application is available in /doc.
 
 For more information, see:
 
